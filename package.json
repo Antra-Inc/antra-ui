@@ -7,15 +7,19 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-antra-ui": "ng build antra-ui",
+    "watch-antra-ui": "ng build antra-ui --watch"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.3",
+    "@angular/cdk": "~10.2.1-sha-b23d130e1",
     "@angular/common": "~10.1.3",
     "@angular/compiler": "~10.1.3",
     "@angular/core": "~10.1.3",
     "@angular/forms": "~10.1.3",
+    "@angular/material": "~10.2.1-sha-b23d130e1",
     "@angular/platform-browser": "~10.1.3",
     "@angular/platform-browser-dynamic": "~10.1.3",
     "@angular/router": "~10.1.3",
