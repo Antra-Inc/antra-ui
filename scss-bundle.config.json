@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/antra-ui/src/lib/styles.scss",
+    "outFile": "./dist/antra-ui/lib/styles.scss",
+    "logLevel": "error"
+  }
+}

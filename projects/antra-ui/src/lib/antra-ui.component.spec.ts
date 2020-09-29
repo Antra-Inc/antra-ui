@@ -8,9 +8,8 @@ describe('AntraUiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AntraUiComponent ]
-    })
-    .compileComponents();
+      declarations: [AntraUiComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

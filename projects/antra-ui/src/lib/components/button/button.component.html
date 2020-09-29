@@ -1,0 +1,15 @@
+<button *ngIf="btnType === 'raised'" mat-raised-button [color]="btnColor">
+  Test
+</button>
+<button *ngIf="btnType === 'basic'" mat-button [color]="btnColor">
+  <ng-content></ng-content>
+</button>
+<button *ngIf="btnType === 'flat'" mat-flat-button [color]="btnColor">
+  <ng-content></ng-content>
+</button>
+<button *ngIf="btnType === 'icon'" mat-icon-button [color]="btnColor">
+  <ng-content></ng-content>
+</button>
+<button *ngIf="btnType === 'fab'" mat-fab [color]="btnColor">
+  <ng-content></ng-content>
+</button>
