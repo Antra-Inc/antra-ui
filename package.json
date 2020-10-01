@@ -12,7 +12,6 @@
     "build-antra-ui": "ng build antra-ui --prod=true && npm run build-scss",
     "watch-antra-ui": "ng build antra-ui --watch"
   },
-  "types": "dist/antra-ui/antra-ui.d.ts",
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.3",

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-type btnType = 'raised' | 'basic' | 'flat' | 'icon' | 'fab' | 'miniFab';
-type btnColor = 'basic' | 'primary' | 'accent' | 'warn';
+export type btnType = 'raised' | 'basic' | 'flat' | 'icon' | 'fab' | 'miniFab';
+export type btnColor = 'basic' | 'primary' | 'accent' | 'warn';
 
 @Component({
   selector: 'antra-button',
@@ -11,8 +11,8 @@ type btnColor = 'basic' | 'primary' | 'accent' | 'warn';
 export class ButtonComponent implements OnInit {
   @Input() btnType: btnType = 'raised';
   @Input() btnColor: btnColor = 'primary';
+  @Input() btnText = '';
 
   constructor() {}
-
   ngOnInit() {}
 }
