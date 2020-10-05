@@ -1,0 +1,30 @@
+<mat-nav-list class="selectnone">
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree-node
+      *matTreeNodeDef="let node"
+      matTreeNodePadding
+      matTreeNodePaddingIndent="20px"
+    >
+      <mat-list-item [routerLink]="[node.url]">
+        <span mat-line class="leftspace">{{ node.name }}</span>
+      </mat-list-item>
+    </mat-tree-node>
+
+    <mat-tree-node
+      *matTreeNodeDef="let node; when: hasChild"
+      matTreeNodePadding
+    >
+      <mat-list-item
+        mat-icon-button
+        matTreeNodeToggle
+        [attr.aria-label]="'Toggle ' + node.name"
+      >
+        <span mat-line class="leftspace">{{ node.name }}</span>
+
+        <mat-icon class="mat-icon-rtl-mirror" class="right">
+          {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+        </mat-icon>
+      </mat-list-item>
+    </mat-tree-node>
+  </mat-tree>
+</mat-nav-list>

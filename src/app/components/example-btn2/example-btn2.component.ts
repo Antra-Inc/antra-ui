@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angula
 import { slideToRight } from '../anims/router.anim';
 
 @Component({
-  selector: 'app-example-button',
-  templateUrl: './example-button.component.html',
-  styleUrls: ['./example-button.component.scss'],
+  selector: 'app-example-btn2',
+  templateUrl: './example-btn2.component.html',
+  styleUrls: ['./example-btn2.component.scss'],
   animations: [ slideToRight ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExampleButtonComponent implements OnInit {
+export class ExampleBtn2Component implements OnInit {
 
   @HostBinding('@routeAnim') state;
 

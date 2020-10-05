@@ -1,13 +1,14 @@
 <mat-toolbar class="example-header" color="primary">
-  <span>Antra-ui</span>
+  <!-- <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+  <span >Antra-ui</span>
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav" >
-     Sidenav
+    <app-examplet-sidnav></app-examplet-sidnav>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-example-button></app-example-button>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

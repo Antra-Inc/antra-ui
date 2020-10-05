@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'antra-lib';
+  showFiller = false;
 
-  btnClicked(e) {
-    console.log(e);
-  }
+  // btnClicked(e) {
+  //   console.log(e);
+  // }
 }
