@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./style/palette.scss";
+@import "./styles/palette.scss";
 
 // theme
 @import "~@angular/material/theming";
@@ -13,20 +13,20 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ars-app-primary: mat-palette($ars-primary);
-$ars-app-accent: mat-palette($ars-accent);
+$antra-app-primary: mat-palette($antra-primary);
+$antra-app-accent: mat-palette($antra-accent);
 
 // The warn palette is optional (defaults to red).
-$ars-app-warn: mat-palette($ars-warnning);
+$antra-app-warn: mat-palette($antra-warnning);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$ars-app-theme: mat-light-theme(
-  $ars-app-primary,
-  $ars-app-accent,
-  $ars-app-warn
+$antra-app-theme: mat-light-theme(
+  $antra-app-primary,
+  $antra-app-accent,
+  $antra-app-warn
 );
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($ars-app-theme);
+@include angular-material-theme($antra-app-theme);

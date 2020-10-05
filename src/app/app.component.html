@@ -1,24 +1,13 @@
-<section>
-  <header>Raised Buttons</header>
-  <antra-button
-    btnType="raised"
-    btnColor="primary"
-    btnText="Raised Primary"
-    (click)="btnClicked($event)"
-  ></antra-button>
-  <antra-button
-    btnType="raised"
-    btnColor="basic"
-    btnText="Raised Basic"
-  ></antra-button>
-  <antra-button
-    btnType="raised"
-    btnColor="accent"
-    btnText="Raised accent"
-  ></antra-button>
-  <antra-button
-    btnType="raised"
-    btnColor="warn"
-    btnText="Raised warn"
-  ></antra-button>
-</section>
+<mat-toolbar class="example-header" color="primary">
+  <span>Antra-ui</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav" >
+     Sidenav
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    content
+  </mat-sidenav-content>
+</mat-sidenav-container>
