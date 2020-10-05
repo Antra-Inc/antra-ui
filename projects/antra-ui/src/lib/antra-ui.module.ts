@@ -2,22 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 // mat modules
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 
-// components
-import { ButtonComponent } from './components/button/button.component';
-
+// Antra modules
+import { AntraButtonModule } from './antra-button/antra-button.module';
+import { AntraIconModule } from './antra-icon/antra-icon.module';
+import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
+import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 
 @NgModule({
-  declarations: [ButtonComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatIconModule
-    , MatSidenavModule, MatToolbarModule, MatButtonModule],
-  exports: [BrowserModule, BrowserAnimationsModule, MatIconModule
-    , MatSidenavModule, MatToolbarModule, MatButtonModule, ButtonComponent],
+  declarations: [],
+  imports: [BrowserModule, BrowserAnimationsModule, AntraIconModule],
+  exports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AntraSidenavModule,
+    AntraToolbarModule,
+    AntraButtonModule,
+    AntraButtonModule,
+  ],
 })
-export class AntraUiModule { }
+export class AntraUiModule {}
