@@ -15,9 +15,9 @@ import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [ButtonComponent],
-  imports: [BrowserModule,BrowserAnimationsModule, MatIconModule
-    , MatSidenavModule, MatToolbarModule,MatButtonModule],
-  exports: [BrowserModule,BrowserAnimationsModule, MatIconModule
-    , MatSidenavModule, MatToolbarModule,MatButtonModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MatIconModule
+    , MatSidenavModule, MatToolbarModule, MatButtonModule],
+  exports: [BrowserModule, BrowserAnimationsModule, MatIconModule
+    , MatSidenavModule, MatToolbarModule, MatButtonModule, ButtonComponent],
 })
-export class AntraUiModule {}
+export class AntraUiModule { }
