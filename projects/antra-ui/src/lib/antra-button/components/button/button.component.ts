@@ -8,11 +8,12 @@ import { btnColor } from '../../interfaces/button.interface';
 })
 /**
  * Example of usage:
- * <example-url>https://angular.io/</example-url>
+ * <example-url>http://127.0.0.1:4200/components/button</example-url>
  */
 export class ButtonComponent implements OnInit {
   @Input() btnColor: btnColor = 'primary';
   @Input() btnText = '';
+  @Input() disabled = 'false';
 
   /**
    * @ignore
@@ -22,7 +23,5 @@ export class ButtonComponent implements OnInit {
   /**
    * @ignore
    */
-  ngOnInit(): void {
-    console.log('oninit');
-  }
+  ngOnInit(): void {}
 }

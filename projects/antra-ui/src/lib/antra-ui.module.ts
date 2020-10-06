@@ -2,24 +2,42 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// mat modules
+// Mat modules
 
 // Antra modules
 import { AntraButtonModule } from './antra-button/antra-button.module';
 import { AntraIconModule } from './antra-icon/antra-icon.module';
+import { AntraListModule } from './antra-list/antra-list.module';
 import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
+import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
+import { AntraTreeModule } from './antra-tree/antra-tree.module';
 
 @NgModule({
   declarations: [],
-  imports: [BrowserModule, BrowserAnimationsModule, AntraIconModule],
-  exports: [
+  imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AntraIconModule,
     AntraSidenavModule,
     AntraToolbarModule,
     AntraButtonModule,
     AntraButtonModule,
+    AntraTabsModule,
+    AntraTreeModule,
+    AntraListModule,
+  ],
+  exports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AntraIconModule,
+    AntraSidenavModule,
+    AntraToolbarModule,
+    AntraButtonModule,
+    AntraButtonModule,
+    AntraTabsModule,
+    AntraTreeModule,
+    AntraListModule,
   ],
 })
 export class AntraUiModule {}

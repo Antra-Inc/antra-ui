@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200 --host 0.0.0.0 --disableHostCheck true",
     "test": "ng test",
     "lint": "ng lint",
     "build-scss": "scss-bundle --config scss-bundle.config.json",
@@ -43,6 +43,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "ng-packagr": "^10.1.0",
+    "prettier": "2.1.2",
     "protractor": "~7.0.0",
     "scss-bundle": "^3.1.2",
     "ts-node": "~8.3.0",
