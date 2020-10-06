@@ -3,17 +3,20 @@
   <div class="example-content">
     <antra-button btnColor="primary" btnText="primary"></antra-button>
     <antra-button btnColor="accent" btnText="accent"></antra-button>
-
     <antra-button btnColor="warn" btnText="warn"></antra-button>
-
     <antra-button btnColor="error" btnText="error"></antra-button>
-
     <antra-button disabled btnText="disabled"></antra-button>
   </div>
 
   <mat-tab-group animationDuration="0ms" color="primary">
-    <mat-tab label="html"> Content 1 </mat-tab>
-    <mat-tab label="css">Content 2</mat-tab>
-    <mat-tab label="ts">Content 3</mat-tab>
+    <mat-tab label="html"> 
+      <pre><code [highlight]="htmlCode" [lineNumbers]="true"></code></pre>
+    </mat-tab>
+    <mat-tab label="css">
+      <pre><code [highlight]="cssCode" [lineNumbers]="true"></code></pre>
+    </mat-tab>
+    <mat-tab label="ts">
+      <pre><code [highlight]="tsCode" [lineNumbers]="true"></code></pre>
+    </mat-tab>
   </mat-tab-group>
 </section>
