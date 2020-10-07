@@ -1,22 +1,9 @@
-<section class="example-container">
-  <header><h2>Example</h2></header>
-  <div class="example-content">
-    <antra-raised-button btnColor="primary" btnText="primary"></antra-raised-button>
-    <antra-raised-button btnColor="accent" btnText="accent"></antra-raised-button>
-    <antra-raised-button btnColor="warn" btnText="warn"></antra-raised-button>
-    <antra-raised-button btnColor="error" btnText="error"></antra-raised-button>
-    <antra-raised-button disabled btnText="disabled"></antra-raised-button>
-  </div>
-
-  <mat-tab-group animationDuration="0ms" color="primary">
-    <mat-tab label="html">
-      <pre><code [highlight]="code" [lineNumbers]="true"></code></pre>
-    </mat-tab>
-    <mat-tab label="css">
-      <pre><code [highlight]="cssCode" [lineNumbers]="true"></code></pre>
-    </mat-tab>
-    <mat-tab label="ts">
-      <pre><code [highlight]="tsCode" [lineNumbers]="true"></code></pre>
-    </mat-tab>
-  </mat-tab-group>
-</section>
+<app-example-wrapper lass="example-container" [hCode]="htmlCode" [tCode]="tsCode" [cCode]="cssCode">
+  <app-raised-button-doc
+    class="example-content"
+    (htmlCode)="getHtmlCode($event)"
+    (cssCode)="getCssCode($event)"
+    (tsCode)="getTsCode($event)"
+  >
+  </app-raised-button-doc>
+</app-example-wrapper>

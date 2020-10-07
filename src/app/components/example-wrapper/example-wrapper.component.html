@@ -1,0 +1,16 @@
+<section class="example-container">
+  <header><h2>Example</h2></header>
+  <ng-content></ng-content>
+
+  <mat-tab-group animationDuration="0ms" color="primary">
+    <mat-tab label="html">
+      <pre><code [highlight]="hCode" lineNumbers="true"></code></pre>
+    </mat-tab>
+    <mat-tab label="css">
+      <pre><code [highlight]="cCode" lineNumbers="true"></code></pre>
+    </mat-tab>
+    <mat-tab label="ts">
+      <pre><code [highlight]="tCode" lineNumbers="true"></code></pre>
+    </mat-tab>
+  </mat-tab-group>
+</section>
