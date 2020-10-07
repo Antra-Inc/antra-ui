@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ExampleRaisedButtonComponent } from './example-raised-button.component';
+import { RaisedButtonExampleComponent } from './raised-button-example.component';
 
-describe('ExampleRaisedButtonComponent', () => {
-  let component: ExampleRaisedButtonComponent;
-  let fixture: ComponentFixture<ExampleRaisedButtonComponent>;
+describe('RaisedButtonExampleComponent', () => {
+  let component: RaisedButtonExampleComponent;
+  let fixture: ComponentFixture<RaisedButtonExampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExampleRaisedButtonComponent ]
+      declarations: [ RaisedButtonExampleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExampleRaisedButtonComponent);
+    fixture = TestBed.createComponent(RaisedButtonExampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ExampleButtonComponent } from './components/example-button/example-button.component';
-import { ExampleRaisedButtonComponent } from './components/example-raised-button/example-raised-button.component';
+import { ButtonPageComponent } from './components/pages/button-page/button-page.component';
+import { RaisedButtonPageComponent } from './components/pages/raised-button-page/raised-button-page.component';
 
 const routes: Routes = [
-  { path: 'components/button', component: ExampleButtonComponent },
-  { path: 'components/raised-button', component: ExampleRaisedButtonComponent },
+  { path: 'components/button', component: ButtonPageComponent },
+  { path: 'components/raised-button', component: RaisedButtonPageComponent },
 ];
 
 @NgModule({

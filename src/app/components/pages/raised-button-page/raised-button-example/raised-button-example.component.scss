@@ -1,0 +1,16 @@
+.example-content {
+  padding: 10px 0;
+
+  & > * {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+::ng-deep .customized {
+  button.mat-raised-button {
+    background-color: teal;
+    font-size: 25px;
+    padding: 5px 15px;
+  }
+}
