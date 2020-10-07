@@ -8,7 +8,9 @@
     "lint": "ng lint",
     "build-scss": "scss-bundle --config scss-bundle.config.json",
     "build-doc": "npx compodoc -p projects/antra-ui/tsconfig.lib.json",
-    "build-antra-ui": "ng build antra-ui --prod=true && npm run build-scss && npm run build-doc"
+    "build-antra-ui": "ng build antra-ui --prod=true && npm run build-scss && npm run build-doc",
+    "start-example": "npm run start",
+    "start-doc": "live-server ./documentation"
   },
   "private": true,
   "dependencies": {
