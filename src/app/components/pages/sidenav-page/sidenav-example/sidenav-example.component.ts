@@ -22,6 +22,7 @@ export class SidenavExampleComponent implements OnInit {
       ],
     },
   ];
+
   @Output() listOptionClicked = new EventEmitter();
 
   // tslint:disable-next-line: variable-name

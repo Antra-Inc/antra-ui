@@ -12,9 +12,12 @@ import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
 import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
+import { AntraSidenavbarComponent } from './components/antra-sidenavbar/antra-sidenavbar.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AntraSidenavbarComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,6 +41,7 @@ import { AntraTreeModule } from './antra-tree/antra-tree.module';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
+    AntraSidenavbarComponent
   ],
 })
 export class AntraUiModule {}

@@ -1,3 +1,26 @@
-<p>
-  antra-sidenavbar works!
-</p>
+<mat-drawer-container class="sidenavbar-container" autosize>
+  <mat-drawer #drawer [mode]="sidenavMode" [opened]="toggleSideBar">
+    <mat-nav-list>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
+          <mat-list-item (click)="handleListOnClick(node)">
+            <span mat-line >{{ node.name }}</span>
+          </mat-list-item>
+        </mat-tree-node>
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
+          <mat-list-item matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon>
+              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+            <span mat-line>{{ node.name }}</span>
+          </mat-list-item>
+        </mat-tree-node>
+      </mat-tree>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+
+</mat-drawer-container>
