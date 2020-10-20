@@ -9,6 +9,7 @@ describe('AntraSidenavbarComponent', () => {
   let component: AntraSidenavbarComponent;
   let fixture: ComponentFixture<AntraSidenavbarComponent>;
 
+  // tslint:disable-next-line: deprecation
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AntraSidenavbarComponent ]

@@ -9,7 +9,7 @@ import { NavLinkNodeFlat, NavLinkNode } from 'src/app/interface/app.interface';
 })
 export class SidenavPageComponent {
   htmlSource = `<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" [mode]="sidenavMode" [opened]="opened">
+  <mat-drawer #drawer [mode]="sidenavMode" [opened]="opened">
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="TreeNodePaddingIndent">
@@ -40,13 +40,6 @@ export class SidenavPageComponent {
     width: 500px;
     height: 300px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
   }`;
 
   tsSource = `import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
@@ -73,6 +66,7 @@ export class SidenavPageComponent {
         ],
       },
     ];
+
     @Output() listOptionClicked = new EventEmitter();
 
     private _transformer = (node: NavLinkNode, level: number) => {
