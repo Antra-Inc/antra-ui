@@ -10,6 +10,8 @@ import { RaisedButtonPageComponent } from './components/pages/raised-button-page
 import { ButtonExampleComponent } from './components/pages/button-page/button-example/button-example.component';
 import { RaisedButtonExampleComponent } from './components/pages/raised-button-page/raised-button-example/raised-button-example.component';
 import { ExampleDocComponent } from './components/example-doc/example-doc.component';
+import { SidenavPageComponent } from './components/pages/sidenav-page/sidenav-page.component';
+import { SidenavExampleComponent } from './components/pages/sidenav-page/sidenav-example/sidenav-example.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ExampleDocComponent } from './components/example-doc/example-doc.compon
     RaisedButtonPageComponent,
     ButtonExampleComponent,
     RaisedButtonExampleComponent,
+    SidenavPageComponent,
+    SidenavExampleComponent,
   ],
   imports: [AntraUiModule, AppRoutingModule, HighlightModule],
   providers: [

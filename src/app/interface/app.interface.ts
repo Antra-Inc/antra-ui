@@ -3,3 +3,9 @@ export interface NavLinkNode {
   url?: string;
   children?: NavLinkNode[];
 }
+export interface NavLinkNodeFlat {
+  expandable: boolean;
+  name: string;
+  url: string;
+  level: number;
+}

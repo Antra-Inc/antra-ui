@@ -1,0 +1,14 @@
+<app-example-doc [htmlSource]="htmlSource" [scssSource]="scssSource" [tsSource]="tsSource">
+  <app-sidenav-example 
+    [sideNavData]="sideNavData" 
+    (listOptionClicked)="getClickEventFromSideNav($event)"
+    [toggleSideBar]="toggleSideBar"
+  >
+    <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
+    <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
+    <h1 *ngIf="optionInSideNav === ''">Select an option.</h1>
+    <router-outlet name="sidenav"></router-outlet>
+  </app-sidenav-example>
+
+
+</app-example-doc>

@@ -3,22 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ExampleDocComponent } from './example-doc.component';
+import { AntraSidenavbarComponent } from './antra-sidenavbar.component';
 
-describe('ExampleDocComponent', () => {
-  let component: ExampleDocComponent;
-  let fixture: ComponentFixture<ExampleDocComponent>;
+describe('AntraSidenavbarComponent', () => {
+  let component: AntraSidenavbarComponent;
+  let fixture: ComponentFixture<AntraSidenavbarComponent>;
 
-  // tslint:disable-next-line: deprecation
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExampleDocComponent ]
+      declarations: [ AntraSidenavbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExampleDocComponent);
+    fixture = TestBed.createComponent(AntraSidenavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

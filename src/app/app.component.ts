@@ -1,6 +1,6 @@
-import { FlatTreeControl, NestedTreeControl } from '@angular/cdk/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource } from '@angular/material/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { NavLinkNode } from './interface/app.interface';
 
 const SIDENAV_DATA: NavLinkNode[] = [
@@ -10,6 +10,13 @@ const SIDENAV_DATA: NavLinkNode[] = [
     children: [
       { name: 'ButtonComponent', url: 'components/button' },
       { name: 'RaisedButtonComponent', url: 'components/raised-button' },
+    ],
+  },
+  {
+    name: 'SideNav',
+
+    children: [
+      { name: 'Reusable SideNav Bar', url: 'components/sidenav' },
     ],
   },
 ];
@@ -35,7 +42,7 @@ export class AppComponent {
       url: node.url,
       level,
     };
-  };
+  }
 
   // tslint:disable-next-line: member-ordering
   treeControl = new FlatTreeControl<NavLinkNodeFlat>(
