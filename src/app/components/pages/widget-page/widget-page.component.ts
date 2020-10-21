@@ -25,6 +25,12 @@ export class WidgetPageComponent implements OnInit {
       <span class="small">Attrition Rate</span>
     </p>
   </article>
+  <article antraWidget [width]="'300px'" [height]="'180px'" [backgroundColor]="'#350564'">
+    <p>
+      <span class="big">14</span> &nbsp;<span class="medium material-icons"> arrow_upward </span> <br />
+      <span class="small">Custom width, height and backgroundColor</span>
+    </p>
+  </article>
 </div>
 `;
   scssSource = `article {
