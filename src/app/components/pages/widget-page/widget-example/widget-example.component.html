@@ -1,13 +1,20 @@
-<!-- <div style="display: flex; flex-direction: row"> -->
-<!-- <div antraWidget [width]="'250'" [height]="'140'" [backgroundColor]="'#985633'"></div>
-  &nbsp; -->
-<!-- <antra-widget width="300" height="140" backgroundColor="#856400"></antra-widget>
-  &nbsp; -->
-<!-- <antra-widget width="250" height="160" backgroundColor="#128564"></antra-widget>
-  &nbsp;
-  <antra-widget></antra-widget> -->
-<!-- </div> -->
-
-<article antraWidget>
-  <h1>Hello World</h1>
-</article>
+<div style="display: flex; flex-direction: row">
+  <article antraWidget>
+    <p>
+      <span class="big">350</span> &nbsp;<span class="medium material-icons"> arrow_upward </span> <br />
+      <span class="small">Total Active Employees</span>
+    </p>
+  </article>
+  <article antraWidget [width]="'300px'" [backgroundColor]="'#856400'">
+    <p>
+      <span class="big">100</span> &nbsp;<span class="medium material-icons"> arrow_upward </span> <br />
+      <span class="small">Total New Hires</span>
+    </p>
+  </article>
+  <article antraWidget [height]="'160px'" [backgroundColor]="'#128564'">
+    <p>
+      <span class="big">14</span> &nbsp;<span class="medium material-icons"> arrow_upward </span> <br />
+      <span class="small">Attrition Rate</span>
+    </p>
+  </article>
+</div>
