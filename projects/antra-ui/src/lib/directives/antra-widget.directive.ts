@@ -15,12 +15,20 @@ export class AntraWidgetDirective implements OnInit {
   borderRadius: any = '8px';
   boxShadow: any = '3px 2px 3px #888888';
 
+  domElement: any;
+
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
   ngOnInit(): void {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', this.backgroundColor);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'width', this.width);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'height', this.height);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'border-radius', this.borderRadius);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'box-shadow', this.boxShadow);
+    this.domElement = this.elementRef.nativeElement;
+    const applyStyles = {
+      'border-radius': this.borderRadius,
+      'box-shadow': this.boxShadow,
+      'background-color': this.backgroundColor,
+      width: this.width,
+      height: this.height,
+    };
+    Object.keys(applyStyles).forEach((newStyle) => {
+      this.renderer.setStyle(this.domElement, `${newStyle}`, applyStyles[newStyle]);
+    });
   }
 }
