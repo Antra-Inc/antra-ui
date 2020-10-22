@@ -8,11 +8,11 @@ import { NavLinkNodeFlat, NavLinkNode } from 'src/app/interface/app.interface';
   styleUrls: ['./sidenav-page.component.scss']
 })
 export class SidenavPageComponent {
-  htmlSource = `<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer [mode]="sidenavMode" [opened]="opened">
+  htmlSource = `<mat-drawer-container [class]="containerClass" autosize>
+  <mat-drawer #drawer [mode]="sidenavMode" [opened]="toggleSideBar" class="sidenavbar-sidenav">
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="TreeNodePaddingIndent">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
           <mat-list-item (click)="handleListOnClick(node)">
             <span mat-line >{{ node.name }}</span>
           </mat-list-item>
@@ -36,27 +36,30 @@ export class SidenavPageComponent {
 </mat-drawer-container>
   `;
 
-  scssSource = `.example-container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+  scssSource = `.sidenavbar-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100%;
   }`;
 
   tsSource = `import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
   import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
   import { FlatTreeControl } from '@angular/cdk/tree';
-  import { NavLinkNode, NavLinkNodeFlat } from 'src/app/interface/app.interface';
+  import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interface';
 
   @Component({
-    selector: 'app-sidenav-example',
-    templateUrl: './sidenav-example.component.html',
-    styleUrls: ['./sidenav-example.component.scss']
+    selector: 'antra-sidenavbar',
+    templateUrl: './antra-sidenavbar.component.html',
+    styleUrls: ['./antra-sidenavbar.component.scss']
   })
-  export class SidenavExampleComponent implements OnInit {
+  export class AntraSidenavbarComponent implements OnInit {
 
     @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
-    @Input() opened = true;
-    @Input() TreeNodePaddingIndent = '10px';
+    @Input() treeNodePaddingIndent = '10px';
+    @Input() toggleSideBar = false;
+    @Input() containerClass = '';
     @Input() sideNavData: NavLinkNode[] = [
       {
         name: 'SideNav event tree',
@@ -69,6 +72,7 @@ export class SidenavPageComponent {
 
     @Output() listOptionClicked = new EventEmitter();
 
+    // tslint:disable-next-line: variable-name
     private _transformer = (node: NavLinkNode, level: number) => {
       return {
         expandable: !!node.children && node.children.length > 0,
@@ -78,18 +82,20 @@ export class SidenavPageComponent {
       };
     }
 
+    // tslint:disable-next-line: member-ordering
     treeControl = new FlatTreeControl<NavLinkNodeFlat>(
       (node) => node.level,
       (node) => node.expandable
     );
 
+    // tslint:disable-next-line: member-ordering
     treeFlattener = new MatTreeFlattener(
       this._transformer,
       (node) => node.level,
       (node) => node.expandable,
       (node) => node.children
     );
-
+    // tslint:disable-next-line: member-ordering
     dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
     constructor() { }
@@ -100,6 +106,7 @@ export class SidenavPageComponent {
 
     hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
 
+    // tslint:disable-next-line: typedef
     handleListOnClick(node: NavLinkNodeFlat) {
       this.listOptionClicked.emit(node);
     }

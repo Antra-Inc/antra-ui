@@ -13,6 +13,7 @@ export class SidenavExampleComponent implements OnInit {
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
   @Input() TreeNodePaddingIndent = '10px';
   @Input() toggleSideBar = false;
+  @Input() containerClass = 'example-container';
   @Input() sideNavData: NavLinkNode[] = [
     {
       name: 'SideNav event tree',

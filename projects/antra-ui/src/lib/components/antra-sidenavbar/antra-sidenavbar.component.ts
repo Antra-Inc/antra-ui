@@ -13,6 +13,7 @@ export class AntraSidenavbarComponent implements OnInit {
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
   @Input() treeNodePaddingIndent = '10px';
   @Input() toggleSideBar = false;
+  @Input() containerClass = '';
   @Input() sideNavData: NavLinkNode[] = [
     {
       name: 'SideNav event tree',

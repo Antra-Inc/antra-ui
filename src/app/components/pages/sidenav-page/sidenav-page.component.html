@@ -1,5 +1,6 @@
 <app-example-doc [htmlSource]="htmlSource" [scssSource]="scssSource" [tsSource]="tsSource">
   <!-- <app-sidenav-example 
+    [containerClass]="'example-container'"
     [sideNavData]="sideNavData" 
     (listOptionClicked)="getClickEventFromSideNav($event)"
     [toggleSideBar]="toggleSideBar"
@@ -11,6 +12,7 @@
   </app-sidenav-example> -->
 
   <antra-sidenavbar
+    [containerClass]="'sidenav-container'"
     [sideNavData]="sideNavData" 
     (listOptionClicked)="getClickEventFromSideNav($event)"
     [toggleSideBar]="toggleSideBar"

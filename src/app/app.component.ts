@@ -9,7 +9,7 @@ import { NavLinkNode, NavLinkNodeFlat } from './interface/app.interface';
 })
 export class AppComponent {
 
-  toggleSideBar = true;
+  toggleSideBar = false;
   sideNavData: NavLinkNode[] = [
     {
       name: 'Buttons',
