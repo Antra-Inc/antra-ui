@@ -1,11 +1,12 @@
-<mat-toolbar class="app-header" color="primary">
-  <button mat-icon-button (click)="toggleSideNav()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Antra-ui</span>
-</mat-toolbar>
+<div class="main-container">
+  <mat-toolbar class="app-header" color="primary">
+    <button mat-icon-button (click)="toggleSideNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Antra-ui</span>
+  </mat-toolbar>
 
-<!-- <mat-sidenav-container class="app-container">
+  <!-- <mat-sidenav-container class="app-container">
   <mat-sidenav #sidenav mode="side" opened="false" class="app-sidenav">
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
@@ -31,11 +32,14 @@
   </mat-sidenav-content>
 </mat-sidenav-container> -->
 
-<antra-sidenavbar
-  [containerClass]="'app-container'"
-  [sideNavData]="sideNavData"
-  (listOptionClicked)="getClickEventFromSideNav($event)"
-  [toggleSideBar]="toggleSideBar"
->
-  <router-outlet></router-outlet>
-</antra-sidenavbar>
+  <antra-sidenavbar
+    [containerClass]="'app-container'"
+    [sideNavData]="sideNavData"
+    (listOptionClicked)="getClickEventFromSideNav($event)"
+    [toggleSideBar]="toggleSideBar"
+  >
+    <router-outlet></router-outlet>
+  </antra-sidenavbar>
+  
+  <footer class="app-footer"></footer>
+</div>
