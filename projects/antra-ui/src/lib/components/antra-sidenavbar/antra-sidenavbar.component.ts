@@ -12,9 +12,9 @@ export class AntraSidenavbarComponent implements OnInit {
 
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
   @Input() treeNodePaddingIndent = '10px';
-  @Input() toggleSideBar = false;
+  @Input() isOpen = true;
   @Input() containerClass = '';
-  @Input() sideNavData: NavLinkNode[] = [
+  @Input() sideNavConfig: NavLinkNode[] = [
     {
       name: 'SideNav event tree',
       children: [
@@ -55,7 +55,8 @@ export class AntraSidenavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.dataSource.data = this.sideNavData;
+    // console.log('navbar init');
+    this.dataSource.data = this.sideNavConfig;
   }
 
   hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
@@ -63,5 +64,6 @@ export class AntraSidenavbarComponent implements OnInit {
   // tslint:disable-next-line: typedef
   handleListOnClick(node: NavLinkNodeFlat) {
     this.listOptionClicked.emit(node);
+
   }
 }

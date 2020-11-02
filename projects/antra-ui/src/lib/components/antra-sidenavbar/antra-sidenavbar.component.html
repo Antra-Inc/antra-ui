@@ -1,5 +1,5 @@
 <mat-drawer-container [class]="containerClass" autosize>
-  <mat-drawer #drawer [mode]="sidenavMode" [opened]="toggleSideBar" class="sidenavbar-sidenav">
+  <mat-drawer #drawer [mode]="sidenavMode" [opened]="isOpen" class="sidenavbar-sidenav">
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">

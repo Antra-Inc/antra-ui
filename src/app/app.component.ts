@@ -9,8 +9,8 @@ import { NavLinkNode, NavLinkNodeFlat } from './interface/app.interface';
 })
 export class AppComponent {
 
-  toggleSideBar = false;
-  sideNavData: NavLinkNode[] = [
+  isOpen = true;
+  sideNavConfig: NavLinkNode[] = [
     {
       name: 'Buttons',
 
@@ -35,6 +35,6 @@ export class AppComponent {
   }
 
   toggleSideNav(): void {
-    this.toggleSideBar = !this.toggleSideBar;
+    this.isOpen = !this.isOpen;
   }
 }

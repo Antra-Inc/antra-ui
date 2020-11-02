@@ -6,40 +6,12 @@
     <span>Antra-ui</span>
   </mat-toolbar>
 
-  <!-- <mat-sidenav-container class="app-container">
-  <mat-sidenav #sidenav mode="side" opened="false" class="app-sidenav">
-    <mat-nav-list>
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="10px">
-          <mat-list-item [routerLink]="[node.url]">
-            <span mat-line>{{ node.name }}</span>
-          </mat-list-item>
-        </mat-tree-node>
-        <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
-          <mat-list-item matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
-            <mat-icon>
-              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
-            </mat-icon>
-            <span mat-line>{{ node.name }}</span>
-          </mat-list-item>
-        </mat-tree-node>
-      </mat-tree>
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->
-
   <antra-sidenavbar
     [containerClass]="'app-container'"
-    [sideNavData]="sideNavData"
+    [sideNavConfig]="sideNavConfig"
     (listOptionClicked)="getClickEventFromSideNav($event)"
-    [toggleSideBar]="toggleSideBar"
+    [isOpen]="isOpen"
   >
     <router-outlet></router-outlet>
   </antra-sidenavbar>
-  
-  <footer class="app-footer"></footer>
 </div>
