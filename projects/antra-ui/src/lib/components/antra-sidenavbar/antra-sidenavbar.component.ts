@@ -11,13 +11,13 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class AntraSidenavbarComponent implements OnInit {
 
-  isExpanded = true;
+  isExpanded = false;
 
   treeNodeToggle = true;
 
   @Input() sideNavTextColor = 'red';
   @Input() sideNavBackgroundColor = '';
-  @Input() sidenavMode: 'over' | 'push' | 'side' = 'over';
+  @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
   @Input() treeNodePaddingIndent = '0px';
   @Input() isOpen = true;
   @Input() containerClass = '';
