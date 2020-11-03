@@ -6,21 +6,28 @@
     class="sidenavbar-sidenav"
     [style.backgroundColor]="sideNavBackgroundColor"
     [ngClass]="{ sidenavopen: isExpanded }"
+    (mouseenter)="handleMouseEnter()"
+    (mouseleave)="handleMouseLeave()"
     color="primary"
   >
-    <button mat-mini-fab (click)="handleExpanded()" color="warn" style="margin: 10px">
+    <!-- <button mat-mini-fab (click)="handleExpanded()" color="warn" style="margin: 10px">
       <mat-icon aria-label="Menu">menu</mat-icon>
-    </button>
+    </button> -->
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [style.backgroundColor]="sideNavBackgroundColor">
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
-          <ng-container *ngIf="isExpanded">
+        <ng-container *ngIf="isExpanded">
+          <mat-tree-node
+            *matTreeNodeDef="let node"
+            matTreeNodePadding
+            [matTreeNodePaddingIndent]="treeNodePaddingIndent"
+          >
             <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
               <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
               <span mat-line>{{ node.name }}</span>
             </mat-list-item>
-          </ng-container>
-        </mat-tree-node>
+          </mat-tree-node>
+        </ng-container>
+
         <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
           <mat-list-item
             matTreeNodeToggle
