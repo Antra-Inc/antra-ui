@@ -12,6 +12,13 @@ const SIDENAV_DATA: NavLinkNode[] = [
       { name: 'RaisedButtonComponent', url: 'components/raised-button' },
     ],
   },
+  {
+    name: 'Logo',
+
+    children: [
+      { name: 'LogoComponent', url: 'components/logo' },
+    ],
+  },
 ];
 
 interface NavLinkNodeFlat {
