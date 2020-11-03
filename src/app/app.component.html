@@ -9,6 +9,10 @@
   <antra-sidenavbar
     [containerClass]="'app-container'"
     [sideNavConfig]="sideNavConfig"
+
+    [sideNavBackgroundColor]="'blue'"
+    [sideNavTextColor]="'white'"
+    
     (listOptionClicked)="getClickEventFromSideNav($event)"
     [isOpen]="isOpen"
   >

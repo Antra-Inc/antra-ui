@@ -11,10 +11,13 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class AntraSidenavbarComponent implements OnInit {
 
-  isExpanded = false;
+  isExpanded = true;
+
   treeNodeToggle = true;
 
-  @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
+  @Input() sideNavTextColor = 'red';
+  @Input() sideNavBackgroundColor = '';
+  @Input() sidenavMode: 'over' | 'push' | 'side' = 'over';
   @Input() treeNodePaddingIndent = '0px';
   @Input() isOpen = true;
   @Input() containerClass = '';
@@ -82,7 +85,12 @@ export class AntraSidenavbarComponent implements OnInit {
 
   handleMouseLeave(): void {
     this.isExpanded = false;
-    this.treeControl.collapseAll();
+    console.log(this.isExpanded);
+    // this.treeControl.collapseAll();
   }
 
+  handleMouseEnter(): void {
+    this.isExpanded = true;
+    console.log(this.isExpanded);
+  }
 }
