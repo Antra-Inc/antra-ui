@@ -13,7 +13,7 @@ export class AppComponent {
   sideNavConfig: NavLinkNode[] = [
     {
       name: 'Buttons',
-
+      icon: 'assignment',
       children: [
         { name: 'ButtonComponent', url: 'components/button' },
         { name: 'RaisedButtonComponent', url: 'components/raised-button' },
@@ -21,7 +21,7 @@ export class AppComponent {
     },
     {
       name: 'SideNav',
-
+      icon: 'folder_shared',
       children: [
         { name: 'Reusable SideNav Bar', url: 'components/sidenav' },
       ],

@@ -1,26 +1,42 @@
 <mat-drawer-container [class]="containerClass" autosize>
-  <mat-drawer #drawer [mode]="sidenavMode" [opened]="isOpen" class="sidenavbar-sidenav">
+  <mat-drawer
+    #drawer
+    [mode]="sidenavMode"
+    [opened]="isOpen"
+    class="sidenavbar-sidenav"
+    [ngClass]="{ sidenavopen: isExpanded }"
+    (mouseover)="isExpanded = true"
+    (mouseleave)="handleMouseLeave()"
+  >
+    <!-- <button mat-mini-fab (click)="handleExpanded()" color="warn" style="margin: 10px">
+      <mat-icon aria-label="Menu">menu</mat-icon>
+    </button> -->
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
           <mat-list-item (click)="handleListOnClick(node)">
-            <span mat-line >{{ node.name }}</span>
+            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <span mat-line *ngIf="isExpanded">{{ node.name }}</span>
           </mat-list-item>
         </mat-tree-node>
         <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
-          <mat-list-item matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
-            <mat-icon>
+          <mat-list-item
+            matTreeNodeToggle
+            [matTreeNodeToggleRecursive]="treeNodeToggle"
+            [attr.aria-label]="'Toggle ' + node.name"
+          >
+            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <mat-icon *ngIf="isExpanded">
               {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
             </mat-icon>
-            <span mat-line>{{ node.name }}</span>
+            <span mat-line *ngIf="isExpanded">{{ node.name }}</span>
           </mat-list-item>
         </mat-tree-node>
       </mat-tree>
     </mat-nav-list>
   </mat-drawer>
 
-  <mat-drawer-content>
+  <mat-drawer-content autosize>
     <ng-content></ng-content>
   </mat-drawer-content>
-
 </mat-drawer-container>

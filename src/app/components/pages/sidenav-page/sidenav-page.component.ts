@@ -72,6 +72,7 @@ export class SidenavPageComponent {
   sideNavConfig: NavLinkNode[] = [
     {
       name: 'example-sidenav tree',
+      icon: 'person',
       children: [
         { name: 'example-option1', url: 'components/sidenav/button' },
         { name: 'example-option2', url: 'components/sidenav/raised-button'},

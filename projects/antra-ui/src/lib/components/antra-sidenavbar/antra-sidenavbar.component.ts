@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interface';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'antra-sidenavbar',
@@ -10,16 +11,20 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
 })
 export class AntraSidenavbarComponent implements OnInit {
 
+  isExpanded = false;
+  treeNodeToggle = true;
+
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
-  @Input() treeNodePaddingIndent = '10px';
+  @Input() treeNodePaddingIndent = '0px';
   @Input() isOpen = true;
   @Input() containerClass = '';
   @Input() sideNavConfig: NavLinkNode[] = [
     {
       name: 'SideNav event tree',
+      icon: 'person',
       children: [
-        { name: 'button', url: 'button' },
-        { name: 'raised-button', url: 'raised-button'},
+        { name: 'button', url: 'button', icon: 'person' },
+        { name: 'raised-button', url: 'raised-button', icon: 'person'},
       ],
     },
   ];
@@ -32,6 +37,7 @@ export class AntraSidenavbarComponent implements OnInit {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
       url: node.url,
+      icon: node.icon,
       level,
     };
   }
@@ -55,8 +61,10 @@ export class AntraSidenavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log('navbar init');
+    console.log('navbar init');
     this.dataSource.data = this.sideNavConfig;
+    console.log('dataSource: ', this.dataSource.data);
+    console.log('dataSource: ', this.dataSource);
   }
 
   hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
@@ -66,4 +74,15 @@ export class AntraSidenavbarComponent implements OnInit {
     this.listOptionClicked.emit(node);
 
   }
+
+  handleExpanded(): void {
+    this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded);
+  }
+
+  handleMouseLeave(): void {
+    this.isExpanded = false;
+    this.treeControl.collapseAll();
+  }
+
 }
