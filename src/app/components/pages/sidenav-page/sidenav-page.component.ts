@@ -8,21 +8,25 @@ import { NavLinkNodeFlat, NavLinkNode } from 'src/app/interface/app.interface';
   styleUrls: ['./sidenav-page.component.scss']
 })
 export class SidenavPageComponent {
-  htmlSource = ` <antra-sidenavbar
+  htmlSource = ` <div class="sideNavBar-container">
+  <antra-sidenavbar
     [containerClass]="'sidenav-container'"
     [sideNavConfig]="sideNavConfig"
-
-    [sideNavBackgroundColor]="'blue'"
-    [sideNavTextColor]="'white'"
-
     (listOptionClicked)="getClickEventFromSideNav($event)"
+    [sideNavBackground]="'blue'"
+    [sideNavTextColor]="'white'"
     [isOpen]="isOpen"
   >
-    <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
-    <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
-    <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
-    <router-outlet></router-outlet>
-  </antra-sidenavbar>
+
+    <div class="sideNav-content-container">
+      <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
+      <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
+      <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
+      <router-outlet></router-outlet>
+    </div>
+
+    </antra-sidenavbar>
+  </div>
   `;
 
   scssSource = ` ::ng-deep .sidenav-container {
@@ -31,6 +35,14 @@ export class SidenavPageComponent {
     border: 1px solid rgba(0, 0, 0, 0.5);
     padding: 0;
     box-sizing: border-box;
+  }
+  .sideNavBar-container {
+    padding-left: 10px;
+    margin: 10px;
+  }
+  .sideNav-content-container {
+    padding-left: 10px;
+    margin-left: 250px;
   }
   `;
 
@@ -49,18 +61,25 @@ export class SidenavPageComponent {
     isOpen = true;
     sideNavConfig: NavLinkNode[] = [
       {
-        name: 'example-sidenav tree',
+        name: 'example-sidenav tree1',
+        icon: 'person',
         children: [
           { name: 'example-option1', url: 'components/example-option1' },
           { name: 'example-option2', url: 'components/example-option2'},
         ],
       },
+      {
+        name: 'example-sidenav tree2',
+        icon: 'menu',
+        children: [
+          { name: 'example-option3', url: 'components/example-option3' },
+        ],
+      },
     ];
 
-    constructor(private router: Router) {}
+    constructor() {}
 
     getClickEventFromSideNav(event: NavLinkNodeFlat): void {
-      console.log(event);
       this.optionInSideNav = event.name;
       // this.router.navigate([event.url]);
     }
@@ -75,19 +94,26 @@ export class SidenavPageComponent {
   isOpen = true;
   sideNavConfig: NavLinkNode[] = [
     {
-      name: 'example-sidenav tree',
+      name: 'example-sidenav tree1',
       icon: 'person',
       children: [
-        { name: 'example-option1', url: 'components/sidenav/button' },
-        { name: 'example-option2', url: 'components/sidenav/raised-button'},
+        { name: 'example-option1', url: 'components/example-option1' },
+        { name: 'example-option2', url: 'components/example-option2'},
+      ],
+    },
+    {
+      name: 'example-sidenav tree2',
+      icon: 'menu',
+      children: [
+        { name: 'example-option3', url: 'components/example-option3' },
       ],
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   getClickEventFromSideNav(event: NavLinkNodeFlat): void {
-    console.log(event);
+
     this.optionInSideNav = event.name;
     // this.router.navigate([event.url]);
   }

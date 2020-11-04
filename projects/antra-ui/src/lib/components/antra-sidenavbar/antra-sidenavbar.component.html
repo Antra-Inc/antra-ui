@@ -4,17 +4,14 @@
     [mode]="sidenavMode"
     [opened]="isOpen"
     class="sidenavbar-sidenav"
-    [style.backgroundColor]="sideNavBackgroundColor"
+    [ngStyle]="{ background: sideNavBackground }"
     [ngClass]="{ sidenavopen: isExpanded }"
     (mouseenter)="handleMouseEnter()"
     (mouseleave)="handleMouseLeave()"
     color="primary"
   >
-    <!-- <button mat-mini-fab (click)="handleExpanded()" color="warn" style="margin: 10px">
-      <mat-icon aria-label="Menu">menu</mat-icon>
-    </button> -->
     <mat-nav-list>
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [style.backgroundColor]="sideNavBackgroundColor">
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [ngStyle]="{ background: sideNavBackground }">
         <mat-tree-node
           [ngStyle]="{ display: isExpanded ? 'block' : 'none' }"
           *matTreeNodeDef="let node"

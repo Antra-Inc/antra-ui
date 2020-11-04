@@ -1,18 +1,21 @@
 <app-example-doc [htmlSource]="htmlSource" [scssSource]="scssSource" [tsSource]="tsSource">
+  <div class="sideNavBar-container">
+    <antra-sidenavbar
+      [containerClass]="'sidenav-container'"
+      [sideNavConfig]="sideNavConfig"
+      (listOptionClicked)="getClickEventFromSideNav($event)"
+      [sideNavBackground]="'blue'"
+      [sideNavTextColor]="'white'"
+      [isOpen]="isOpen"
+    >
 
-  <antra-sidenavbar
-    [containerClass]="'sidenav-container'"
-    [sideNavConfig]="sideNavConfig" 
-    (listOptionClicked)="getClickEventFromSideNav($event)"
-
-    [sideNavBackgroundColor]="'blue'"
-    [sideNavTextColor]="'white'"
-    
-    [isOpen]="isOpen"
-  >
-    <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
-    <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
-    <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
-    <router-outlet></router-outlet>
-  </antra-sidenavbar>
+      <div class="sideNav-content-container">
+        <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
+        <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
+        <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
+        <router-outlet></router-outlet>
+      </div>
+      
+    </antra-sidenavbar>
+  </div>
 </app-example-doc>

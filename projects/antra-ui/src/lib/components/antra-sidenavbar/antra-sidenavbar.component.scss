@@ -3,10 +3,12 @@
   align-items: center;
   justify-content: center;
   width: 65px;
-  // transition: width 0.2s;
 }
 
 .sidenavopen {
   width: 300px;
-  // transition: width 0.2s;
+}
+
+mat-drawer-content {
+  margin-left: 65px !important;
 }

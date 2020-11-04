@@ -12,12 +12,11 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class AntraSidenavbarComponent implements OnInit {
 
   isExpanded = false;
-  treeNodeToggleRemember = [];
 
   @Input() sideNavTextColor = 'red'; //  customrize the sidenav text color;
-  @Input() sideNavBackgroundColor = ''; // customrize the sidenav sidenavbar color;
+  @Input() sideNavBackground = ''; // customrize the sidenav sidenavbar color;
 
-  @Input() sidenavMode: 'over' | 'push' | 'side' = 'over'; // set sidenav mode;
+  @Input() sidenavMode: 'over' | 'push' | 'side' = 'side'; // set sidenav mode;
   @Input() treeNodePaddingIndent = '0px'; // set the subnode left padding;
 
   @Input() isOpen = true; // set the side open or close;
@@ -66,10 +65,7 @@ export class AntraSidenavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('navbar init');
     this.dataSource.data = this.sideNavConfig;
-    console.log('dataSource: ', this.dataSource.data);
-    console.log('dataSource: ', this.dataSource);
   }
 
   hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
@@ -77,28 +73,22 @@ export class AntraSidenavbarComponent implements OnInit {
   // tslint:disable-next-line: typedef
   handleListOnClick(node: NavLinkNodeFlat) {
     this.listOptionClicked.emit(node);
-
   }
 
   handleExpanded(): void {
     this.isExpanded = !this.isExpanded;
-    console.log(this.isExpanded);
   }
 
   handleMouseLeave(): void {
     this.isExpanded = false;
-    console.log(this.isExpanded);
-    //this.treeControl.collapseAll();
   }
 
   handleMouseEnter(): void {
     this.isExpanded = true;
-    console.log(this.isExpanded);
   }
 
   handleTreeNodeToggle(node): void {
     this.treeControl.toggle(node);
-    this.treeNodeToggleRemember.push(node);
   }
 
 }
