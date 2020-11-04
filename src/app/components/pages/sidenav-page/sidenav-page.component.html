@@ -1,12 +1,13 @@
 <app-example-doc [htmlSource]="htmlSource" [scssSource]="scssSource" [tsSource]="tsSource">
   <div class="sideNavBar-container">
     <antra-sidenavbar
-      [containerClass]="'sidenav-container'"
+      containerClass="sidenav-container"
+      sideNavBackground="url('https://picsum.photos/600/600?random=1')"
+      sideNavTextColor="#7fff00"
+      isOpen="isOpen"
+
       [sideNavConfig]="sideNavConfig"
       (listOptionClicked)="getClickEventFromSideNav($event)"
-      [sideNavBackground]="'blue'"
-      [sideNavTextColor]="'white'"
-      [isOpen]="isOpen"
     >
 
       <div class="sideNav-content-container">
@@ -15,7 +16,7 @@
         <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
         <router-outlet></router-outlet>
       </div>
-      
+
     </antra-sidenavbar>
   </div>
 </app-example-doc>

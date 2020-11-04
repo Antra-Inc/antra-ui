@@ -8,14 +8,14 @@ import { NavLinkNodeFlat, NavLinkNode } from 'src/app/interface/app.interface';
   styleUrls: ['./sidenav-page.component.scss']
 })
 export class SidenavPageComponent {
-  htmlSource = ` <div class="sideNavBar-container">
-  <antra-sidenavbar
-    [containerClass]="'sidenav-container'"
+  htmlSource = ` <antra-sidenavbar
+    containerClass="sidenav-container"
+    sideNavBackground="url('https://picsum.photos/600/600?random=1')"
+    sideNavTextColor="#7fff00"
+    isOpen="isOpen"
+
     [sideNavConfig]="sideNavConfig"
     (listOptionClicked)="getClickEventFromSideNav($event)"
-    [sideNavBackground]="'blue'"
-    [sideNavTextColor]="'white'"
-    [isOpen]="isOpen"
   >
 
     <div class="sideNav-content-container">
@@ -25,8 +25,7 @@ export class SidenavPageComponent {
       <router-outlet></router-outlet>
     </div>
 
-    </antra-sidenavbar>
-  </div>
+  </antra-sidenavbar>
   `;
 
   scssSource = ` ::ng-deep .sidenav-container {
