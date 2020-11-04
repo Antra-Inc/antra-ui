@@ -11,6 +11,10 @@ export class SidenavPageComponent {
   htmlSource = ` <antra-sidenavbar
     [containerClass]="'sidenav-container'"
     [sideNavConfig]="sideNavConfig"
+
+    [sideNavBackgroundColor]="'blue'"
+    [sideNavTextColor]="'white'"
+
     (listOptionClicked)="getClickEventFromSideNav($event)"
     [isOpen]="isOpen"
   >

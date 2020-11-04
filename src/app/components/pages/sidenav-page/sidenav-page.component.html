@@ -4,6 +4,10 @@
     [containerClass]="'sidenav-container'"
     [sideNavConfig]="sideNavConfig" 
     (listOptionClicked)="getClickEventFromSideNav($event)"
+
+    [sideNavBackgroundColor]="'blue'"
+    [sideNavTextColor]="'white'"
+    
     [isOpen]="isOpen"
   >
     <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>

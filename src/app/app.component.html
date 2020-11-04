@@ -6,16 +6,20 @@
     <span>Antra-ui</span>
   </mat-toolbar>
 
-  <antra-sidenavbar
-    [containerClass]="'app-container'"
-    [sideNavConfig]="sideNavConfig"
-
-    [sideNavBackgroundColor]="'blue'"
-    [sideNavTextColor]="'white'"
-    
-    (listOptionClicked)="getClickEventFromSideNav($event)"
-    [isOpen]="isOpen"
-  >
-    <router-outlet></router-outlet>
-  </antra-sidenavbar>
+  <div style="display: fixed; top: 60px; height: calc(100% - 60px);">
+    <antra-sidenavbar
+      [containerClass]="'app-container'"
+      [sideNavConfig]="sideNavConfig"
+      [sideNavBackgroundColor]="'blue'"
+      [sideNavTextColor]="'white'"
+      [sidenavMode]="'side'"
+      (listOptionClicked)="getClickEventFromSideNav($event)"
+      [isOpen]="isOpen"
+    >
+      <div style="display: fixed; left: 65px;">
+        <router-outlet></router-outlet>
+      </div>
+      
+    </antra-sidenavbar>
+  </div>
 </div>

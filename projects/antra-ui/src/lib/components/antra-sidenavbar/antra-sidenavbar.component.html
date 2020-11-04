@@ -15,23 +15,20 @@
     </button> -->
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [style.backgroundColor]="sideNavBackgroundColor">
-        <ng-container *ngIf="isExpanded">
           <mat-tree-node
             *matTreeNodeDef="let node"
             matTreeNodePadding
             [matTreeNodePaddingIndent]="treeNodePaddingIndent"
           >
-            <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
+            <mat-list-item *ngIf="isExpanded" (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
               <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
               <span mat-line>{{ node.name }}</span>
             </mat-list-item>
           </mat-tree-node>
-        </ng-container>
 
         <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
           <mat-list-item
-            matTreeNodeToggle
-            [matTreeNodeToggleRecursive]="treeNodeToggle"
+            (click)="handleTreeNodeToggle(node)"
             [attr.aria-label]="'Toggle ' + node.name"
             [ngStyle]="{ color: sideNavTextColor }"
           >
