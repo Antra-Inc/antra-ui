@@ -1,7 +1,7 @@
-<!-- <div antraWidget style="width: 300px; height: 400px; background-color: white">
-  <form class="form" #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
+<div antraWidget class="loginForm">
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
     <div class="form-group">
-      <label>Email Address</label>
+      <label><b>Email Address</b></label>
       <input
         type="text"
         class="form-control"
@@ -12,19 +12,19 @@
         email
       />
       <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.required">
-        Email is required
+        Email Address is required
       </span>
-      <span class="text-danger" *ngIf="email.touched && email.errors?.email"> Enter a valid email address </span>
+      <span class="text-danger" *ngIf="email.touched && email.errors?.email"> Please Enter Valid Email Address </span>
     </div>
     <div class="form-group">
-      <label>Password</label>
+      <label><b>Password</b></label>
       <input
         type="password"
         class="form-control"
         [(ngModel)]="loginModel.password"
         name="password"
         #password="ngModel"
-        appPasswordPattern
+        antraPasswordPattern
         required
       />
       <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.required">
@@ -35,10 +35,7 @@
       </span>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-success">LOGIN</button>
+      <button type="submit" class="btn">LOGIN</button>
     </div>
   </form>
-</div> -->
-<div style="width: 400; height: 200; background-color: orange;">
-
 </div>

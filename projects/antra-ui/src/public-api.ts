@@ -30,7 +30,7 @@ export * from './lib/antra-list/antra-list.module';
 export * from './lib/directives/antra-widget.directive';
 
 // AntraLoginComponent which will auto import and export AntraLoginComponent
-export * from './lib/components/antra-login/antra-login.component';
+export * from './lib/components/login/login.component';
 export * from './lib/models/login.model';
 export * from './lib/directives/antra-widget.directive';
 export * from './lib/services/custom-validation.service';
