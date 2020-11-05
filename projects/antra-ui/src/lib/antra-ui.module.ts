@@ -13,9 +13,12 @@ import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
 import { AntraWidgetDirective } from './directives/antra-widget.directive';
+import { AntraLoginComponent } from './components/antra-login/antra-login.component';
+import { FormsModule } from '@angular/forms';
+import { PasswordPatternDirective } from './directives/password-pattern.directive';
 
 @NgModule({
-  declarations: [AntraWidgetDirective],
+  declarations: [AntraWidgetDirective, AntraLoginComponent, PasswordPatternDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -27,6 +30,7 @@ import { AntraWidgetDirective } from './directives/antra-widget.directive';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
+    FormsModule
   ],
   exports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { AntraWidgetDirective } from './directives/antra-widget.directive';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    AntraWidgetDirective
+    AntraWidgetDirective,
+    AntraLoginComponent,
+    FormsModule
   ],
 })
 export class AntraUiModule {}
