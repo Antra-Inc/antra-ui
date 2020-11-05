@@ -12,7 +12,7 @@ import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
 import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
-import { AntraWidgetDirective } from './directives/antra-widget.directive';
+import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
 
 @NgModule({
   declarations: [AntraWidgetDirective],
@@ -39,7 +39,7 @@ import { AntraWidgetDirective } from './directives/antra-widget.directive';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    AntraWidgetDirective
+    AntraWidgetDirective,
   ],
 })
 export class AntraUiModule {}
