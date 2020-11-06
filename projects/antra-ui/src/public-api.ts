@@ -25,6 +25,3 @@ export * from './lib/antra-tree/antra-tree.module';
 
 // AntraListModule which will auto import and export MatListModule & AntraListModule
 export * from './lib/antra-list/antra-list.module';
-
-// AntraWidgetDirective which will auto import and export AntraWidgetDirective
-export * from './lib/directives/antra-widget.directive';
