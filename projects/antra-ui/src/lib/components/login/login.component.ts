@@ -6,6 +6,10 @@ import { Login } from '../../models/login.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+/**
+ * Example of usage:
+ * <example-url>http://127.0.0.1:4200/components/login</example-url>
+ */
 export class LoginComponent implements OnInit {
 
   loginModel = new Login();

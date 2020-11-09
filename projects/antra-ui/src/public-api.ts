@@ -29,8 +29,8 @@ export * from './lib/antra-list/antra-list.module';
 // AntraWidgetDirective which will auto import and export AntraWidgetDirective
 export * from './lib/directives/antra-widget.directive';
 
-// AntraLoginComponent which will auto import and export AntraLoginComponent
+// AntraLoginComponent which will auto import and export LoginComponent
 export * from './lib/components/login/login.component';
 export * from './lib/models/login.model';
-export * from './lib/directives/antra-widget.directive';
+export * from './lib/directives/password-pattern.directive';
 export * from './lib/services/custom-validation.service';
