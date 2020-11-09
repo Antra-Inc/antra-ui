@@ -1,11 +1,43 @@
-.example-content {
-  display: flex;
-  flex-direction: row;
-}
 
-antra-logo::ng-deep .logoSize {
+.customized-svg::ng-deep .logo__svg{
   width: 100px;
   height: 100px;
+  background-color: lightgray;
+}
+
+.customized-text::ng-deep .logo__text{
+  color:blue;
+  font-size: 35px;
+}
+
+.customized-all-1::ng-deep .logo{
+  background-color: lightgray;
+  color:white;
+  padding:0 10px;
+
+  .logo__svg{
+    width:60px;
+    height: 40px;
+  }
+  .logo__text{
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.customized-all-2::ng-deep .logo{
+  background-color: lightgray;
+  color:white;
+  padding-right:10px;
+  .logo__svg{
+    width:80px;
+    height: 80px;
+  }
+  .logo__text{
+    font-size: 30px;
+    font-weight: 500;
+  }
+
 }
 
 
