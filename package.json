@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4200 --host 0.0.0.0 --disableHostCheck true",
-    "test": "ng test",
+    "test": "ng test antra-ui",
     "lint": "ng lint",
     "build-scss": "scss-bundle --config scss-bundle.config.json",
     "build-doc": "npx compodoc -p projects/antra-ui/tsconfig.lib.json",
