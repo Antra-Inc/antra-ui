@@ -17,8 +17,12 @@ import { FormsModule } from '@angular/forms';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
 import { LoginComponent } from './components/login/login.component';
 
+// components
+import { ButtonComponent } from './components/button/button.component';
+import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+
 @NgModule({
-  declarations: [AntraWidgetDirective, PasswordPatternDirective, LoginComponent],
+  declarations: [AntraWidgetDirective, PasswordPatternDirective, LoginComponent, ButtonComponent, RaisedButtonComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -45,7 +49,10 @@ import { LoginComponent } from './components/login/login.component';
     AntraListModule,
     AntraWidgetDirective,
     LoginComponent,
-    FormsModule
+    FormsModule,
+    // Components
+    ButtonComponent,
+    RaisedButtonComponent,
   ],
 })
 export class AntraUiModule {}
