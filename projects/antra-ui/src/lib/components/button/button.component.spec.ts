@@ -1,28 +1,63 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Component } from '@angular/core';
 
 import { ButtonComponent } from './button.component';
+import { AntraUiModule } from '../../antra-ui.module';
+
+@Component({
+  template: ` <antra-button [btnColor]="btnColor" [btnText]="btnText" [disabled]="disabled"> </antra-button>`,
+})
+class TestHostComponent {
+  btnColor = 'primary';
+  btnText = 'primary button';
+  disabled = false;
+}
 
 describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ButtonComponent, TestHostComponent],
+        imports: [AntraUiModule],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonComponent);
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show a proper button with different inputs', () => {
+    // inputs one
+    component.btnText = 'primary btn';
+    component.btnColor = 'primary';
+    component.disabled = false;
+    fixture.detectChanges();
+    const btnElement = fixture.nativeElement.querySelector('button');
+    fixture.detectChanges();
+    expect(btnElement.className).toContain('mat-button');
+    expect(btnElement.className).toContain('mat-primary');
+    expect(btnElement.className).not.toContain('mat-button-disabled');
+    expect(btnElement.textContent.trim()).toBe('primary btn');
+
+    // inputs two
+    component.btnText = 'secondary btn';
+    component.btnColor = 'secondary';
+    component.disabled = true;
+    fixture.detectChanges();
+    expect(btnElement.className).toContain('mat-button');
+    expect(btnElement.className).toContain('mat-secondary');
+    expect(btnElement.className).toContain('mat-button-disabled');
+    expect(btnElement.textContent.trim()).toBe('secondary btn');
   });
 });
