@@ -10,8 +10,6 @@ import { RaisedButtonPageComponent } from './components/pages/raised-button-page
 import { ButtonExampleComponent } from './components/pages/button-page/button-example/button-example.component';
 import { RaisedButtonExampleComponent } from './components/pages/raised-button-page/raised-button-example/raised-button-example.component';
 import { ExampleDocComponent } from './components/example-doc/example-doc.component';
-import { WidgetExampleComponent } from './components/pages/widget-page/widget-example/widget-example.component';
-import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { LoginExampleComponent } from './components/pages/login-page/login-example/login-example.component';
 
@@ -23,8 +21,6 @@ import { LoginExampleComponent } from './components/pages/login-page/login-examp
     RaisedButtonPageComponent,
     ButtonExampleComponent,
     RaisedButtonExampleComponent,
-    WidgetPageComponent,
-    WidgetExampleComponent,
     LoginPageComponent,
     LoginExampleComponent,
   ],
