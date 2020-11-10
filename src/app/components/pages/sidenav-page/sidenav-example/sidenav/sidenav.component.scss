@@ -1,0 +1,14 @@
+.sidenavbar-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+  }
+  
+  .sidenavopen {
+    width: 300px;
+  }
+  
+  mat-drawer-content {
+    margin-left: 65px !important;
+  }

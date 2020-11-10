@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interface';
+import { NavLinkNode, NavLinkNodeFlat } from '../../../../../interface/app.interface';
 
 @Component({
-  selector: 'antra-sidenavbar',
-  templateUrl: './antra-sidenavbar.component.html',
-  styleUrls: ['./antra-sidenavbar.component.scss']
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.scss']
 })
-export class AntraSidenavbarComponent implements OnInit {
+export class SidenavComponent implements OnInit {
 
   isExpanded = false;
 
@@ -89,5 +89,4 @@ export class AntraSidenavbarComponent implements OnInit {
   handleTreeNodeToggle(node): void {
     this.treeControl.toggle(node);
   }
-
 }
