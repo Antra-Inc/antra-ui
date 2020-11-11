@@ -13,7 +13,7 @@ import { btnColor } from '../../interfaces/button.interface';
 export class RaisedButtonComponent implements OnInit {
   @Input() btnColor: btnColor = 'primary';
   @Input() btnText = '';
-  @Input() disabled = 'false';
+  @Input() disabled = false;
 
   /**
    * @ignore

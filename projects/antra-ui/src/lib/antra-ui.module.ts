@@ -12,10 +12,14 @@ import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
 import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
+
+// components
+import { ButtonComponent } from './components/button/button.component';
+import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
-  declarations: [LogoComponent],
+  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -39,6 +43,9 @@ import { LogoComponent } from './components/logo/logo.component';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
+    // Components
+    ButtonComponent,
+    RaisedButtonComponent,
     LogoComponent,
   ],
 })
