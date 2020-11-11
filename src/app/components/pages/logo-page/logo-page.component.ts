@@ -36,7 +36,7 @@ export class LogoPageComponent implements OnInit {
     background-color: lightgray;
     color:white;
     padding:0 10px;
-  
+
     .logo__svg{
       width:60px;
       height: 40px;
@@ -46,7 +46,7 @@ export class LogoPageComponent implements OnInit {
       font-weight: 500;
     }
   }
-  
+
   .customized-all-2::ng-deep .logo{
     background-color: lightgray;
     color:white;
@@ -59,7 +59,7 @@ export class LogoPageComponent implements OnInit {
       font-size: 30px;
       font-weight: 500;
     }
-  
+
   }`;
   tsSource = `import { Component, OnInit } from '@angular/core';
 
