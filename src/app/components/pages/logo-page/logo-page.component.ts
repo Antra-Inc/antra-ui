@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo-page.component.scss'],
 })
 export class LogoPageComponent implements OnInit {
-  htmlSource = `<div class="example-content"> 
+  htmlSource = `<div class="example-content">
   <h4>Default without Text:</h4>
   <antra-logo  svgPath="/assets/svg/logo.svg" > </antra-logo>
   <h4>Default with Text:</h4>
@@ -26,12 +26,12 @@ export class LogoPageComponent implements OnInit {
     height: 100px;
     background-color: lightgray;
   }
-  
+
   .customized-text::ng-deep .logo__text{
     color:blue;
     font-size: 35px;
   }
-  
+
   .customized-all-1::ng-deep .logo{
     background-color: lightgray;
     color:white;
