@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements OnInit {
-  @Input() logoPath = '/assets/svg/logo.svg';
+  @Input() svgPath;
+  @Input() logoText;
 
   // tslint:disable-next-line: typedef
   constructor() {}
