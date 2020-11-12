@@ -17,12 +17,13 @@ import { AntraTreeModule } from './antra-tree/antra-tree.module';
 // components
 import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
 
 @NgModule({
-  declarations: [ButtonComponent, RaisedButtonComponent, AntraWidgetDirective],
+  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent, AntraWidgetDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -50,6 +51,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     AntraWidgetDirective,
     ButtonComponent,
     RaisedButtonComponent,
+    LogoComponent,
   ],
 })
 export class AntraUiModule {}
