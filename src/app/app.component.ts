@@ -12,6 +12,13 @@ const SIDENAV_DATA: NavLinkNode[] = [
       { name: 'RaisedButtonComponent', url: 'components/raised-button' },
     ],
   },
+  {
+    name: 'Progress Spinner',
+
+    children: [
+      { name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' },
+    ],
+  },
 ];
 
 interface NavLinkNodeFlat {
