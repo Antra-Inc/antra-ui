@@ -15,14 +15,14 @@ import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
 
 // components
-import { ButtonComponent } from 'antra-ui/lib/components/button/button.component';
-import { RaisedButtonComponent } from 'antra-ui/lib/components/raised-button/raised-button.component';
+import { ButtonComponent } from './components/button/button.component';
+import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
 
 @NgModule({
-  declarations: [ButtonComponent, RaisedButtonComponent],
+  declarations: [ButtonComponent, RaisedButtonComponent, AntraWidgetDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

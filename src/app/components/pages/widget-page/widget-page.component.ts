@@ -24,7 +24,6 @@ export class WidgetPageComponent implements OnInit {
     display: flex;
     flex-wrap: wrap;
   }
-  
   .widget1 {
     width: 100px;
     height: 100px;

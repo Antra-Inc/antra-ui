@@ -17,11 +17,6 @@ const SIDENAV_DATA: NavLinkNode[] = [
 
     children: [{ name: 'WidgetComponent', url: 'components/widget' }],
   },
-  {
-    name: 'Login',
-
-    children: [{ name: 'LoginComponent', url: 'components/login' }],
-  },
 ];
 
 interface NavLinkNodeFlat {

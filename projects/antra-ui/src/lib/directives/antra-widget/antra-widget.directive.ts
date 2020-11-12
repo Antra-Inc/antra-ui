@@ -16,6 +16,13 @@ import { Directive, OnInit, HostBinding } from '@angular/core';
 export class AntraWidgetDirective implements OnInit {
   @HostBinding('class') elementClass = 'antra-widget';
 
+  /**
+   * @ignore
+   */
   constructor() {}
+
+  /**
+   * @ignore
+   */
   ngOnInit(): void {}
 }
