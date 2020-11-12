@@ -14,10 +14,12 @@ import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
 import { AntraSidenavbarComponent } from './components/antra-sidenavbar/antra-sidenavbar.component';
 
+// components
+import { ButtonComponent } from './components/button/button.component';
+import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+
 @NgModule({
-  declarations: [
-    AntraSidenavbarComponent
-  ],
+  declarations: [ButtonComponent, RaisedButtonComponent, AntraSidenavbarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,7 +43,11 @@ import { AntraSidenavbarComponent } from './components/antra-sidenavbar/antra-si
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    AntraSidenavbarComponent
+
+    // Components
+    ButtonComponent,
+    RaisedButtonComponent,
+    AntraSidenavbarComponent,
   ],
 })
 export class AntraUiModule {}
