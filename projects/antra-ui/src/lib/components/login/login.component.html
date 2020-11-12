@@ -2,7 +2,7 @@
   <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
     <div class="form-group">
       <label><b>Email Address</b></label>
-      <input
+      <input matInput 
         type="text"
         class="form-control"
         [(ngModel)]="loginModel.email"
@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
       <label><b>Password</b></label>
-      <input
+      <input matInput 
         type="password"
         class="form-control"
         [(ngModel)]="loginModel.password"

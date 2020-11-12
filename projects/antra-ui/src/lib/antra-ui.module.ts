@@ -15,16 +15,22 @@ import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
 
 // components
-import { ButtonComponent } from 'antra-ui/lib/components/button/button.component';
-import { LoginComponent } from 'antra-ui/lib/components/login/login.component';
-import { RaisedButtonComponent } from 'antra-ui/lib/components/raised-button/raised-button.component';
+import { LoginComponent } from './components/login/login.component';
+import { ButtonComponent } from './components/button/button.component';
+import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 
 // directives
-import { PasswordPatternDirective } from 'antra-ui/lib/directives/password-pattern.directive';
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+import { PasswordPatternDirective } from './directives/password-pattern.directive';
 
 @NgModule({
-  declarations: [AntraWidgetDirective, PasswordPatternDirective, LoginComponent, ButtonComponent, RaisedButtonComponent],
+  declarations: [
+    AntraWidgetDirective,
+    PasswordPatternDirective,
+    LoginComponent,
+    ButtonComponent,
+    RaisedButtonComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -36,7 +42,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     BrowserModule,
@@ -50,6 +56,9 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     AntraTreeModule,
     AntraListModule,
     AntraWidgetDirective,
+    LoginComponent,
+    ButtonComponent,
+    RaisedButtonComponent,
   ],
 })
 export class AntraUiModule {}
