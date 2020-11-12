@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,8 +19,11 @@ import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { LogoComponent } from './components/logo/logo.component';
 
+// directives
+import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+
 @NgModule({
-  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent],
+  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent, AntraWidgetDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -31,6 +35,7 @@ import { LogoComponent } from './components/logo/logo.component';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
+    FormsModule,
   ],
   exports: [
     BrowserModule,
@@ -43,7 +48,7 @@ import { LogoComponent } from './components/logo/logo.component';
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    // Components
+    AntraWidgetDirective,
     ButtonComponent,
     RaisedButtonComponent,
     LogoComponent,

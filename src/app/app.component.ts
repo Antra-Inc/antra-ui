@@ -13,11 +13,14 @@ const SIDENAV_DATA: NavLinkNode[] = [
     ],
   },
   {
+    name: 'Widgets',
+
+    children: [{ name: 'WidgetComponent', url: 'components/widget' }],
+  },
+  {
     name: 'Logo',
 
-    children: [
-      { name: 'LogoComponent', url: 'components/logo' },
-    ],
+    children: [{ name: 'LogoComponent', url: 'components/logo' }],
   },
 ];
 
