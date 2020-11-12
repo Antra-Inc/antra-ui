@@ -39,17 +39,17 @@ describe('LogoComponent', () => {
     component.svgPath = '/assets/svg/logo.svg';
     component.logoText = 'BRS';
     fixture.detectChanges();
-    const imgElement = fixture.nativeElement.querySelector('img');
-    const spanElement = fixture.nativeElement.querySelector('span');
+    const imgElement = fixture.nativeElement.querySelector('.logo__svg');
+    const textElement = fixture.nativeElement.querySelector('.logo__text');
     fixture.detectChanges();
     expect(imgElement.src).toContain('/assets/svg/logo.svg');
-    expect(spanElement.textContent.trim()).toBe('BRS');
+    expect(textElement.textContent.trim()).toBe('BRS');
 
     // inputs two
     component.svgPath = '/assets/svg/google.svg';
     component.logoText = 'Google';
     fixture.detectChanges();
     expect(imgElement.src).toContain('/assets/svg/google.svg');
-    expect(spanElement.textContent.trim()).toBe('Google');
+    expect(textElement.textContent.trim()).toBe('Google');
   });
 });
