@@ -14,23 +14,11 @@ export class AntraSidenavbarComponent implements OnInit {
 
   @Input() sideNavTextColor = 'red'; //  customrize the sidenav text color;
   @Input() sideNavBackground = ''; // customrize the sidenav sidenavbar color;
-
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side'; // set sidenav mode;
   @Input() treeNodePaddingIndent = '0px'; // set the subnode left padding;
-
   @Input() isOpen = true; // set the side open or close;
   @Input() containerClass = ''; // customrize sidenav container style;
-
-  @Input() sideNavConfig: NavLinkNode[] = [
-    {
-      name: 'SideNav event tree',
-      icon: 'person',
-      children: [
-        { name: 'button', url: 'button', icon: 'person' },
-        { name: 'raised-button', url: 'raised-button', icon: 'person'},
-      ],
-    },
-  ]; // set tree node structure;
+  @Input() sideNavConfig: NavLinkNode[] = [];
 
   @Output() listOptionClicked = new EventEmitter();
 

@@ -26,7 +26,8 @@
   
           <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
             <mat-list-item
-              (click)="handleTreeNodeToggle(node)"
+              (click)="handleTreeNodeToggle(node); handleListOnClick(node)"
+
               [attr.aria-label]="'Toggle ' + node.name"
               [ngStyle]="{ color: sideNavTextColor }"
             >
