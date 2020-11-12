@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,11 +13,13 @@ import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
 import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
-import { FormsModule } from '@angular/forms';
 
 // components
-import { ButtonComponent } from './components/button/button.component';
-import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+import { ButtonComponent } from 'antra-ui/lib/components/button/button.component';
+import { RaisedButtonComponent } from 'antra-ui/lib/components/raised-button/raised-button.component';
+
+// directives
+import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
 
 @NgModule({
   declarations: [ButtonComponent, RaisedButtonComponent],
@@ -31,7 +34,7 @@ import { RaisedButtonComponent } from './components/raised-button/raised-button.
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { RaisedButtonComponent } from './components/raised-button/raised-button.
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
-    // Components
+    AntraWidgetDirective,
     ButtonComponent,
     RaisedButtonComponent,
   ],

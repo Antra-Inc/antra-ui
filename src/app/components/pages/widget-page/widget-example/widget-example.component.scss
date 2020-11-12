@@ -1,18 +1,10 @@
-article {
-  margin: 10px;
-  color: white;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  p {
-    padding: 10px;
-  }
-  .big {
-    font-size: 24px;
-  }
-  .small {
-    font-size: 10px;
-    padding: 4px;
-  }
-  .medium {
-    font-size: 16px;
-  }
+.widget1 {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
 }

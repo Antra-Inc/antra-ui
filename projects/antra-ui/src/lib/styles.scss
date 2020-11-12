@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./styles/palette.scss";
+@import './styles/palette.scss';
 
 // theme
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,15 +20,15 @@ $antra-app-accent: mat-palette($antra-accent);
 $antra-app-warn: mat-palette($antra-warnning);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$antra-app-theme: mat-light-theme(
-  $antra-app-primary,
-  $antra-app-accent,
-  $antra-app-warn
-);
+$antra-app-theme: mat-light-theme($antra-app-primary, $antra-app-accent, $antra-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($antra-app-theme);
 
-@import "./styles/button";
+@import './styles/variables';
+
+@import './styles/button';
+
+@import './directives/antra-widget/antra-widget';
