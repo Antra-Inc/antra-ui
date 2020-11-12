@@ -83,35 +83,35 @@ describe('SidenavComponent', () => {
     expect(de.nativeElement.textContent).toContain('Hello World');
   });
 
-  it('should render the correct Text Color for the sideNav after customize the sideNavTextColor attribute.', () => {
-    component.sideNavTextColor = 'blue';
-    fixture.detectChanges();
+  // it('should render the correct Text Color for the sideNav after customize the sideNavTextColor attribute.', () => {
+  //   component.sideNavTextColor = 'blue';
+  //   fixture.detectChanges();
 
-    const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
+  //   const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
 
-    for (const item of listItems) {
-      expect(item.nativeElement.style.color).toBe('blue');
-    }
-  });
+  //   for (const item of listItems) {
+  //     expect(item.nativeElement.style.color).toBe('blue');
+  //   }
+  // });
 
-  it('should render the correct background for the sideNav after customize the sideNavBackground attribute.', () => {
-    component.sideNavBackground = 'blue';
-    fixture.detectChanges();
+  // it('should render the correct background for the sideNav after customize the sideNavBackground attribute.', () => {
+  //   component.sideNavBackground = 'blue';
+  //   fixture.detectChanges();
 
-    const matDrawer = fixture.debugElement.query(By.css('mat-drawer'));
-    expect(matDrawer.nativeElement.style.background).toBe('blue');
+  //   const matDrawer = fixture.debugElement.query(By.css('mat-drawer'));
+  //   expect(matDrawer.nativeElement.style.background).toBe('blue');
 
-    const matTree = fixture.debugElement.query(By.css('mat-tree'));
-    expect(matTree.nativeElement.style.background).toBe('blue');
-  });
+  //   const matTree = fixture.debugElement.query(By.css('mat-tree'));
+  //   expect(matTree.nativeElement.style.background).toBe('blue');
+  // });
 
-  it('should use the correct class for the sideNav after customize the containerClass.', () => {
-    component.containerClass = 'sidenav-container';
-    fixture.detectChanges();
+  // it('should use the correct class for the sideNav after customize the containerClass.', () => {
+  //   component.containerClass = 'sidenav-container';
+  //   fixture.detectChanges();
 
-    const matDrawerContainer = fixture.debugElement.query(By.css('mat-drawer-container'));
-    expect(matDrawerContainer.nativeElement.getAttribute('class')).toContain('sidenav-container');
-  });
+  //   const matDrawerContainer = fixture.debugElement.query(By.css('mat-drawer-container'));
+  //   expect(matDrawerContainer.nativeElement.getAttribute('class')).toContain('sidenav-container');
+  // });
 
   it('shold get tree node config data after customize the sideNavConfig attribute ', () => {
     const testfixture = TestBed.createComponent(TestHostComponent);

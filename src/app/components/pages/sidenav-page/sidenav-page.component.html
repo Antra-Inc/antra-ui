@@ -1,22 +1,3 @@
 <app-example-doc [htmlSource]="htmlSource" [scssSource]="scssSource" [tsSource]="tsSource">
-  <div class="sideNavBar-container">
-    <app-sidenav
-      containerClass="sidenav-container"
-      sideNavBackground="url('https://picsum.photos/600/600?random=1')"
-      sideNavTextColor="#7fff00"
-      isOpen="isOpen"
-
-      [sideNavConfig]="sideNavConfig"
-      (listOptionClicked)="getClickEventFromSideNav($event)"
-    >
-
-      <div class="sideNav-content-container">
-        <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
-        <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
-        <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
-        <router-outlet></router-outlet>
-      </div>
-
-    </app-sidenav>
-  </div>
+  <app-sidenav-example></app-sidenav-example>
 </app-example-doc>

@@ -1,49 +1,20 @@
-<mat-drawer-container [class]="containerClass" autosize>
-    <mat-drawer
-      #drawer
-      [mode]="sidenavMode"
-      [opened]="isOpen"
-      class="sidenavbar-sidenav"
-      [ngStyle]="{ background: sideNavBackground }"
-      [ngClass]="{ sidenavopen: isExpanded }"
-      (mouseenter)="handleMouseEnter()"
-      (mouseleave)="handleMouseLeave()"
-      color="primary"
-    >
-      <mat-nav-list>
-        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [ngStyle]="{ background: sideNavBackground }">
-          <mat-tree-node
-            [ngStyle]="{ display: isExpanded ? 'block' : 'none' }"
-            *matTreeNodeDef="let node; when: !hasChild"
-            matTreeNodePadding
-            [matTreeNodePaddingIndent]="treeNodePaddingIndent"
-          >
-            <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
-              <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
-              <span mat-line>{{ node.name }}</span>
-            </mat-list-item>
-          </mat-tree-node>
-  
-          <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
-            <mat-list-item
-              (click)="handleTreeNodeToggle(node); handleListOnClick(node)"
+<div class="sideNavBar-container">
+  <antra-sidenavbar
+    containerClass="sidenav-container"
+    sideNavBackground="url('https://picsum.photos/600/600?random=1')"
+    sideNavTextColor="#7fff00"
+    isOpen="isOpen"
 
-              [attr.aria-label]="'Toggle ' + node.name"
-              [ngStyle]="{ color: sideNavTextColor }"
-            >
-              <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
-              <mat-icon *ngIf="isExpanded">
-                {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
-              </mat-icon>
-              <span mat-line *ngIf="isExpanded">{{ node.name }}</span>
-            </mat-list-item>
-          </mat-tree-node>
-        </mat-tree>
-      </mat-nav-list>
-    </mat-drawer>
-  
-    <mat-drawer-content autosize>
-      <ng-content></ng-content>
-    </mat-drawer-content>
-  </mat-drawer-container>
-  
+    [sideNavConfig]="sideNavConfig"
+    (listOptionClicked)="getClickEventFromSideNav($event)"
+  >
+
+    <div class="sideNav-content-container">
+      <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
+      <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
+      <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
+      <router-outlet></router-outlet>
+    </div>
+
+  </antra-sidenavbar>
+</div>

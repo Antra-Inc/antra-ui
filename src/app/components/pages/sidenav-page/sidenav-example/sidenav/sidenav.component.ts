@@ -1,80 +1,42 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
+import { Component } from '@angular/core';
 import { NavLinkNode, NavLinkNodeFlat } from '../../../../../interface/app.interface';
 
 @Component({
-  selector: 'app-sidenav',
+  selector: 'app-sidenav-example',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
 
-  isExpanded = false;
+  optionInSideNav = '';
+  isOpen = true;
+  sideNavConfig: NavLinkNode[] = [
+    {
+      name: 'example-sidenav tree1',
+      icon: 'person',
+      children: [
+        { name: 'example-option1', url: 'components/example-option1' },
+        { name: 'example-option2', url: 'components/example-option2'},
+      ],
+    },
+    {
+      name: 'example-sidenav tree2',
+      icon: 'menu',
+      children: [
+        { name: 'example-option3', url: 'components/example-option3' },
+      ],
+    },
+  ];
 
-  @Input() sideNavTextColor = 'red'; //  customrize the sidenav text color;
-  @Input() sideNavBackground = ''; // customrize the sidenav sidenavbar color;
-  @Input() sidenavMode: 'over' | 'push' | 'side' = 'side'; // set sidenav mode;
-  @Input() treeNodePaddingIndent = '0px'; // set the subnode left padding;
-  @Input() isOpen = true; // set the side open or close;
-  @Input() containerClass = ''; // customrize sidenav container style;
-  @Input() sideNavConfig: NavLinkNode[] = []; // set tree node structure;
+  constructor() {}
 
-  @Output() listOptionClicked = new EventEmitter();
+  getClickEventFromSideNav(event: NavLinkNodeFlat): void {
 
-  // tslint:disable-next-line: variable-name
-  private _transformer = (node: NavLinkNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      url: node.url,
-      icon: node.icon,
-      level,
-    };
+    this.optionInSideNav = event.name;
+    // this.router.navigate([event.url]);
   }
 
-  // tslint:disable-next-line: member-ordering
-  treeControl = new FlatTreeControl<NavLinkNodeFlat>(
-    (node) => node.level,
-    (node) => node.expandable
-  );
-
-  // tslint:disable-next-line: member-ordering
-  treeFlattener = new MatTreeFlattener(
-    this._transformer,
-    (node) => node.level,
-    (node) => node.expandable,
-    (node) => node.children
-  );
-  // tslint:disable-next-line: member-ordering
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.dataSource.data = this.sideNavConfig;
-  }
-
-  hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
-
-  // tslint:disable-next-line: typedef
-  handleListOnClick(node: NavLinkNodeFlat) {
-    this.listOptionClicked.emit(node);
-  }
-
-  handleExpanded(): void {
-    this.isExpanded = !this.isExpanded;
-  }
-
-  handleMouseLeave(): void {
-    this.isExpanded = false;
-  }
-
-  handleMouseEnter(): void {
-    this.isExpanded = true;
-  }
-
-  handleTreeNodeToggle(node): void {
-    this.treeControl.toggle(node);
+  toggleSideNav(): void {
+    this.isOpen = !this.isOpen;
   }
 }
