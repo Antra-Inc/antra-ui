@@ -19,7 +19,11 @@ import { Login } from '../../models/login.model';
  */
 export class LoginComponent implements OnInit {
   loginModel = new Login();
-
+  emailAddressValidationMessage = ['Email Address is required', 'Please Enter Valid Email Address'];
+  passwordValidationMessage = [
+    'Password is required',
+    'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+  ];
   /**
    * @ignore
    */

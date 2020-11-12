@@ -1,8 +1,9 @@
-<div antraWidget class="loginForm">
+<div antraWidget class="form">
   <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
     <div class="form-group">
       <label><b>Email Address</b></label>
-      <input matInput 
+      <input
+        matInput
         type="text"
         class="form-control"
         [(ngModel)]="loginModel.email"
@@ -12,13 +13,16 @@
         email
       />
       <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.required">
-        Email Address is required
+        {{ emailAddressValidationMessage[0] }}
       </span>
-      <span class="text-danger" *ngIf="email.touched && email.errors?.email"> Please Enter Valid Email Address </span>
+      <span class="text-danger" *ngIf="email.touched && email.errors?.email">
+        {{ emailAddressValidationMessage[1] }}
+      </span>
     </div>
     <div class="form-group">
       <label><b>Password</b></label>
-      <input matInput 
+      <input
+        matInput
         type="password"
         class="form-control"
         [(ngModel)]="loginModel.password"
@@ -28,10 +32,10 @@
         required
       />
       <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.required">
-        Password is required
+        {{ passwordValidationMessage[0] }}
       </span>
       <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
-        Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number
+        {{ passwordValidationMessage[1] }}
       </span>
     </div>
     <div class="form-group">
