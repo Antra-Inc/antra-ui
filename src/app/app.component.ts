@@ -1,6 +1,34 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavLinkNode, NavLinkNodeFlat } from './interface/app.interface';
+import { NavLinkNode } from './interface/app.interface';
+
+const SIDENAV_DATA: NavLinkNode[] = [
+  {
+    name: 'Buttons',
+
+    children: [
+      { name: 'ButtonComponent', url: 'components/button' },
+      { name: 'RaisedButtonComponent', url: 'components/raised-button' },
+    ],
+  },
+  {
+    name: 'Widgets',
+
+    children: [{ name: 'WidgetComponent', url: 'components/widget' }],
+  },
+  {
+    name: 'Logo',
+
+    children: [{ name: 'LogoComponent', url: 'components/logo' }],
+  },
+];
+
+interface NavLinkNodeFlat {
+  expandable: boolean;
+  name: string;
+  url: string;
+  level: number;
+}
 
 @Component({
   selector: 'app-root',

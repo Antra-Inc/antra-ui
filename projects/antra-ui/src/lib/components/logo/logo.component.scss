@@ -1,0 +1,21 @@
+
+:host{
+  display: inline-block;
+}
+
+.logo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo__svg{
+  display:inline-block;
+  width: 42px;
+  height: 42px;
+}
+.logo__text{
+  
+}
+
