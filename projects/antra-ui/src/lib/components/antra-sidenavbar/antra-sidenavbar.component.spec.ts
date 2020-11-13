@@ -4,7 +4,7 @@ import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/cor
 import { By } from '@angular/platform-browser';
 import { NavLinkNode, NavLinkNodeFlat } from 'projects/antra-ui/src/lib/interfaces/sidenavbar.interface';
 import { SidenavbarComponent } from './antra-sidenavbar.component';
-import { AntraUiModule } from 'antra-ui';
+import { AntraUiModule } from '../../antra-ui.module';
 
 @Component({
   template: `
@@ -20,6 +20,7 @@ import { AntraUiModule } from 'antra-ui';
       <h3>
         Hello World
       </h3>
+      <button id="toggle" (click)="toggleSideNavBar()">Toggle SideNavBar</button>
     </antra-sidenavbar>
   `,
 })
@@ -51,6 +52,10 @@ class TestHostComponent {
   getClickEventFromSideNav(event: NavLinkNodeFlat): void {
     this.optionInSideNav = event.name;
   }
+
+  toggleSideNavBar(): void {
+    this.isOpen = !this.isOpen;
+  }
 }
 
 describe('SidenavbarComponent', () => {
@@ -78,19 +83,14 @@ describe('SidenavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('shoule display any templete inside the the sidenavbar tag correctly', () => {
-    console.log(fixture.nativeElement);
-    const matDrawerContent = fixture.nativeElement.querySelector('mat-drawer-content');
-    // const matDrawerContent = fixture.debugElement.query(By.css('mat-drawer-content'));
-    console.log(matDrawerContent);
-    // const ngContent = matDrawerContent.nativeElement.query(By.css('ng-content'));
-    // const elementh3 = ngContent.nativeElement.query(By.css('h3'));
-
-    // expect(elementh3.nativeElement.textContent).toContain('Hello World');
+  it('shoule display any templete inside the the sidenavbar tag correctly', () => {
+    const matDrawerContent = fixture.debugElement.query(By.css('h3'));
+    expect(matDrawerContent.nativeElement.textContent).toContain('Hello World');
   });
 
-  xit('should render the correct Text Color for the sideNav after customize the sideNavTextColor attribute.', () => {
-    component.sideNavTextColor = 'blue';
+  it('should render the correct Text Color for the sideNav after customize the sideNavTextColor attribute.', () => {
+    const sidnav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    sidnav.componentInstance.sideNavTextColor = 'blue';
     fixture.detectChanges();
 
     const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
@@ -100,8 +100,9 @@ describe('SidenavbarComponent', () => {
     }
   });
 
-  xit('should render the correct background for the sideNav after customize the sideNavBackground attribute.', () => {
-    component.sideNavBackground = 'blue';
+  it('should render the correct background for the sideNav after customize the sideNavBackground attribute.', () => {
+    const sidnav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    sidnav.componentInstance.sideNavBackground = 'blue';
     fixture.detectChanges();
 
     const matDrawer = fixture.debugElement.query(By.css('mat-drawer'));
@@ -111,34 +112,44 @@ describe('SidenavbarComponent', () => {
     expect(matTree.nativeElement.style.background).toBe('blue');
   });
 
-  xit('should use the correct class for the sideNav after customize the containerClass.', () => {
-    component.containerClass = 'sidenav-container';
+  it('should use the correct class for the sideNav after customize the containerClass.', () => {
+    const sidnav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    sidnav.componentInstance.containerClass = 'sidenav-container';
     fixture.detectChanges();
 
     const matDrawerContainer = fixture.debugElement.query(By.css('mat-drawer-container'));
     expect(matDrawerContainer.nativeElement.getAttribute('class')).toContain('sidenav-container');
   });
 
-  xit('should get tree node config data after customize the sideNavConfig attribute ', waitForAsync(() => {
-    const testfixture = TestBed.createComponent(TestHostComponent);
-    testfixture.detectChanges();
+  it('should get tree node config data after customize the sideNavConfig attribute ', waitForAsync(() => {
+    const sidenav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    fixture.detectChanges();
 
-    const sidenav = testfixture.debugElement.query(By.directive(SidenavbarComponent));
-    testfixture.detectChanges();
-    console.log('sidenav: ', sidenav);
-    // const data = testfixture.componentInstance.sideNavConfig;
+    const data = fixture.componentInstance.sideNavConfig;
 
-    // expect(sidenav.componentInstance.sideNavConfig.length).toBe(2);
-    // expect(sidenav.componentInstance.sideNavConfig).toEqual(data);
+    expect(sidenav.componentInstance.sideNavConfig.length).toBe(2);
+    expect(sidenav.componentInstance.sideNavConfig).toEqual(data);
   }));
 
-  xit('shouled emit node after click tree node in the sidenavbar', fakeAsync(() => {
-    const testfixture = TestBed.createComponent(TestHostComponent);
-    const sidenav = testfixture.debugElement.query(By.directive(SidenavbarComponent));
+  it('should toggle the sidenavbar after click Toggle SideNavBar button', waitForAsync(() => {
+    const sidenav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    fixture.detectChanges();
 
-    spyOn(sidenav.componentInstance.listOptionClicked, 'emit');
-    // spyOn(testfixture.componentInstance, 'getClickEventFromSideNav');
+    expect(sidenav.componentInstance.isOpen).toBe(true);
 
+    const button = fixture.debugElement.query(By.css('#toggle'));
+    button.triggerEventHandler('click', null);
+    // component.toggleSideNavBar();
+    fixture.detectChanges();
+    expect(sidenav.componentInstance.isOpen).toBe(false);
+  }));
+
+  it('shouled emit node after click tree node in the sidenavbar', waitForAsync(() => {
+    const sidenav = fixture.debugElement.query(By.directive(SidenavbarComponent));
+    const spyMethodEmit = spyOn(sidenav.componentInstance.listOptionClicked, 'emit').and.callThrough();
+    const spyMethodGetEmit = spyOn(fixture.componentInstance, 'getClickEventFromSideNav').and.callThrough();
+
+    fixture.detectChanges();
     const data: NavLinkNodeFlat = {
       expandable: true,
       name: 'example-sidenav tree1',
@@ -146,23 +157,12 @@ describe('SidenavbarComponent', () => {
       icon: 'person',
       level: 0
     };
-    testfixture.detectChanges();
-    // const matListItems = testfixture.debugElement.queryAll(By.css('mat-list-item'));
 
-    testfixture.whenStable().then(() => {
+    const matListItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
+    matListItems[0].triggerEventHandler('click', null);
 
-      console.log('sidenav-dataSource: ', sidenav.componentInstance.dataSource.data);
-      console.log('testfixture-nativeElement: ', testfixture.nativeElement);
-      console.log('sidenav-nativeElement: ', sidenav.nativeElement);
-
-      const matListItems = testfixture.debugElement.queryAll(By.css('mat-list-item'));
-      console.log(matListItems);
-    });
-    // matListItems[0].triggerEventHandler('click', null);
-    // testfixture.detectChanges();
-
-    // expect(sidenav.componentInstance.listOptionClicked.emit).toHaveBeenCalledWith(data);
-    // expect(testfixture.componentInstance.getClickEventFromSideNav).toHaveBeenCalledWith(data);
+    expect(spyMethodEmit).toHaveBeenCalledWith(data);
+    expect(spyMethodGetEmit).toHaveBeenCalledWith(data);
 
   }));
 });
