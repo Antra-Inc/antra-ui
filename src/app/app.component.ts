@@ -59,7 +59,9 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   getClickEventFromSideNav(event: NavLinkNodeFlat): void {
-    this.router.navigate([event.url]);
+    if (event.url) {
+      this.router.navigate([event.url]);
+    }
   }
 
   toggleSideNav(): void {

@@ -22,6 +22,7 @@ import { LogoComponent } from './components/logo/logo.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+// import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     ButtonComponent,
     RaisedButtonComponent,
     LogoComponent,
-    AntraWidgetDirective
+    AntraWidgetDirective,
   ],
 
   imports: [
@@ -67,6 +68,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     ButtonComponent,
     RaisedButtonComponent,
     LogoComponent,
+
   ],
 })
 export class AntraUiModule { }

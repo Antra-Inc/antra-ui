@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavLinkNode, NavLinkNodeFlat } from '../../../../../interface/app.interface';
+import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
 
 @Component({
   selector: 'app-sidenav-example',

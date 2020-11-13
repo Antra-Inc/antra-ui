@@ -13,7 +13,9 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
  * Thanks to Antra-UI you can easily implement SideNav in your own projects, by using one of various, alluring Side Menus.
  *
  * ### Usage
- *  `import { AntraUiModule } from 'antra-ui'`
+ *  `import { AntraUiModule } from 'antra-ui';`
+ *
+ *  `import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';`
  */
 @Component({
   selector: 'antra-sidenavbar',
