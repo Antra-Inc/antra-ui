@@ -18,6 +18,7 @@ import { AntraTreeModule } from './antra-tree/antra-tree.module';
 import { LoginComponent } from './components/login/login.component';
 import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
@@ -31,6 +32,9 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     ButtonComponent,
     RaisedButtonComponent,
   ],
+
+@NgModule({
+  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent, AntraWidgetDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -59,6 +63,9 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     LoginComponent,
     ButtonComponent,
     RaisedButtonComponent,
+    ButtonComponent,
+    RaisedButtonComponent,
+    LogoComponent,
   ],
 })
 export class AntraUiModule {}
