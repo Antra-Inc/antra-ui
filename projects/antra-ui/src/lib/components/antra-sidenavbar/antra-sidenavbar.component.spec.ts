@@ -3,7 +3,7 @@ import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NavLinkNode, NavLinkNodeFlat } from 'projects/antra-ui/src/lib/interfaces/sidenavbar.interface';
-import { AntraSidenavbarComponent } from './antra-sidenavbar.component';
+import { SidenavbarComponent } from './antra-sidenavbar.component';
 import { AntraUiModule } from 'antra-ui';
 
 @Component({
@@ -53,22 +53,19 @@ class TestHostComponent {
   }
 }
 
-describe('AntraSidenavbarComponent', () => {
+describe('SidenavbarComponent', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
 
-  // tslint:disable-next-line: deprecation
   beforeEach( waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AntraSidenavbarComponent,
+        SidenavbarComponent,
         TestHostComponent
       ],
       imports: [AntraUiModule],
       schemas: [NO_ERRORS_SCHEMA]
-    })
-
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -126,7 +123,7 @@ describe('AntraSidenavbarComponent', () => {
     const testfixture = TestBed.createComponent(TestHostComponent);
     testfixture.detectChanges();
 
-    const sidenav = testfixture.debugElement.query(By.directive(AntraSidenavbarComponent));
+    const sidenav = testfixture.debugElement.query(By.directive(SidenavbarComponent));
     testfixture.detectChanges();
     console.log('sidenav: ', sidenav);
     // const data = testfixture.componentInstance.sideNavConfig;
@@ -137,7 +134,7 @@ describe('AntraSidenavbarComponent', () => {
 
   xit('shouled emit node after click tree node in the sidenavbar', fakeAsync(() => {
     const testfixture = TestBed.createComponent(TestHostComponent);
-    const sidenav = testfixture.debugElement.query(By.directive(AntraSidenavbarComponent));
+    const sidenav = testfixture.debugElement.query(By.directive(SidenavbarComponent));
 
     spyOn(sidenav.componentInstance.listOptionClicked, 'emit');
     // spyOn(testfixture.componentInstance, 'getClickEventFromSideNav');

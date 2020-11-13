@@ -3,7 +3,7 @@
     containerClass="sidenav-container"
     sideNavBackground="url('https://picsum.photos/600/600?random=1')"
     sideNavTextColor="#7fff00"
-    isOpen="isOpen"
+    [isOpen]="isOpen"
 
     [sideNavConfig]="sideNavConfig"
     (listOptionClicked)="getClickEventFromSideNav($event)"

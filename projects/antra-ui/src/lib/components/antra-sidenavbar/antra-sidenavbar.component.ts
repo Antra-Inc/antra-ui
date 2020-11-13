@@ -8,7 +8,7 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
   templateUrl: './antra-sidenavbar.component.html',
   styleUrls: ['./antra-sidenavbar.component.scss']
 })
-export class AntraSidenavbarComponent implements OnInit {
+export class SidenavbarComponent implements OnInit {
 
   isExpanded = false;
 
