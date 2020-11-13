@@ -26,15 +26,13 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
 
 @NgModule({
   declarations: [
-    AntraWidgetDirective,
-    PasswordPatternDirective,
-    LoginComponent,
     ButtonComponent,
     RaisedButtonComponent,
+    LogoComponent,
+    LoginComponent,
+    AntraWidgetDirective,
+    PasswordPatternDirective,
   ],
-
-@NgModule({
-  declarations: [ButtonComponent, RaisedButtonComponent, LogoComponent, AntraWidgetDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

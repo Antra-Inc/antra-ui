@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ButtonPageComponent } from './components/pages/button-page/button-page.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { LogoPageComponent } from './components/pages/logo-page/logo-page.component';
 import { RaisedButtonPageComponent } from './components/pages/raised-button-page/raised-button-page.component';
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';

@@ -1,0 +1,53 @@
+<div antraWidget class="form">
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
+    <div class="form-group">
+      <label><b>Email Address</b></label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        [(ngModel)]="loginModel.email"
+        name="email"
+        #email="ngModel"
+        required
+        email
+      />
+      <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.required">
+        {{ emailAddressValidationMessage[0] }}
+      </span>
+      <span class="text-danger" *ngIf="email.touched && email.errors?.email">
+        {{ emailAddressValidationMessage[1] }}
+      </span>
+    </div>
+    <div class="form-group">
+      <label><b>Password</b></label>
+      <input
+        matInput
+        type="password"
+        class="form-control"
+        [(ngModel)]="loginModel.password"
+        name="password"
+        #password="ngModel"
+        antraPasswordPattern
+        required
+      />
+      <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.required">
+        {{ passwordValidationMessage[0] }}
+      </span>
+      <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
+        {{ passwordValidationMessage[1] }}
+      </span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn">LOGIN</button>
+    </div>
+    <div align="right">
+      <b>Forgot Password</b>
+    </div>
+    <hr />
+    <div>
+      <b>Login using</b>
+    </div>
+    <div class="form-group"><button>Gmail</button><button>Office 365</button></div>
+  </form>
+</div>
