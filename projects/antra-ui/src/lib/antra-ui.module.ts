@@ -61,14 +61,11 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     AntraListModule,
 
     // Components
-    ButtonComponent,
-    RaisedButtonComponent,
     SidenavbarComponent,
     AntraWidgetDirective,
     ButtonComponent,
     RaisedButtonComponent,
     LogoComponent,
-
   ],
 })
-export class AntraUiModule { }
+export class AntraUiModule {}
