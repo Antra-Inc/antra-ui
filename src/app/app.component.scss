@@ -1,22 +1,24 @@
 .app-container {
   width: 100vw;
   height: 100vh;
+
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+  }
+  
+  .app-drawer-container::ng-deep > .mat-drawer-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  z-index: 1000;
-}
 
-.app-drawer-container::ng-deep > .mat-drawer-container {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-}
