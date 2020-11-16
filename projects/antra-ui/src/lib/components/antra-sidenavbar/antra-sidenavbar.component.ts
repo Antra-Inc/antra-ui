@@ -20,7 +20,7 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
 @Component({
   selector: 'antra-sidenavbar',
   templateUrl: './antra-sidenavbar.component.html',
-  styleUrls: ['./antra-sidenavbar.component.scss']
+  styleUrls: ['./antra-sidenavbar.component.scss'],
 })
 /**
  * Example of usage:
@@ -52,10 +52,7 @@ export class SidenavbarComponent implements OnInit {
    * Set the side open or close
    */
   @Input() isOpen = true;
-  /**
-   * Customrize sidenav container style
-   */
-  @Input() containerClass = '';
+
   /**
    * Customrize tree nodes, enables to implement more advanced content categorization
    */
@@ -66,9 +63,9 @@ export class SidenavbarComponent implements OnInit {
    */
   @Output() listOptionClicked = new EventEmitter();
 
-   /**
-    * @ignore
-    */
+  /**
+   * @ignore
+   */
   // tslint:disable-next-line: variable-name
   private _transformer = (node: NavLinkNode, level: number) => {
     return {
@@ -78,18 +75,18 @@ export class SidenavbarComponent implements OnInit {
       icon: node.icon,
       level,
     };
-  }
-   /**
-    * @ignore
-    */
+  };
+  /**
+   * @ignore
+   */
   // tslint:disable-next-line: member-ordering
   treeControl = new FlatTreeControl<NavLinkNodeFlat>(
     (node) => node.level,
     (node) => node.expandable
   );
-   /**
-    * @ignore
-    */
+  /**
+   * @ignore
+   */
   // tslint:disable-next-line: member-ordering
   treeFlattener = new MatTreeFlattener(
     this._transformer,
@@ -97,24 +94,24 @@ export class SidenavbarComponent implements OnInit {
     (node) => node.expandable,
     (node) => node.children
   );
-   /**
-    * @ignore
-    */
+  /**
+   * @ignore
+   */
   // tslint:disable-next-line: member-ordering
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-   /**
-    * @ignore
-    */
-  constructor() { }
-   /**
-    * @ignore
-    */
+  /**
+   * @ignore
+   */
+  constructor() {}
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.dataSource.data = this.sideNavConfig;
   }
-   /**
-    * @ignore
-    */
+  /**
+   * @ignore
+   */
   hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
 
   /**
@@ -151,5 +148,4 @@ export class SidenavbarComponent implements OnInit {
   handleTreeNodeToggle(node: NavLinkNodeFlat): void {
     this.treeControl.toggle(node);
   }
-
 }
