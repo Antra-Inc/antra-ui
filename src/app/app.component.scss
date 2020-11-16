@@ -1,16 +1,6 @@
-.app-container::ng-deep > .mat-drawer-container {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  height: 100%;
-}
-
-.app-sidenav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
+.app-container {
+  width: 100vw;
+  height: 100vh;
 }
 
 .app-header {
@@ -22,32 +12,11 @@
   z-index: 1000;
 }
 
-.app-footer {
-  z-index: 999;
+.app-drawer-container::ng-deep > .mat-drawer-container {
   position: fixed;
-  bottom: 0;
+  top: 60px;
   left: 0;
   right: 0;
-  height: 10px;
-  background-color: blue;
-}
-
-.antra-tree-invisible {
-  display: none;
-}
-
-.main-container {
-  height: 100vh;
-  width: 100vw;
-}
-
-.sideNavBar-container {
-  display: fixed; 
-  top: 60px; 
-  height: calc(100% - 60px);
-}
-
-.sideNav-content-container {
-  display: fixed; 
-  left: 65px;
+  bottom: 0;
+  width: 100%;
 }

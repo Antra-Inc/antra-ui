@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="app-container">
   <mat-toolbar class="app-header" color="primary">
     <button mat-icon-button (click)="toggleSideNav()">
       <mat-icon>menu</mat-icon>
@@ -6,20 +6,17 @@
     <span>Antra-ui</span>
   </mat-toolbar>
 
-  <div class="sideNavBar-container">
-    <antra-sidenavbar
-      class="app-container"
-      [sideNavConfig]="sideNavConfig"
-      [sideNavBackground]="''"
-      [sideNavTextColor]="''"
-      [sidenavMode]="'side'"
-      (listOptionClicked)="getClickEventFromSideNav($event)"
-      [isOpen]="isOpen"
-    >
-      <div class="sideNav-content-container">
-        <router-outlet></router-outlet>
-      </div>
-      
-    </antra-sidenavbar>
-  </div>
+  <antra-sidenavbar
+    class="app-drawer-container"
+    [sideNavConfig]="sideNavConfig"
+    [sideNavBackground]="'gray'"
+    [sideNavTextColor]="''"
+    [sidenavMode]="'side'"
+    (listOptionClicked)="getClickEventFromSideNav($event)"
+    [isOpen]="isOpen"
+  >
+    <div class="sideNav-content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </antra-sidenavbar>
 </div>
