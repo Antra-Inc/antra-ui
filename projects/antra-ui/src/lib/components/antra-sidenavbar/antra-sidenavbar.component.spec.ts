@@ -144,7 +144,7 @@ describe('SidenavbarComponent', () => {
     expect(sidenav.componentInstance.isOpen).toBe(false);
   }));
 
-  it('shouled emit node after click tree node in the sidenavbar', waitForAsync(() => {
+  it('should emit node after click tree node in the sidenavbar', waitForAsync(() => {
     const sidenav = fixture.debugElement.query(By.directive(SidenavbarComponent));
     const spyMethodEmit = spyOn(sidenav.componentInstance.listOptionClicked, 'emit').and.callThrough();
     const spyMethodGetEmit = spyOn(fixture.componentInstance, 'getClickEventFromSideNav').and.callThrough();

@@ -9,39 +9,26 @@ import { NavLinkNodeFlat, NavLinkNode } from 'src/app/interface/app.interface';
 })
 export class SidenavPageComponent {
   htmlSource = ` <antra-sidenavbar
-    containerClass="sidenav-container"
+    class="sidenav-container"
     sideNavBackground="url('https://picsum.photos/600/600?random=1')"
     sideNavTextColor="#7fff00"
-    isOpen="isOpen"
-
+    [isOpen]="isOpen"
     [sideNavConfig]="sideNavConfig"
     (listOptionClicked)="getClickEventFromSideNav($event)"
   >
-
-    <div class="sideNav-content-container">
-      <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
-      <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
-      <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
-      <router-outlet></router-outlet>
-    </div>
-
+    <button type="button" mat-raised-button (click)="toggleSideNav()">Toggle sidenav</button>
+    <h1 *ngIf="optionInSideNav !== ''">{{ optionInSideNav }} be clicked.</h1>
+    <h1 *ngIf="optionInSideNav === ''">Select an optione.</h1>
+    <router-outlet></router-outlet>
   </antra-sidenavbar>
   `;
 
-  scssSource = ` ::ng-deep .sidenav-container {
+  scssSource = `  // customize container
+  .sidenav-container::ng-deep > .mat-drawer-container {
     width: 500px;
     height: 300px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     padding: 0;
-    box-sizing: border-box;
-  }
-  .sideNavBar-container {
-    padding-left: 10px;
-    margin: 10px;
-  }
-  .sideNav-content-container {
-    padding-left: 10px;
-    margin-left: 250px;
   }
   `;
 

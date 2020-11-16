@@ -2,27 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
 
-const SIDENAV_DATA: NavLinkNode[] = [
-  {
-    name: 'Buttons',
-
-    children: [
-      { name: 'ButtonComponent', url: 'components/button' },
-      { name: 'RaisedButtonComponent', url: 'components/raised-button' },
-    ],
-  },
-  {
-    name: 'Widgets',
-
-    children: [{ name: 'WidgetComponent', url: 'components/widget' }],
-  },
-  {
-    name: 'Logo',
-
-    children: [{ name: 'LogoComponent', url: 'components/logo' }],
-  },
-];
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,7 +12,7 @@ export class AppComponent {
   sideNavConfig: NavLinkNode[] = [
     {
       name: 'Buttons',
-      icon: 'assignment',
+      icon: 'outbond',
       children: [
         { name: 'ButtonComponent', url: 'components/button' },
         { name: 'RaisedButtonComponent', url: 'components/raised-button' },
@@ -41,8 +20,18 @@ export class AppComponent {
     },
     {
       name: 'SideNav',
-      icon: 'folder_shared',
-      children: [{ name: 'Reusable SideNav Bar', url: 'components/sidenav' }],
+      icon: 'chrome_reader_mode',
+      children: [{ name: 'SidenavbarComponent', url: 'components/sidenav' }],
+    },
+    {
+      name: 'Widgets',
+      icon: 'featured_play_list',
+      children: [{ name: 'WidgetComponent', url: 'components/widget' }],
+    },
+    {
+      name: 'Logo',
+      icon: 'fingerprint',
+      children: [{ name: 'LogoComponent', url: 'components/logo' }],
     },
   ];
 

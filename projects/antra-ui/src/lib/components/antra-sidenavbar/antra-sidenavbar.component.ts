@@ -4,11 +4,13 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interface';
 
 /**
- * `antra-sidenavbar` is a vertical navigation component which apart from traditional, text links, might embed icons.
+ * `antra-sidenavbar` is a mat-drawer-container with a vertical navigation component which apart from traditional, 
+ * text links, might embed icons.
  *
  * By virtue of its clarity and simplicity, it remarkably increases the User Experience.
  * It allows you to navigate through small applications as well as vast portals swiftly.
- * Its multiple link embedding functionalities enables you to implement more advanced content categorization, which is almost essential within bigger projects.
+ * Its multiple link embedding functionalities enables you to implement more advanced content categorization, 
+ * which is almost essential within bigger projects.
  *
  * Thanks to Antra-UI you can easily implement SideNav in your own projects, by using one of various, alluring Side Menus.
  *
@@ -28,38 +30,38 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
  */
 export class SidenavbarComponent implements OnInit {
   /**
-   * Value of control sidenavbar stretch;
+   * Value of control Sidenav stretch, when isExpanded = true, the Sidenav should be expended;
    */
   isExpanded = false;
 
   /**
-   * Customrize the sidenav text color;
+   * Customrize the Sidenav text color;
    */
   @Input() sideNavTextColor = 'red';
   /**
-   * Customrize the sidenav sidenavbar color
+   * Customrize the Sidenav background;
    */
   @Input() sideNavBackground = '';
   /**
-   * Set sidenav mode
+   * Set mode of the Sidenav, the default mode is side;
    */
   @Input() sidenavMode: 'over' | 'push' | 'side' = 'side';
   /**
-   * Set the subnode left padding
+   * Set the tree node left padding;
    */
   @Input() treeNodePaddingIndent = '0px';
   /**
-   * Set the side open or close
+   * Set the Sidenav open or close;
    */
   @Input() isOpen = true;
 
   /**
-   * Customrize tree nodes, enables to implement more advanced content categorization
+   * Customrize tree nodes, enables to implement more advanced content categorization;
    */
   @Input() sideNavConfig: NavLinkNode[] = [];
 
   /**
-   * Event emiter, use to hold node info
+   * Event emiter, use to hold node info;
    */
   @Output() listOptionClicked = new EventEmitter();
 
@@ -121,13 +123,6 @@ export class SidenavbarComponent implements OnInit {
   // tslint:disable-next-line: typedef
   handleListOnClick(node: NavLinkNodeFlat) {
     this.listOptionClicked.emit(node);
-  }
-
-  /**
-   * Control sidenav expand
-   */
-  handleExpanded(): void {
-    this.isExpanded = !this.isExpanded;
   }
   /**
    * Handle mouse leave
