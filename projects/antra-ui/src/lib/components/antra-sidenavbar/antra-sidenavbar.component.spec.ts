@@ -9,7 +9,6 @@ import { AntraUiModule } from '../../antra-ui.module';
 @Component({
   template: `
     <antra-sidenavbar
-      [containerClass]="containerClass"
       [sideNavBackground]="sideNavBackground"
       [sideNavTextColor]="sideNavTextColor"
       [isOpen]="isOpen"
@@ -25,7 +24,6 @@ import { AntraUiModule } from '../../antra-ui.module';
   `,
 })
 class TestHostComponent {
-  containerClass = 'sidenav-container';
   sideNavBackground = 'green';
   sideNavTextColor = '#7fff00';
   optionInSideNav = '';
@@ -110,15 +108,6 @@ describe('SidenavbarComponent', () => {
 
     const matTree = fixture.debugElement.query(By.css('mat-tree'));
     expect(matTree.nativeElement.style.background).toBe('blue');
-  });
-
-  it('should use the correct class for the sideNav after customize the containerClass.', () => {
-    const sidnav = fixture.debugElement.query(By.directive(SidenavbarComponent));
-    sidnav.componentInstance.containerClass = 'sidenav-container';
-    fixture.detectChanges();
-
-    const matDrawerContainer = fixture.debugElement.query(By.css('mat-drawer-container'));
-    expect(matDrawerContainer.nativeElement.getAttribute('class')).toContain('sidenav-container');
   });
 
   it('should get tree node config data after customize the sideNavConfig attribute ', waitForAsync(() => {
