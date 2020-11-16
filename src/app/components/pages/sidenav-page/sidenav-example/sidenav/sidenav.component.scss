@@ -1,0 +1,7 @@
+// customize container
+.drawer-container::ng-deep > .mat-drawer-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0;
+}

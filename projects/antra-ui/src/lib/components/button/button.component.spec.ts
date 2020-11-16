@@ -6,7 +6,13 @@ import { ButtonComponent } from './button.component';
 import { AntraUiModule } from '../../antra-ui.module';
 
 @Component({
-  template: ` <antra-button [btnColor]="btnColor" [btnText]="btnText" [disabled]="disabled"> </antra-button>`,
+  template: `
+    <antra-button
+      [btnColor]="btnColor"
+      [btnText]="btnText"
+      [disabled]="disabled">
+    </antra-button>
+  `,
 })
 class TestHostComponent {
   btnColor = 'primary';
