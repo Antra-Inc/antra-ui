@@ -50,20 +50,19 @@ describe('ButtonComponent', () => {
     component.disabled = false;
     fixture.detectChanges();
     const btnElement = fixture.nativeElement.querySelector('button');
-    fixture.detectChanges();
     expect(btnElement.className).toContain('mat-button');
     expect(btnElement.className).toContain('mat-primary');
     expect(btnElement.className).not.toContain('mat-button-disabled');
     expect(btnElement.textContent.trim()).toBe('primary btn');
 
     // inputs two
-    component.btnText = 'secondary btn';
-    component.btnColor = 'secondary';
+    component.btnText = 'accent btn';
+    component.btnColor = 'accent';
     component.disabled = true;
     fixture.detectChanges();
     expect(btnElement.className).toContain('mat-button');
-    expect(btnElement.className).toContain('mat-secondary');
+    expect(btnElement.className).toContain('mat-accent');
     expect(btnElement.className).toContain('mat-button-disabled');
-    expect(btnElement.textContent.trim()).toBe('secondary btn');
+    expect(btnElement.textContent.trim()).toBe('accent btn');
   });
 });
