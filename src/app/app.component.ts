@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavLinkNode } from './interface/app.interface';
+import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
 
 const SIDENAV_DATA: NavLinkNode[] = [
   {
@@ -23,20 +23,12 @@ const SIDENAV_DATA: NavLinkNode[] = [
   },
 ];
 
-interface NavLinkNodeFlat {
-  expandable: boolean;
-  name: string;
-  url: string;
-  level: number;
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   isOpen = true;
   sideNavConfig: NavLinkNode[] = [
     {
@@ -50,9 +42,7 @@ export class AppComponent {
     {
       name: 'SideNav',
       icon: 'folder_shared',
-      children: [
-        { name: 'Reusable SideNav Bar', url: 'components/sidenav' },
-      ],
+      children: [{ name: 'Reusable SideNav Bar', url: 'components/sidenav' }],
     },
   ];
 
