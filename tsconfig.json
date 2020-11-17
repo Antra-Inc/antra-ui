@@ -12,9 +12,12 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
       "antra-ui": ["dist/antra-ui"],
       "antra-ui/*": ["dist/antra-ui/*"]
-    }
+    }    
   }
 }
