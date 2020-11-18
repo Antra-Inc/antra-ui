@@ -3,21 +3,26 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-progress-spinner-page',
   templateUrl: './progress-spinner-page.component.html',
-  styleUrls: ['./progress-spinner-page.component.scss']
+  styleUrls: ['./progress-spinner-page.component.scss'],
 })
 export class ProgressSpinnerPageComponent implements OnInit {
   htmlSource = `<div class="example-content">
   <h4>Default Style:</h4>
-  <antra-progress-spinner></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="50"></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="75"></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="100"></antra-progress-spinner>
+  <div class="progress-circle-container-1">
+    <antra-progress-spinner></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="50"></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="75"></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="100"></antra-progress-spinner>
+  </div>
   <h4>Customized Style:</h4>
-  <antra-progress-spinner [radius]="25" class="customized"></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="50" [radius]="25" class="customized"></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="75" [radius]="25" class="customized"></antra-progress-spinner>
-  <antra-progress-spinner [percentage]="100" [radius]="25" class="customized"></antra-progress-spinner>
+  <div class="progress-circle-container-2">
+    <antra-progress-spinner [radius]="25" class="customized"></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="50" [radius]="25" class="customized"></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="75" [radius]="25" class="customized"></antra-progress-spinner>
+    <antra-progress-spinner [percentage]="100" [radius]="25" class="customized"></antra-progress-spinner>
+  </div>
 </div>
+
 `;
   scssSource = `.example-content {
     padding: 10px 0;
@@ -26,30 +31,44 @@ export class ProgressSpinnerPageComponent implements OnInit {
       margin-bottom: 10px;
     }
   }
+  .progress-circle-container-1 {
+    position: relative;
+    width: 1200px;
+    height: 150px;
+    background: #0b82c2;
+    z-index: 1000;
+  }
+  .progress-circle-container-2 {
+    position: relative;
+    width: 1200px;
+    height: 150px;
+    background: #11c20b;
+    z-index: 1000;
+  }
   .customized::ng-deep .progress-circle-properites {
     stroke-width: 6;
-    stroke: orange;
+    stroke: black;
   }
   .customized::ng-deep .progress-circle-1to50percent {
     stroke-width: 6;
-    stroke: blue;
+    stroke: rgb(128, 0, 60);
   }
   .customized::ng-deep .progress-circle-51to80percent {
     stroke-width: 6;
-    stroke: green;
+    stroke: blue;
   }
   .customized::ng-deep .progress-circle-81to100percent {
     stroke-width: 6;
-    stroke:yellow;
+    stroke: yellow;
   }
   .customized::ng-deep circle {
-    fill: #53022b73;
+    fill: none;
   }
   .customized::ng-deep .textStyle {
     font-family: 'Arial';
-    font-size:11px;
+    font-size: 11px;
     font-weight: 600;
-    fill:rgb(14, 13, 13);
+    fill: rgb(14, 13, 13);
   }
   `;
   tsSource = `import { Component, OnInit } from '@angular/core';
@@ -69,9 +88,7 @@ export class ProgressSpinnerPageComponent implements OnInit {
   }
 
 `;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

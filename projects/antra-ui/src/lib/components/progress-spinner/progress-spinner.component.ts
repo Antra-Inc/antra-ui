@@ -20,14 +20,14 @@ export class ProgressSpinnerComponent implements OnInit {
   public strokeDashoffset = 0;
   public circumference: number;
 
-/**
- * @ignore
- */
+  /**
+   * @ignore
+   */
   constructor() {}
 
-/**
- * @ignore
- */
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.circumference = 2 * Math.PI * this.radius;
     const offset = this.circumference - (this.percentage / 100) * this.circumference;
