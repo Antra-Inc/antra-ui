@@ -1,0 +1,47 @@
+<mat-drawer-container autosize>
+  <mat-drawer
+    #drawer
+    [mode]="sidenavMode"
+    [opened]="isOpen"
+    class="sidenavbar-sidenav"
+    [ngStyle]="{ background: sideNavBackground }"
+    [ngClass]="{ sidenavopen: isExpanded }"
+    (mouseenter)="handleMouseEnter()"
+    (mouseleave)="handleMouseLeave()"
+    color="primary"
+  >
+    <mat-nav-list>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [ngStyle]="{ background: sideNavBackground }">
+        <mat-tree-node
+          [ngStyle]="{ display: isExpanded ? 'block' : 'none' }"
+          *matTreeNodeDef="let node"
+          matTreeNodePadding
+          [matTreeNodePaddingIndent]="treeNodePaddingIndent"
+        >
+          <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
+            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <span mat-line>{{ node.name }}</span>
+          </mat-list-item>
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
+          <mat-list-item
+            (click)="handleTreeNodeToggle(node); handleListOnClick(node)"
+            [attr.aria-label]="'Toggle ' + node.name"
+            [ngStyle]="{ color: sideNavTextColor }"
+          >
+            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <mat-icon *ngIf="isExpanded">
+              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+            <span mat-line *ngIf="isExpanded">{{ node.name }}</span>
+          </mat-list-item>
+        </mat-tree-node>
+      </mat-tree>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content autosize>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>
