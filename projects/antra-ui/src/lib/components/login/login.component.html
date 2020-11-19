@@ -1,0 +1,61 @@
+<div antraWidget class="form">
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
+    <div class="form-group">
+      <input
+        matInput
+        placeholder="Email Address"
+        type="text"
+        class="form-control"
+        [(ngModel)]="loginModel.email"
+        name="email"
+        #email="ngModel"
+        required
+        email
+      />
+      <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.required">
+        {{ emailAddressValidationMessage[0] }}
+      </span>
+      <span class="text-danger" *ngIf="email.touched && email.errors?.email">
+        {{ emailAddressValidationMessage[1] }}
+      </span>
+    </div>
+    <div class="form-group">
+      <input
+        matInput
+        placeholder="Password"
+        type="password"
+        class="form-control"
+        [(ngModel)]="loginModel.password"
+        name="password"
+        #password="ngModel"
+        antraPasswordPattern
+        required
+      />
+      <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.required">
+        {{ passwordValidationMessage[0] }}
+      </span>
+      <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
+        {{ passwordValidationMessage[1] }}
+      </span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">LOGIN</button>
+    </div>
+    <div align="right" class="margin-top">
+      <b class="light-color">Forgot Password </b>
+    </div>
+    <hr />
+    <div class="margin-top">
+      <b class="light-color">Login using</b>
+    </div>
+
+    <table width="100%">
+      <tr>
+        <td width="50%">
+          <button class="btn btn-danger">Gmail</button>
+        </td>
+        <td width="50%" align="right"><button class="btn btn-warning">Office 365</button></td>
+      </tr>
+    </table>
+  </form>
+</div>

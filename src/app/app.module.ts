@@ -12,6 +12,8 @@ import { RaisedButtonExampleComponent } from './components/pages/raised-button-p
 import { ExampleDocComponent } from './components/example-doc/example-doc.component';
 import { SidenavPageComponent } from './components/pages/sidenav-page/sidenav-page.component';
 import { SidenavComponent } from './components/pages/sidenav-page/sidenav-example/sidenav/sidenav.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { LoginExampleComponent } from './components/pages/login-page/login-example/login-example.component';
 import { WidgetExampleComponent } from './components/pages/widget-page/widget-example/widget-example.component';
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { LogoPageComponent } from './components/pages/logo-page/logo-page.component';
@@ -27,6 +29,8 @@ import { LogoExampleComponent } from './components/pages/logo-page/logo-example/
     RaisedButtonExampleComponent,
     SidenavPageComponent,
     SidenavComponent,
+    LoginPageComponent,
+    LoginExampleComponent,
     WidgetPageComponent,
     WidgetExampleComponent,
     LogoPageComponent,

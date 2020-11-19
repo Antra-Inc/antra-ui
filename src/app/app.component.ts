@@ -1,6 +1,41 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
+import { MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource } from '@angular/material/tree';
+import { NavLinkNode } from './interface/app.interface';
+
+const SIDENAV_DATA: NavLinkNode[] = [
+  {
+    name: 'Buttons',
+
+    children: [
+      { name: 'ButtonComponent', url: 'components/button' },
+      { name: 'RaisedButtonComponent', url: 'components/raised-button' },
+    ],
+  },
+  {
+    name: 'Widgets',
+
+    children: [{ name: 'WidgetComponent', url: 'components/widget' }],
+  },
+  {
+    name: 'Logo',
+
+    children: [{ name: 'LogoComponent', url: 'components/logo' }],
+  },
+  {
+    name: 'Login',
+
+    children: [{ name: 'LoginComponent', url: 'components/login' }],
+  },
+];
+
+interface NavLinkNodeFlat {
+  expandable: boolean;
+  name: string;
+  url: string;
+  level: number;
+}
 
 @Component({
   selector: 'app-root',
