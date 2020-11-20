@@ -18,8 +18,8 @@ import { WidgetExampleComponent } from './components/pages/widget-page/widget-ex
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { LogoPageComponent } from './components/pages/logo-page/logo-page.component';
 import { LogoExampleComponent } from './components/pages/logo-page/logo-example/logo-example.component';
-import { SearchInputBoxPageComponent } from './components/pages/search-input-box-page/search-input-box-page.component';
-import { SearchInputBoxExampleComponent } from './components/pages/search-input-box-page/search-input-box-example/search-input-box-example.component';
+import { GlobalSearchPageComponent } from './components/pages/global-search-page/global-search-page.component';
+import { GlobalSearchExampleComponent } from './components/pages/global-search-page/global-search-example/global-search-example.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +37,8 @@ import { SearchInputBoxExampleComponent } from './components/pages/search-input-
     WidgetExampleComponent,
     LogoPageComponent,
     LogoExampleComponent,
-    SearchInputBoxPageComponent,
-    SearchInputBoxExampleComponent,
+    GlobalSearchPageComponent,
+    GlobalSearchExampleComponent,
   ],
   imports: [AntraUiModule, AppRoutingModule, HighlightModule],
   providers: [

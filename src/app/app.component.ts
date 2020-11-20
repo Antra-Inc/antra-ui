@@ -39,9 +39,9 @@ export class AppComponent {
       children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
     },
     {
-      name: 'Search Input Box',
+      name: 'Global Search',
       icon: 'search',
-      children: [{ name: 'SearchInputBoxComponent', url: 'components/search-input-box' }],
+      children: [{ name: 'GlobalSearchComponent', url: 'components/global-search' }],
     },
   ];
 

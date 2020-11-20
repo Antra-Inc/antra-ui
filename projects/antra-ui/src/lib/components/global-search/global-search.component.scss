@@ -1,0 +1,23 @@
+input {
+    border: 1px solid grey;
+    border-radius: 25px;
+    font: inherit;
+    font-size: 18px;
+    height: 38px;
+    padding: 5px 50px;
+    width: 490px;
+
+    @media (max-width: 960px) {
+        width: 100%;
+    }
+}
+
+.material-icons {
+    color: grey;
+    font-size: 30px;
+    left: 29px;
+    line-height: 22px;
+    position: absolute;
+    top: 121px;
+}
+

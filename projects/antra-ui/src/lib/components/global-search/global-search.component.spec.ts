@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchInputBoxComponent } from './search-input-box.component';
+import { GlobalSearchComponent } from './global-search.component';
 
-describe('SearchInputBoxComponent', () => {
-  let component: SearchInputBoxComponent;
-  let fixture: ComponentFixture<SearchInputBoxComponent>;
+describe('GlobalSearchComponent', () => {
+  let component: GlobalSearchComponent;
+  let fixture: ComponentFixture<GlobalSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchInputBoxComponent ]
+      declarations: [ GlobalSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchInputBoxComponent);
+    fixture = TestBed.createComponent(GlobalSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

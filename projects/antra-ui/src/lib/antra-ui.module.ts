@@ -15,15 +15,15 @@ import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
 import { SidenavbarComponent } from './components/antra-sidenavbar/antra-sidenavbar.component';
 
+// directives
+import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+
 // components
 import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
-import { SearchInputBoxComponent } from './components/search-input-box/search-input-box.component';
-
-// directives
-import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+import { GlobalSearchComponent } from './components/global-search/global-search.component';
 
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
@@ -37,7 +37,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     LogoComponent,
     ProgressSpinnerComponent,
     AntraWidgetDirective,
-    SearchInputBoxComponent,
+    GlobalSearchComponent,
   ],
 
   imports: [
@@ -72,7 +72,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     RaisedButtonComponent,
     ProgressSpinnerComponent,
     LogoComponent,
-    SearchInputBoxComponent,
+    GlobalSearchComponent,
   ],
 })
 export class AntraUiModule {}
