@@ -1,39 +1,4 @@
 import { Component } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource } from '@angular/material/tree';
-import { NavLinkNode } from './interface/app.interface';
-
-const SIDENAV_DATA: NavLinkNode[] = [
-  {
-    name: 'Buttons',
-
-    children: [
-      { name: 'ButtonComponent', url: 'components/button' },
-      { name: 'RaisedButtonComponent', url: 'components/raised-button' },
-    ],
-  },
-  {
-    name: 'Widgets',
-
-    children: [{ name: 'WidgetComponent', url: 'components/widget' }],
-  },
-  {
-    name: 'Logo',
-
-    children: [{ name: 'LogoComponent', url: 'components/logo' }],
-  },
-  {
-    name: 'Login',
-
-    children: [{ name: 'LoginComponent', url: 'components/login' }],
-  },
-];
-
-interface NavLinkNodeFlat {
-  expandable: boolean;
-  name: string;
-  url: string;
-  level: number;
-}
 import { Router } from '@angular/router';
 import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
 
@@ -72,6 +37,11 @@ export class AppComponent {
       name: 'Progress Spinner',
       icon: 'donut_large',
       children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
+    },
+    {
+      name: 'Login',
+      icon: 'lock_open',
+      children: [{ name: 'LoginComponent', url: 'components/login' }],
     },
   ];
 

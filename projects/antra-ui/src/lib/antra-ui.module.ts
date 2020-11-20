@@ -35,7 +35,6 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     LoginComponent,
     AntraWidgetDirective,
     PasswordPatternDirective,
-  ],
     SidenavbarComponent,
     ButtonComponent,
     RaisedButtonComponent,
