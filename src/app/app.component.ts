@@ -1,4 +1,3 @@
-import { FlatTreeControl, NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource } from '@angular/material/tree';
 import { NavLinkNode } from './interface/app.interface';
@@ -35,6 +34,8 @@ interface NavLinkNodeFlat {
   url: string;
   level: number;
 }
+import { Router } from '@angular/router';
+import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
 
 @Component({
   selector: 'app-root',
@@ -42,35 +43,47 @@ interface NavLinkNodeFlat {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  // tslint:disable-next-line: variable-name
-  private _transformer = (node: NavLinkNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      url: node.url,
-      level,
-    };
-  };
+  isOpen = true;
+  sideNavConfig: NavLinkNode[] = [
+    {
+      name: 'Buttons',
+      icon: 'outbond',
+      children: [
+        { name: 'ButtonComponent', url: 'components/button' },
+        { name: 'RaisedButtonComponent', url: 'components/raised-button' },
+      ],
+    },
+    {
+      name: 'SideNav',
+      icon: 'chrome_reader_mode',
+      children: [{ name: 'SidenavbarComponent', url: 'components/sidenav' }],
+    },
+    {
+      name: 'Widgets',
+      icon: 'featured_play_list',
+      children: [{ name: 'WidgetComponent', url: 'components/widget' }],
+    },
+    {
+      name: 'Logo',
+      icon: 'fingerprint',
+      children: [{ name: 'LogoComponent', url: 'components/logo' }],
+    },
+    {
+      name: 'Progress Spinner',
+      icon: 'donut_large',
+      children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
+    },
+  ];
 
-  // tslint:disable-next-line: member-ordering
-  treeControl = new FlatTreeControl<NavLinkNodeFlat>(
-    (node) => node.level,
-    (node) => node.expandable
-  );
+  constructor(private router: Router) {}
 
-  // tslint:disable-next-line: member-ordering
-  treeFlattener = new MatTreeFlattener(
-    this._transformer,
-    (node) => node.level,
-    (node) => node.expandable,
-    (node) => node.children
-  );
-  // tslint:disable-next-line: member-ordering
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {
-    this.dataSource.data = SIDENAV_DATA;
-    // this.treeControl.expand(this.treeControl.dataNodes[0]);
+  getClickEventFromSideNav(event: NavLinkNodeFlat): void {
+    if (event.url) {
+      this.router.navigate([event.url]);
+    }
   }
-  hasChild = (_: number, node: NavLinkNodeFlat) => node.expandable;
+
+  toggleSideNav(): void {
+    this.isOpen = !this.isOpen;
+  }
 }

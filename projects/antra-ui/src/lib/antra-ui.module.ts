@@ -13,16 +13,19 @@ import { AntraSidenavModule } from './antra-sidenav/antra-sidenav.module';
 import { AntraTabsModule } from './antra-tabs/antra-tabs.module';
 import { AntraToolbarModule } from './antra-toolbar/antra-toolbar.module';
 import { AntraTreeModule } from './antra-tree/antra-tree.module';
+import { SidenavbarComponent } from './components/antra-sidenavbar/antra-sidenavbar.component';
 
 // components
 import { LoginComponent } from './components/login/login.component';
 import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
+// import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,14 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     AntraWidgetDirective,
     PasswordPatternDirective,
   ],
+    SidenavbarComponent,
+    ButtonComponent,
+    RaisedButtonComponent,
+    LogoComponent,
+    ProgressSpinnerComponent,
+    AntraWidgetDirective,
+  ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,12 +68,16 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     AntraTabsModule,
     AntraTreeModule,
     AntraListModule,
+
+    // Components
+    SidenavbarComponent,
     AntraWidgetDirective,
     LoginComponent,
     ButtonComponent,
     RaisedButtonComponent,
     ButtonComponent,
     RaisedButtonComponent,
+    ProgressSpinnerComponent,
     LogoComponent,
   ],
 })
