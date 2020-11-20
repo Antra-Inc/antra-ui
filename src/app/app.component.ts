@@ -38,6 +38,11 @@ export class AppComponent {
       icon: 'donut_large',
       children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
     },
+    {
+      name: 'Search Input Box',
+      icon: 'search',
+      children: [{ name: 'SearchInputBoxComponent', url: 'components/search-input-box' }],
+    },
   ];
 
   constructor(private router: Router) {}

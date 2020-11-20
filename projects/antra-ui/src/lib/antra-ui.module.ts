@@ -20,9 +20,11 @@ import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { SearchInputBoxComponent } from './components/search-input-box/search-input-box.component';
 
 // directives
 import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.directive';
+
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -35,6 +37,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     LogoComponent,
     ProgressSpinnerComponent,
     AntraWidgetDirective,
+    SearchInputBoxComponent,
   ],
 
   imports: [
@@ -69,6 +72,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     RaisedButtonComponent,
     ProgressSpinnerComponent,
     LogoComponent,
+    SearchInputBoxComponent,
   ],
 })
 export class AntraUiModule {}
