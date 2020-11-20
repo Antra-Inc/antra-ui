@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginExampleComponent implements OnInit {
 
+  actionName: string;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   // tslint:disable-next-line: typedef
-  getActionName(value: string) {
-    console.log(value);
+  getActionName(actionName: string) {
+    this.actionName = actionName;
   }
 }
