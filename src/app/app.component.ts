@@ -33,6 +33,11 @@ export class AppComponent {
       icon: 'fingerprint',
       children: [{ name: 'LogoComponent', url: 'components/logo' }],
     },
+    {
+      name: 'Progress Spinner',
+      icon: 'donut_large',
+      children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
+    },
   ];
 
   constructor(private router: Router) {}

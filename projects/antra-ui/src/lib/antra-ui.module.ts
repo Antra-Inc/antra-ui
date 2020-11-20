@@ -18,6 +18,7 @@ import { SidenavbarComponent } from './components/antra-sidenavbar/antra-sidenav
 // components
 import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
 
 // directives
@@ -32,6 +33,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     ButtonComponent,
     RaisedButtonComponent,
     LogoComponent,
+    ProgressSpinnerComponent,
     AntraWidgetDirective,
   ],
 
@@ -65,6 +67,7 @@ import { AntraWidgetDirective } from './directives/antra-widget/antra-widget.dir
     AntraWidgetDirective,
     ButtonComponent,
     RaisedButtonComponent,
+    ProgressSpinnerComponent,
     LogoComponent,
   ],
 })

@@ -1,0 +1,17 @@
+<svg>
+  <circle class="progress-circle-properites" cx="70" cy="70" [style.r]="radius" stroke-dasharray="0"></circle>
+  <circle
+    class="progress-circle"
+    [ngClass]="{
+      'progress-circle-1to50percent': percentage >= 1 && percentage <= 50,
+      'progress-circle-51to80percent': percentage >= 51 && percentage <= 80,
+      'progress-circle-81to100percent': percentage >= 81 && percentage <= 100
+    }"
+    cx="70"
+    cy="70"
+    [style.r]="radius"
+    [style.strokeDasharray]="circumference"
+    [style.strokeDashoffset]="strokeDashoffset"
+  ></circle>
+  <text x="70" y="74" class="textStyle" text-anchor="middle">{{ percentage + '%' }}</text>
+</svg>
