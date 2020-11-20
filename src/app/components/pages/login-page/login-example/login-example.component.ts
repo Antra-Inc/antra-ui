@@ -12,4 +12,8 @@ export class LoginExampleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line: typedef
+  getActionName(value: string) {
+    console.log(value);
+  }
 }

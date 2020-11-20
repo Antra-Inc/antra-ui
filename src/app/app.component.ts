@@ -29,6 +29,11 @@ export class AppComponent {
       children: [{ name: 'WidgetComponent', url: 'components/widget' }],
     },
     {
+      name: 'Login',
+      icon: 'lock_open',
+      children: [{ name: 'LoginComponent', url: 'components/login' }],
+    },
+    {
       name: 'Logo',
       icon: 'fingerprint',
       children: [{ name: 'LogoComponent', url: 'components/logo' }],
@@ -37,11 +42,6 @@ export class AppComponent {
       name: 'Progress Spinner',
       icon: 'donut_large',
       children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
-    },
-    {
-      name: 'Login',
-      icon: 'lock_open',
-      children: [{ name: 'LoginComponent', url: 'components/login' }],
     },
   ];
 
