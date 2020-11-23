@@ -1,0 +1,39 @@
+circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 1.5s;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-circle-properites {
+  stroke-width: 3;
+  stroke: white;
+}
+
+.progress-circle-1to50percent {
+  stroke-width: 3;
+  stroke: red;
+}
+
+.progress-circle-51to80percent {
+  stroke-width: 3;
+  stroke: rgb(255, 255, 0);
+}
+
+.progress-circle-81to100percent {
+  stroke-width: 3;
+  stroke: rgb(9, 221, 9);
+}
+
+.textStyle {
+  font-family: 'Roboto';
+  font-size: 8px;
+  font-weight: 300;
+  fill: white;
+}

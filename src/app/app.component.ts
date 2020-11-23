@@ -43,6 +43,11 @@ export class AppComponent {
       icon: 'search',
       children: [{ name: 'GlobalSearchComponent', url: 'components/global-search' }],
     },
+  {
+      name: 'Status Circle',
+      icon: 'search',
+      children: [{ name: 'StatusCircleComponent', url: 'components/status-circle' }],
+    },
   ];
 
   constructor(private router: Router) {}

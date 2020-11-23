@@ -7,6 +7,8 @@ import { RaisedButtonPageComponent } from './components/pages/raised-button-page
 import { SidenavPageComponent } from './components/pages/sidenav-page/sidenav-page.component';
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { GlobalSearchPageComponent } from './components/pages/global-search-page/global-search-page.component';
+import { StatusCirclePageComponent } from './components/pages/status-circle-page/status-circle-page.component';
+
 
 const routes: Routes = [
   { path: 'components/button', component: ButtonPageComponent },
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'components/widget', component: WidgetPageComponent },
   { path: 'components/logo', component: LogoPageComponent },
   { path: 'components/global-search', component: GlobalSearchPageComponent },
+  { path: 'components/status-circle', component: StatusCirclePageComponent },
 ];
 
 @NgModule({

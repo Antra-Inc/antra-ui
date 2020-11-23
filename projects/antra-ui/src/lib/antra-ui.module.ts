@@ -24,6 +24,8 @@ import { RaisedButtonComponent } from './components/raised-button/raised-button.
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { GlobalSearchComponent } from './components/global-search/global-search.component';
+import { StatusCircleComponent } from './components/status-circle/status-circle.component';
+
 
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
@@ -38,6 +40,7 @@ import { GlobalSearchComponent } from './components/global-search/global-search.
     ProgressSpinnerComponent,
     AntraWidgetDirective,
     GlobalSearchComponent,
+    StatusCircleComponent,
   ],
 
   imports: [
@@ -73,6 +76,7 @@ import { GlobalSearchComponent } from './components/global-search/global-search.
     ProgressSpinnerComponent,
     LogoComponent,
     GlobalSearchComponent,
+    StatusCircleComponent,
   ],
 })
 export class AntraUiModule {}
