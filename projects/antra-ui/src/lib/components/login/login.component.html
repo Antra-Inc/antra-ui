@@ -39,10 +39,10 @@
       </span>
     </div>
     <div class="form-group">
-      <button type="submit" (click)="sendActionName('LOGIN')" class="btn btn-primary">LOGIN</button>
+      <button type="submit" class="btn btn-primary">LOGIN</button>
     </div>
     <div align="right" class="margin-top">
-      <b class="light-color"><a href="" (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</a> </b>
+      <b class="light-color"><span (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</span> </b>
     </div>
     <hr />
     <div class="margin-top">
@@ -54,7 +54,9 @@
         <td width="50%">
           <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">Gmail</button>
         </td>
-        <td width="50%" align="right"><button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">Office 365</button></td>
+        <td width="50%" align="right">
+          <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">Office 365</button>
+        </td>
       </tr>
     </table>
   </form>

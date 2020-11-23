@@ -4,12 +4,12 @@ import { Login } from '../../models/login.model';
 /**
  * `antra-login` component provides a default login interface with email address and password textboxes.
  * Email address textbox does validations of required and valid email address. Password textbox does validations of required.
- * 
- * Note:  
+ *
+ * Note:
  * Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number
- * 
+ *
  * There is Output event named clickEvent, it will captureto end user action name.
- * 
+ *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
  */
@@ -38,8 +38,9 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onSubmit() {
-    alert('Your Login is successfully done ..!!!');
-    console.table(this.loginModel);
+    // alert('Your Login is successfully done ..!!!');
+    // console.table(this.loginModel);
+    this.clickEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
   }
 
   /**
