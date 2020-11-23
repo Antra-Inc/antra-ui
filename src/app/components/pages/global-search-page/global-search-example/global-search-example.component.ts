@@ -12,7 +12,7 @@ export class GlobalSearchExampleComponent implements OnInit {
   ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
-  handleNotify(text: string) {
-    this.searchedText = text;
+  handleNotify(event: string) {
+    this.searchedText = event.toString();
   }
 }
