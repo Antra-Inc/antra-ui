@@ -38,11 +38,6 @@ export class AppComponent {
       icon: 'donut_large',
       children: [{ name: 'ProgressSpinnerComponent', url: 'components/progress-spinner' }],
     },
-    {
-      name: 'Global Search',
-      icon: 'search',
-      children: [{ name: 'GlobalSearchComponent', url: 'components/global-search' }],
-    },
   {
       name: 'Status Circle',
       icon: 'search',

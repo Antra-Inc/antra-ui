@@ -18,8 +18,6 @@ import { WidgetExampleComponent } from './components/pages/widget-page/widget-ex
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { LogoPageComponent } from './components/pages/logo-page/logo-page.component';
 import { LogoExampleComponent } from './components/pages/logo-page/logo-example/logo-example.component';
-import { GlobalSearchPageComponent } from './components/pages/global-search-page/global-search-page.component';
-import { GlobalSearchExampleComponent } from './components/pages/global-search-page/global-search-example/global-search-example.component';
 import { StatusCirclePageComponent } from './components/pages/status-circle-page/status-circle-page.component';
 import { StatusCircleExampleComponent } from './components/pages/status-circle-page/status-circle-example/status-circle-example.component';
 
@@ -41,8 +39,6 @@ import { StatusCircleExampleComponent } from './components/pages/status-circle-p
     WidgetExampleComponent,
     LogoPageComponent,
     LogoExampleComponent,
-    GlobalSearchPageComponent,
-    GlobalSearchExampleComponent,
     StatusCirclePageComponent,
     StatusCircleExampleComponent,
 
