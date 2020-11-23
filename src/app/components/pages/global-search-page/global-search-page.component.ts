@@ -9,8 +9,9 @@ export class GlobalSearchPageComponent implements OnInit {
   htmlSource = `
   <div class="example-content">
   <h4>Default Style:</h4>
-  <antra-global-search></antra-global-search>
-</div>
+  <antra-global-search (notify)="handleNotify($event)"></antra-global-search>
+  <h4>Searched Text: {{searchedText}}</h4>
+  </div>
 `;
   scssSource = `.example-content {
     padding: 10px 0;
@@ -25,11 +26,15 @@ export class GlobalSearchPageComponent implements OnInit {
   @Component({
     selector: 'app-global-search-example',
     templateUrl: './global-search-example.component.html',
-    styleUrls: ['./global-search-example.component.scss']
+    styleUrls: ['./global-search-example.component.scss'],
   })
   export class GlobalSearchExampleComponent implements OnInit {
-    constructor() { }
-    ngOnInit(): void {
+    searchedText: string;
+    constructor() {}
+    ngOnInit(): void {}
+    // tslint:disable-next-line: typedef
+    handleNotify(text: string) {
+      this.searchedText = text;
     }
   }
 `;

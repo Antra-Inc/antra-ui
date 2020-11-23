@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-global-search-example',
   templateUrl: './global-search-example.component.html',
-  styleUrls: ['./global-search-example.component.scss']
+  styleUrls: ['./global-search-example.component.scss'],
 })
 export class GlobalSearchExampleComponent implements OnInit {
+  searchedText: string;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  // tslint:disable-next-line: typedef
+  handleNotify(text: string) {
+    this.searchedText = text;
   }
-
 }
