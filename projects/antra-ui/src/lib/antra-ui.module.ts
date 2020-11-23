@@ -23,7 +23,6 @@ import { ButtonComponent } from './components/button/button.component';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
-import { GlobalSearchComponent } from './components/global-search/global-search.component';
 import { StatusCircleComponent } from './components/status-circle/status-circle.component';
 
 
@@ -39,7 +38,6 @@ import { StatusCircleComponent } from './components/status-circle/status-circle.
     LogoComponent,
     ProgressSpinnerComponent,
     AntraWidgetDirective,
-    GlobalSearchComponent,
     StatusCircleComponent,
   ],
 
@@ -75,7 +73,6 @@ import { StatusCircleComponent } from './components/status-circle/status-circle.
     RaisedButtonComponent,
     ProgressSpinnerComponent,
     LogoComponent,
-    GlobalSearchComponent,
     StatusCircleComponent,
   ],
 })
