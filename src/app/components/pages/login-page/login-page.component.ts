@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
   htmlSource = `<div class="example-content">
-  <antra-login></antra-login>
-</div>`;
-  scssSource = `  .example-content {
+  <antra-login (clickEvent)="getActionName($event)"></antra-login>
+
+  <hr />
+  <h2>
+    {{ actionName }}
+  </h2>
+</div>
+`;
+  scssSource = `.example-content {
     padding: 10px 0;
     & > * {
       margin-right: 10px;
@@ -22,13 +28,17 @@ export class LoginPageComponent implements OnInit {
   @Component({
     selector: 'app-login-example',
     templateUrl: './login-example.component.html',
-    styleUrls: ['./login-example.component.scss']
+    styleUrls: ['./login-example.component.scss'],
   })
   export class LoginExampleComponent implements OnInit {
-    constructor() { }
-    ngOnInit(): void {
+    actionName: string;
+    constructor() {}
+    ngOnInit(): void {}
+    // tslint:disable-next-line: typedef
+    getActionName(details: string) {
+      this.actionName =  details ;
     }
-  }
+  }  
 `;
 
   constructor() {}
