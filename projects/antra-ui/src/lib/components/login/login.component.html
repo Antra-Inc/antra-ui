@@ -44,18 +44,22 @@
     <div align="right" class="margin-top">
       <b class="light-color"><span (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</span> </b>
     </div>
-    <hr />
+    <hr class="light-color" />
     <div class="margin-top">
-      <b class="light-color">Login using</b>
+      <b class="light-color" style="font-weight: bold">Login using</b>
     </div>
 
     <table width="100%">
       <tr>
         <td width="50%">
-          <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">Gmail</button>
+          <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">
+            <img align="left" class="btn-img" src="../assets/svg/gmail.svg" />Gmail
+          </button>
         </td>
         <td width="50%" align="right">
-          <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">Office 365</button>
+          <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">
+            <img align="left" class="btn-img" src="../assets/svg/office.svg" />Office 365
+          </button>
         </td>
       </tr>
     </table>
