@@ -16,9 +16,7 @@ import { Component, Input, OnInit } from '@angular/core';
  */
 export class StatusCircleComponent implements OnInit {
   @Input() percentage = 0;
-  @Input() radius = 15;
-  public strokeDashoffset = 0;
-  public circumference: number;
+  @Input() radius = 4;
 
   /**
    * @ignore
@@ -29,8 +27,5 @@ export class StatusCircleComponent implements OnInit {
    * @ignore
    */
   ngOnInit(): void {
-    this.circumference = 2 * Math.PI * this.radius;
-    const offset = this.circumference - (this.percentage / 100) * this.circumference;
-    this.strokeDashoffset = offset;
   }
 }

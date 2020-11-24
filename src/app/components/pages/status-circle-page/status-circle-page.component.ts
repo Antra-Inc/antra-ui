@@ -8,67 +8,90 @@ import { Component, OnInit } from '@angular/core';
 export class StatusCirclePageComponent implements OnInit {
   htmlSource = `<div class="example-content">
   <h4>Default Style:</h4>
-  <div class="progress-circle-container-1">
-    <antra-progress-spinner></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="50"></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="75"></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="100"></antra-progress-spinner>
+  <div class="status-circle-container-1">
+    <antra-status-circle></antra-status-circle>
+    <antra-status-circle [percentage]="50"></antra-status-circle>
+    <antra-status-circle [percentage]="75"></antra-status-circle>
+    <antra-status-circle [percentage]="100"></antra-status-circle>
   </div>
   <h4>Customized Style:</h4>
-  <div class="progress-circle-container-2">
-    <antra-progress-spinner [radius]="25" class="customized"></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="50" [radius]="25" class="customized"></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="75" [radius]="25" class="customized"></antra-progress-spinner>
-    <antra-progress-spinner [percentage]="100" [radius]="25" class="customized"></antra-progress-spinner>
+  <div class="status-circle-container-2">
+    <antra-status-circle [radius]="8" class="customized-1"></antra-status-circle>
+    <antra-status-circle [percentage]="50" [radius]="8" class="customized-1"></antra-status-circle>
+    <antra-status-circle [percentage]="75" [radius]="8" class="customized-1"></antra-status-circle>
+    <antra-status-circle [percentage]="100" [radius]="8" class="customized-1"></antra-status-circle>
+  </div>
+  <br /><br />
+  <div class="status-circle-container-3">
+    <antra-status-circle [radius]="11" class="customized-2"></antra-status-circle>
+    <antra-status-circle [percentage]="50" [radius]="11" class="customized-2"></antra-status-circle>
+    <antra-status-circle [percentage]="75" [radius]="11" class="customized-2"></antra-status-circle>
+    <antra-status-circle [percentage]="100" [radius]="11" class="customized-2"></antra-status-circle>
   </div>
 </div>
-
 `;
-  scssSource = `.example-content {
+  scssSource = `
+  .example-content {
     padding: 10px 0;
+
     & > * {
       margin-right: 10px;
       margin-bottom: 10px;
     }
   }
-  .progress-circle-container-1 {
+
+  .status-circle-container-1 {
     position: relative;
     width: 1200px;
-    height: 150px;
+    height: 128px;
     background: #0b82c2;
     z-index: 1000;
   }
-  .progress-circle-container-2 {
+  .status-circle-container-2 {
     position: relative;
     width: 1200px;
-    height: 150px;
+    height: 128px;
     background: #11c20b;
     z-index: 1000;
   }
-  .customized::ng-deep .progress-circle-properites {
-    stroke-width: 6;
-    stroke: black;
+  .status-circle-container-3 {
+    position: relative;
+    width: 1200px;
+    height: 128px;
+    background: #c2540b;
+    z-index: 1000;
   }
-  .customized::ng-deep .progress-circle-1to50percent {
-    stroke-width: 6;
-    stroke: rgb(128, 0, 60);
+  .customized-1::ng-deep .status-circle-0percent {
+    fill: black;
   }
-  .customized::ng-deep .progress-circle-51to80percent {
-    stroke-width: 6;
-    stroke: blue;
+  .customized-1::ng-deep .status-circle-1to50percent {
+    fill: rgb(128, 0, 60);
   }
-  .customized::ng-deep .progress-circle-81to100percent {
-    stroke-width: 6;
-    stroke: yellow;
+  .customized-1::ng-deep .status-circle-51to80percent {
+    fill: blue;
   }
-  .customized::ng-deep circle {
-    fill: none;
+  .customized-1::ng-deep .status-circle-81to100percent {
+    fill: yellow;
   }
-  .customized::ng-deep .textStyle {
-    font-family: 'Arial';
-    font-size: 11px;
-    font-weight: 600;
-    fill: rgb(14, 13, 13);
+  .customized-2::ng-deep .status-circle-0percent {
+    fill: rgb(99, 9, 243);
+    stroke: rgb(252, 217, 217);
+    stroke-width: 2;
+  }
+  .customized-2::ng-deep .status-circle-1to50percent {
+    fill: rgb(173, 114, 141);
+    stroke: red;
+    stroke-width: 2;
+  }
+  .customized-2::ng-deep .status-circle-51to80percent {
+    fill: rgb(9, 221, 9);
+    stroke: #ffff00;
+    stroke-width: 2;
+  }
+  .customized-2::ng-deep .status-circle-81to100percent {
+    fill: rgb(255, 0, 119);
+    stroke: #11c20b;
+    stroke-width: 2;
   }
   `;
   tsSource = `import { Component, OnInit } from '@angular/core';

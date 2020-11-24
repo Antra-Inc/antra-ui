@@ -4,11 +4,11 @@ import { AntraUiModule } from '../../antra-ui.module';
 import { StatusCircleComponent } from './status-circle.component';
 
 @Component({
-  template: ` <antra-progress-spinner [percentage]="percentage" [radius]="radius"></antra-progress-spinner> `,
+  template: ` <antra-status-circle [percentage]="percentage" [radius]="radius"></antra-status-circle> `,
 })
 class TestHostComponent {
   percentage = '50';
-  radius = '25';
+  radius = '4';
 }
 
 describe('StatusCircleComponent ', () => {
@@ -34,26 +34,28 @@ describe('StatusCircleComponent ', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have percentage = 50 and radius = 25', () => {
+  it('should have radius = 4', () => {
     component.percentage = '50';
-    component.radius = '25';
+    component.radius = '4';
     fixture.detectChanges();
-    const radiusElement = fixture.nativeElement.querySelector('.progress-circle-1to50percent');
-    const textElement = fixture.nativeElement.querySelector('.textStyle');
-    fixture.detectChanges();
-    expect(textElement.textContent.trim()).toBe('50%');
-    expect(radiusElement.style.r).toContain('25');
+    const radiusElement = fixture.nativeElement.querySelector('.status-circle-1to50percent');
+    expect(radiusElement.style.r).toContain('4');
   });
 
-  it('should have percentage = 100 and radius = 15', () => {
+  it('should have radius = 8', () => {
+    component.percentage = '75';
+    component.radius = '8';
+    fixture.detectChanges();
+    const radiusElement = fixture.nativeElement.querySelector('.status-circle-51to80percent');
+    expect(radiusElement.style.r).toContain('8');
+  });
+
+  it('should have radius = 11', () => {
     component.percentage = '100';
-    component.radius = '15';
+    component.radius = '11';
     fixture.detectChanges();
-    const radiusElement = fixture.nativeElement.querySelector('.progress-circle-81to100percent');
-    const textElement = fixture.nativeElement.querySelector('.textStyle');
-    fixture.detectChanges();
-    expect(textElement.textContent.trim()).toBe('100%');
-    expect(radiusElement.style.r).toContain('15');
+    const radiusElement = fixture.nativeElement.querySelector('.status-circle-81to100percent');
+    expect(radiusElement.style.r).toContain('11');
   });
 });
 

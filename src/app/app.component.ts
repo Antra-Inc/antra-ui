@@ -40,7 +40,7 @@ export class AppComponent {
     },
   {
       name: 'Status Circle',
-      icon: 'search',
+      icon: 'check_circle_outline',
       children: [{ name: 'StatusCircleComponent', url: 'components/status-circle' }],
     },
   ];
