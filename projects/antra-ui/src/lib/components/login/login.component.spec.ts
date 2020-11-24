@@ -49,11 +49,14 @@ describe('LoginComponent', () => {
     expect(btnElement.textContent.trim()).toBe('LOGIN');
   });
 
-  it('should have b element with textcontent Login using ', () => {
+  it('should have b element with textcontent Forgot Password ', () => {
     const boldElement = fixture.nativeElement.querySelector('b');
     expect(boldElement.textContent.trim()).toBe('Forgot Password');
     expect(boldElement.className).toContain('light-color');
   });
+
+  it('should have img element with classname btn-img ', () => {
+    const imgElement = fixture.nativeElement.querySelector('img');
+    expect(imgElement.className).toContain('btn-img');
+  });
 });
-
-
