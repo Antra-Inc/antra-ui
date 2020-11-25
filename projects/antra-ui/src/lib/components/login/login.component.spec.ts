@@ -32,11 +32,11 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have event binding attribute with the name clickEvent', () => {
+  it('should have event binding attribute with the name loginActionEvent', () => {
     const loginElement = fixture.debugElement.query(By.css('antra-login'));
 
     // tslint:disable-next-line: no-unused-expression
-    expect(loginElement.nativeElement.attributes).toContain['clickEvent'];
+    expect(loginElement.nativeElement.attributes).toContain['loginActionEvent'];
   });
 
   it('should have button with text content LOGIN', () => {
@@ -49,9 +49,9 @@ describe('LoginComponent', () => {
     expect(btnElement.textContent.trim()).toBe('LOGIN');
   });
 
-  it('should have b element with textcontent Forgot Password ', () => {
+  it('should have b element with textcontent Login using ', () => {
     const boldElement = fixture.nativeElement.querySelector('b');
-    expect(boldElement.textContent.trim()).toBe('Forgot Password');
+    expect(boldElement.textContent.trim()).toBe('Login using');
     expect(boldElement.className).toContain('light-color');
   });
 
