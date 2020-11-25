@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ɵConsole } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { Login } from '../../models/login.model';
 
 /**
@@ -9,6 +9,9 @@ import { Login } from '../../models/login.model';
  *
  * **Note:**
  * *Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number*
+ *
+ * There are two **Input properties,  emailAddressValidationMessage and passwordValidationMessage**, they are used to assign
+ * custom validation messages to **email address field and password field** from end user.
  *
  * There is an **Output event** named loginActionEvent, it will emit login action names as a string such as **'FORGOTPASSWORD',
  * 'GMAIL' & 'OFFICE365'** based on end user clicks.
@@ -33,15 +36,17 @@ import { Login } from '../../models/login.model';
  * <example-url>http://127.0.0.1:4200/components/login</example-url>
  */
 export class LoginComponent implements OnInit {
-  loginActions = ['FORGOTPASSWORD', 'GMAIL', 'OFFICE365'];
+  // receiving customized validation messages from end user
+  @Input() emailAddressValidationMessage;
+  @Input() passwordValidationMessage;
+
+  // emitting login actions to end user
   @Output() loginActionEvent = new EventEmitter<string>();
 
+  loginActions = ['FORGOTPASSWORD', 'GMAIL', 'OFFICE365'];
+
   loginModel = new Login();
-  emailAddressValidationMessage = ['Email Address is required', 'Please Enter Valid Email Address'];
-  passwordValidationMessage = [
-    'Password is required',
-    'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
-  ];
+
   /**
    * @ignore
    */

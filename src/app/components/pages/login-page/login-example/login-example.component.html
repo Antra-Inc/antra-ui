@@ -1,5 +1,9 @@
 <div class="example-content">
-  <antra-login (loginActionEvent)="getActionName($event)"></antra-login>
+  <antra-login
+    [emailAddressValidationMessage]="emailAddressValidationMsg"
+    [passwordValidationMessage]="passwordValidationMsg"
+    (loginActionEvent)="getActionName($event)"
+  ></antra-login>
 
   <hr />
   <h2>

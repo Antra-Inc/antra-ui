@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginExampleComponent implements OnInit {
   actionName: string;
+
+  emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
+  passwordValidationMsg = [
+    'Password is required',
+    'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
   getActionName(details: string) {
-    this.actionName =  details ;
+    this.actionName = details;
   }
 }
