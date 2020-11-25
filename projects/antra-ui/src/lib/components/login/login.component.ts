@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onSubmit() {
-    // alert('Your Login is successfully done ..!!!');
-    // console.table(this.loginModel);
     this.clickEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
   }
 

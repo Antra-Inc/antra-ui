@@ -41,27 +41,39 @@
     <div class="form-group">
       <button type="submit" class="btn btn-primary">LOGIN</button>
     </div>
-    <div align="right" class="margin-top">
-      <b class="light-color"><span (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</span> </b>
+    <div class="move-right margin-top">
+      <span class="light-color hover" (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</span>
     </div>
     <hr class="light-color" />
     <div class="margin-top">
-      <b class="light-color" style="font-weight: bold">Login using</b>
+      <b class="light-color bold">Login using</b>
     </div>
 
-    <table width="100%">
+    <!-- <table>
       <tr>
-        <td width="50%">
+        <td>
           <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">
-            <img align="left" class="btn-img" src="../assets/svg/gmail.svg" />Gmail
+            <img class="move-left btn-img" src="../assets/svg/gmail.svg" />Gmail
           </button>
         </td>
-        <td width="50%" align="right">
+        <td class="move-right">
           <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">
-            <img align="left" class="btn-img" src="../assets/svg/office.svg" />Office 365
+            <img class="move-left btn-img" src="../assets/svg/office.svg" />Office 365
           </button>
         </td>
       </tr>
-    </table>
+    </table> -->
+    <div class="container">
+      <div class="block">
+        <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">
+          <img class="move-left btn-img" src="../assets/svg/gmail.svg" />Gmail
+        </button>
+      </div>
+      <div class="block btnRight">
+        <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">
+          <img class="move-left btn-img" src="../assets/svg/office.svg" />Office 365
+        </button>
+      </div>
+    </div>
   </form>
 </div>
