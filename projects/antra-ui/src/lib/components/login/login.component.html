@@ -42,7 +42,7 @@
       <button type="submit" class="btn btn-primary">LOGIN</button>
     </div>
     <div class="move-right margin-top">
-      <span class="light-color hover" (click)="sendActionName('FORGOTPASSWORD')">Forgot Password</span>
+      <span class="light-color hover" (click)="sendLoginActionActionName(loginActions[0])">Forgot Password</span>
     </div>
     <hr class="light-color" />
     <div class="margin-top">
@@ -51,12 +51,12 @@
 
     <div class="container">
       <div class="block">
-        <button class="btn btn-danger" type="button" (click)="sendActionName('GMAIL')">
+        <button class="btn btn-danger" type="button" (click)="sendLoginActionActionName(loginActions[1])">
           <img class="move-left btn-img" src="../assets/svg/gmail.svg" />Gmail
         </button>
       </div>
       <div class="block btnRight">
-        <button type="button" (click)="sendActionName('OFFICE365')" class="btn btn-warning">
+        <button type="button" (click)="sendLoginActionActionName(loginActions[2])" class="btn btn-warning">
           <img class="move-left btn-img" src="../assets/svg/office.svg" />Office 365
         </button>
       </div>

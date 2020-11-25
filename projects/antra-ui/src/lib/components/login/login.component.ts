@@ -2,13 +2,23 @@ import { Component, EventEmitter, OnInit, Output, ɵConsole } from '@angular/cor
 import { Login } from '../../models/login.model';
 
 /**
- * `antra-login` component provides a default login interface with email address and password textboxes.
- * Email address textbox does validations of required and valid email address. Password textbox does validations of required.
+ * `antra-login` component provides a default login interface with **email address field, password field** and
+ * four **login actions** in which one is **FORGOT PASSWORD** link and rest 3 are buttons: **LOGIN button, GMAIL button
+ * & OFFICE365 button**. Email address textbox does validations of required and valid email address.
+ * Password textbox does validations of required.
  *
- * Note:
- * Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number
+ * **Note:**
+ * *Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number*
  *
- * There is Output event named clickEvent, it will captureto end user action name.
+ * There is an **Output event** named loginActionEvent, it will emit login action names as a string such as **'FORGOTPASSWORD',
+ * 'GMAIL' & 'OFFICE365'** based on end user clicks.
+ *
+ * **Note:**
+ * When you click on LOGIN button, it will first validate provided email address and password and
+ * then it will emit validated email address and password as the result.
+ *
+ * Based on the returned results of **login actions [FORGOT PASSWORD link, LOGIN button, GMAIL button & OFFICE365 button]**,
+ * end user will implement their custom logic.
  *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
@@ -23,7 +33,8 @@ import { Login } from '../../models/login.model';
  * <example-url>http://127.0.0.1:4200/components/login</example-url>
  */
 export class LoginComponent implements OnInit {
-  @Output() clickEvent = new EventEmitter<string>();
+  loginActions = ['FORGOTPASSWORD', 'GMAIL', 'OFFICE365'];
+  @Output() loginActionEvent = new EventEmitter<string>();
 
   loginModel = new Login();
   emailAddressValidationMessage = ['Email Address is required', 'Please Enter Valid Email Address'];
@@ -38,7 +49,7 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onSubmit() {
-    this.clickEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
+    this.loginActionEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
   }
 
   /**
@@ -50,7 +61,7 @@ export class LoginComponent implements OnInit {
    * @ignore
    */
   // tslint:disable-next-line: typedef
-  sendActionName(actionName: string) {
-    this.clickEvent.emit(actionName);
+  sendLoginActionActionName(actionName: string) {
+    this.loginActionEvent.emit(actionName);
   }
 }
