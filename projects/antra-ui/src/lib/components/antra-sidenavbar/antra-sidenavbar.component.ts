@@ -4,12 +4,12 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interface';
 
 /**
- * `antra-sidenavbar` is a mat-drawer-container with a vertical navigation component which apart from traditional, 
+ * `antra-sidenavbar` is a mat-drawer-container with a vertical navigation component which apart from traditional,
  * text links, might embed icons.
  *
  * By virtue of its clarity and simplicity, it remarkably increases the User Experience.
  * It allows you to navigate through small applications as well as vast portals swiftly.
- * Its multiple link embedding functionalities enables you to implement more advanced content categorization, 
+ * Its multiple link embedding functionalities enables you to implement more advanced content categorization,
  * which is almost essential within bigger projects.
  *
  * Thanks to Antra-UI you can easily implement SideNav in your own projects, by using one of various, alluring Side Menus.
@@ -75,9 +75,10 @@ export class SidenavbarComponent implements OnInit {
       name: node.name,
       url: node.url,
       icon: node.icon,
+      useSvgIcon: node.useSvgIcon,
       level,
     };
-  };
+  }
   /**
    * @ignore
    */

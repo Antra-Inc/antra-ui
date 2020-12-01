@@ -19,6 +19,11 @@ import { WidgetPageComponent } from './components/pages/widget-page/widget-page.
 import { LogoPageComponent } from './components/pages/logo-page/logo-page.component';
 import { LogoExampleComponent } from './components/pages/logo-page/logo-example/logo-example.component';
 
+import { loadSvgResources } from './utils/svg.util';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +41,11 @@ import { LogoExampleComponent } from './components/pages/logo-page/logo-example/
     LogoPageComponent,
     LogoExampleComponent,
   ],
-  imports: [AntraUiModule, AppRoutingModule, HighlightModule],
+  imports: [
+    AntraUiModule,
+    AppRoutingModule,
+    HighlightModule,
+    HttpClientModule],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
@@ -53,4 +62,9 @@ import { LogoExampleComponent } from './components/pages/logo-page/logo-example/
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    loadSvgResources(iconRegistry, sanitizer);
+  }
+
+}
