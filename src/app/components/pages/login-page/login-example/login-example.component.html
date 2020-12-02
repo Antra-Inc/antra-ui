@@ -1,12 +1,31 @@
 <div class="example-content">
-  <antra-login
-    [emailAddressValidationMessage]="emailAddressValidationMsg"
-    [passwordValidationMessage]="passwordValidationMsg"
-    (loginActionEvent)="getActionName($event)"
-  ></antra-login>
+  <table>
+    <tr>
+      <td>
+        <antra-login
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionName($event)"
+        ></antra-login>
 
-  <hr />
-  <h2>
-    {{ actionName }}
-  </h2>
+        <hr />
+        <h2>
+          {{ actionName }}
+        </h2>
+      </td>
+      <td>
+        <antra-login class="customized"
+          [loginUsingOption]="loginUsingOption"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionName($event)"
+        ></antra-login>
+
+        <hr />
+        <h2>
+          {{ actionName }}
+        </h2>
+      </td>
+    </tr>
+  </table>
 </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { LoginActions, LoginActionType } from '../../interfaces/login.interface';
 import { Login } from '../../models/login.model';
 
 /**
@@ -39,13 +40,17 @@ export class LoginComponent implements OnInit {
   // receiving customized validation messages from end user
   @Input() emailAddressValidationMessage;
   @Input() passwordValidationMessage;
+  @Input() loginUsingOption = true;
 
   // emitting login actions to end user
   @Output() loginActionEvent = new EventEmitter<string>();
 
-  loginActions = ['FORGOTPASSWORD', 'GMAIL', 'OFFICE365'];
+  // loginActions = ['FORGOTPASSWORD', 'GMAIL', 'OFFICE365'];
 
   loginModel = new Login();
+
+  loginActions: LoginActions;
+  actionType: LoginActionType = 'ForgotPassword';
 
   /**
    * @ignore
@@ -54,7 +59,17 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onSubmit() {
-    this.loginActionEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
+    this.loginActions = {
+      actionType: 'Login',
+      email: this.loginModel.email,
+      password: this.loginModel.password,
+    };
+    this.loginActionEvent.emit(
+      this.loginActions.actionType + ', ' + this.loginActions.email + ', ' + this.loginActions.password
+    );
+
+    // this.loginActionEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
+    // this.loginActionEvent.emit(this.loginActions.email + ',' + this.loginActions.password);
   }
 
   /**

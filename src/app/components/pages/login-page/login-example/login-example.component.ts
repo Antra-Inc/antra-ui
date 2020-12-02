@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginExampleComponent implements OnInit {
   actionName: string;
+  loginUsingOption = false;
 
   emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
   passwordValidationMsg = [

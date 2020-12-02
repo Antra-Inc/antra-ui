@@ -1,64 +1,78 @@
 <div antraWidget class="form">
-  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit()" novalidate>
-    <div class="form-group">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
       <input
         matInput
         placeholder="Email Address"
         type="text"
-        class="form-control"
+        class="form__input"
         [(ngModel)]="loginModel.email"
         name="email"
         #email="ngModel"
         required
         email
       />
-      <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.required">
-        {{ emailAddressValidationMessage[0] }}
-      </span>
-      <span class="text-danger" *ngIf="email.touched && email.errors?.email">
-        {{ emailAddressValidationMessage[1] }}
-      </span>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+        <span *ngIf="email.errors?.required">
+          {{ emailAddressValidationMessage[0] }}
+        </span>
+        <span *ngIf="email.errors?.email">
+          {{ emailAddressValidationMessage[1] }}
+        </span>
+      </div>
     </div>
-    <div class="form-group">
+    <div>
       <input
         matInput
         placeholder="Password"
         type="password"
-        class="form-control"
+        class="form__input"
         [(ngModel)]="loginModel.password"
         name="password"
         #password="ngModel"
         antraPasswordPattern
         required
       />
-      <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.required">
-        {{ passwordValidationMessage[0] }}
-      </span>
-      <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
-        {{ passwordValidationMessage[1] }}
-      </span>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">LOGIN</button>
-    </div>
-    <div class="move-right margin-top">
-      <span class="light-color hover" (click)="sendLoginActionActionName(loginActions[0])">Forgot Password</span>
-    </div>
-    <hr class="light-color" />
-    <div class="margin-top">
-      <b class="light-color bold">Login using</b>
-    </div>
-
-    <div class="container">
-      <div class="block" *ngIf="false">
-        <button class="btn btn-danger" type="button" (click)="sendLoginActionActionName(loginActions[1])">
-          <img class="move-left btn-img" src="../assets/svg/gmail.svg" />Gmail
-        </button>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+        <span *ngIf="password.errors?.required">
+          {{ passwordValidationMessage[0] }}
+        </span>
+        <span *ngIf="password.errors?.invalidPassword">
+          {{ passwordValidationMessage[1] }}
+        </span>
       </div>
-      <div class="block btnRight">
-        <button type="button" (click)="sendLoginActionActionName(loginActions[2])" class="btn btn-warning">
-          <img class="move-left btn-img" src="../assets/svg/office.svg" />Office 365
-        </button>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary form__submit-center" [disabled]="loginForm.invalid">LOGIN</button>
+      <!-- <antra-raised-button
+        class="form__submit-center"
+        [disabled]="loginForm.invalid"
+        btnText="LOGIN"
+      ></antra-raised-button> -->
+    </div>
+    <div class="form__link">
+      <span (click)="sendLoginActionActionName(actionType)">Forgot Password</span>
+    </div>
+    <div *ngIf="loginUsingOption">
+      <hr />
+      <div class="form__label-color-grey">
+        <b>Login using</b>
+      </div>
+
+      <div class="form__row">
+        <div class="form__column">
+          <button class="btn btn-danger" type="button" (click)="sendLoginActionActionName(actionType)">
+            <img class="form__button--img" src="../assets/svg/gmail.svg" />Gmail
+          </button>
+          <!-- <antra-raised-button
+            btnText="Gmail"
+          > <img class="move-left btn-img" src="../assets/svg/gmail.svg" /></antra-raised-button> -->
+        </div>
+        <div class="form__column form__button-right">
+          <button type="button" (click)="sendLoginActionActionName(actionType)" class="btn btn-warning">
+            <img class="form__button--img" src="../assets/svg/office.svg" />Office 365
+          </button>
+        </div>
       </div>
     </div>
   </form>

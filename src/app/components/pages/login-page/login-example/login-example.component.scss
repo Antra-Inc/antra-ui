@@ -1,8 +1,19 @@
 .example-content {
-    padding: 10px 0;
-  
-    & > * {
-      margin-right: 10px;
-      margin-bottom: 10px;
-    }
+  padding: 10px 0;
+
+  & > * {
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
+}
+
+::ng-deep .customized {
+  background-color: darkgoldenrod;
+  height: 300px;
+}
+
+// .customized {
+//   width: 100px;
+//   height: 100px;
+//   background-color: lightblue;
+// }
