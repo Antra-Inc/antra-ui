@@ -20,7 +20,8 @@ export class AppComponent {
     },
     {
       name: 'SideNav',
-      icon: 'chrome_reader_mode',
+      icon: 'settings',
+      useSvgIcon: true,
       children: [{ name: 'SidenavbarComponent', url: 'components/sidenav' }],
     },
     {

@@ -21,6 +21,11 @@ import { LogoExampleComponent } from './components/pages/logo-page/logo-example/
 import { GlobalSearchPageComponent } from './components/pages/global-search-page/global-search-page.component';
 import { GlobalSearchExampleComponent } from './components/pages/global-search-page/global-search-example/global-search-example.component';
 
+import { loadSvgResources } from './utils/svg.util';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,11 @@ import { GlobalSearchExampleComponent } from './components/pages/global-search-p
     GlobalSearchPageComponent,
     GlobalSearchExampleComponent,
   ],
-  imports: [AntraUiModule, AppRoutingModule, HighlightModule],
+  imports: [
+    AntraUiModule,
+    AppRoutingModule,
+    HighlightModule,
+    HttpClientModule],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
@@ -57,4 +66,9 @@ import { GlobalSearchExampleComponent } from './components/pages/global-search-p
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    loadSvgResources(iconRegistry, sanitizer);
+  }
+
+}
