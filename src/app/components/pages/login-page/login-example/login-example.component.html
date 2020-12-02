@@ -5,25 +5,33 @@
         <antra-login
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionName($event)"
+          (loginActionEvent)="getActionNameOne($event)"
         ></antra-login>
-
-        <hr />
-        <h2>
-          {{ actionName }}
-        </h2>
       </td>
       <td>
-        <antra-login class="customized"
+        <antra-login id="dialog1"
+          class="customized"
           [loginUsingOption]="loginUsingOption"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionName($event)"
+          (loginActionEvent)="getActionNameTwo($event)"
         ></antra-login>
-
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
         <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>
         <h2>
-          {{ actionName }}
+          {{ actionNameOne }}
+        </h2>
+      </td>
+      <td>
+        <h2>
+          {{ actionNameTwo }}
         </h2>
       </td>
     </tr>

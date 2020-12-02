@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-example.component.scss'],
 })
 export class LoginExampleComponent implements OnInit {
-  actionName: string;
+  actionNameOne: string;
+  actionNameTwo: string;
   loginUsingOption = false;
 
   emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
@@ -20,7 +21,11 @@ export class LoginExampleComponent implements OnInit {
   ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
-  getActionName(details: string) {
-    this.actionName = details;
+  getActionNameOne(details: string) {
+    this.actionNameOne = details;
+  }
+  // tslint:disable-next-line: typedef
+  getActionNameTwo(details: string) {
+    this.actionNameTwo = details;
   }
 }

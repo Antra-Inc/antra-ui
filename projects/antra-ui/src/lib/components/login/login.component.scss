@@ -1,15 +1,3 @@
-// mat-raised-button {
-//   width: 100% !important;
-//   min-width: unset !important;
-// }
-
-button:disabled,
-button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
 .form {
   width: 400px;
   height: 400px;
@@ -21,7 +9,7 @@ button[disabled] {
   color: darkgrey;
   font-weight: bold;
 }
-.form__button--img {
+.form__button-img {
   text-align: left;
   width: 22px;
   vertical-align: middle;
@@ -40,4 +28,10 @@ button[disabled] {
   position: absolute;
   right: 0;
   display: inline-block;
+}
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }

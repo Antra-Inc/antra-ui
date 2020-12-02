@@ -24,6 +24,10 @@ import { Login } from '../../models/login.model';
  * Based on the returned results of **login actions [FORGOT PASSWORD link, LOGIN button, GMAIL button & OFFICE365 button]**,
  * end user will implement their custom logic.
  *
+ * **Note:**
+ * There is an Input type, 'loginUsingOption' which will take boolean value. If it is false,
+ * you will not be able to see Login Using option, it will hide Login using text, Gmail and Office365 buttons. Bydefault is true.
+ *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
  */
@@ -67,9 +71,6 @@ export class LoginComponent implements OnInit {
     this.loginActionEvent.emit(
       this.loginActions.actionType + ', ' + this.loginActions.email + ', ' + this.loginActions.password
     );
-
-    // this.loginActionEvent.emit(this.loginModel.email + ',' + this.loginModel.password);
-    // this.loginActionEvent.emit(this.loginActions.email + ',' + this.loginActions.password);
   }
 
   /**
@@ -81,7 +82,7 @@ export class LoginComponent implements OnInit {
    * @ignore
    */
   // tslint:disable-next-line: typedef
-  sendLoginActionActionName(actionName: string) {
+  sendLoginActionName(actionName: string) {
     this.loginActionEvent.emit(actionName);
   }
 }

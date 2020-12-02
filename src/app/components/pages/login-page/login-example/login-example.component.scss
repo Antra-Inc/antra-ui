@@ -7,13 +7,8 @@
   }
 }
 
-::ng-deep .customized {
-  background-color: darkgoldenrod;
-  height: 300px;
+.customized::ng-deep .form {
+  background-color: darkslategray;
+  height: 320px;
 }
 
-// .customized {
-//   width: 100px;
-//   height: 100px;
-//   background-color: lightblue;
-// }
