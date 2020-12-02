@@ -19,7 +19,8 @@
           [matTreeNodePaddingIndent]="treeNodePaddingIndent"
         >
           <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
-            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <mat-icon mat-list-icon *ngIf="!node.useSvgIcon">{{ node.icon }}</mat-icon>
+            <mat-icon mat-list-icon *ngIf="node.useSvgIcon" [svgIcon]="node.icon"></mat-icon>
             <span mat-line>{{ node.name }}</span>
           </mat-list-item>
         </mat-tree-node>
@@ -30,7 +31,8 @@
             [attr.aria-label]="'Toggle ' + node.name"
             [ngStyle]="{ color: sideNavTextColor }"
           >
-            <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+            <mat-icon mat-list-icon *ngIf="!node.useSvgIcon">{{ node.icon }}</mat-icon>
+            <mat-icon mat-list-icon *ngIf="node.useSvgIcon" [svgIcon]="node.icon"></mat-icon>
             <mat-icon *ngIf="isExpanded">
               {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
             </mat-icon>

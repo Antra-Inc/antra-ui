@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavLinkNode, NavLinkNodeFlat } from 'antra-ui';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sidenav-example',
@@ -13,7 +15,8 @@ export class SidenavComponent {
   sideNavConfig: NavLinkNode[] = [
     {
       name: 'example-sidenav tree1',
-      icon: 'person',
+      icon: 'myinfo',
+      useSvgIcon: true,
       children: [
         { name: 'example-option1', url: 'components/example-option1' },
         { name: 'example-option2', url: 'components/example-option2'},
@@ -28,7 +31,13 @@ export class SidenavComponent {
     },
   ];
 
-  constructor() {}
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    const imgDir = 'assets/svg';
+    iconRegistry.addSvgIcon(
+      'myinfo',
+      sanitizer.bypassSecurityTrustResourceUrl(`${imgDir}/icn_myinfo.svg`)
+    );
+  }
 
   getClickEventFromSideNav(event: NavLinkNodeFlat): void {
 
