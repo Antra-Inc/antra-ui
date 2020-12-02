@@ -1,20 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { AntraUiModule } from '../../antra-ui.module';
 import { GlobalSearchComponent } from './global-search.component';
 
-describe('GlobalSearchComponent', () => {
-  let component: GlobalSearchComponent;
-  let fixture: ComponentFixture<GlobalSearchComponent>;
+@Component({
+  template: `<antra-global-search placeholderText="Please type here..." class="customized-1" (notify)="handleNotify($event)"></antra-global-search>`,
+})
+class TestHostComponent {
+  placeholderText = 'Please type here...';
+}
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ GlobalSearchComponent ]
+describe('GlobalSearchComponent', () => {
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
+
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [GlobalSearchComponent, TestHostComponent],
+        imports: [AntraUiModule],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GlobalSearchComponent);
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,4 +32,7 @@ describe('GlobalSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
+
+
