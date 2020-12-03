@@ -33,6 +33,14 @@ describe('GlobalSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should have placeholder value `Please type here...`', () => {
+    component.placeholderText = 'Please type here...';
+    fixture.detectChanges();
+    const textElement = fixture.nativeElement.querySelector('[placeholder="Please type here..."]');
+    fixture.detectChanges();
+    expect(textElement.placeholder.trim()).toBe('Please type here...');
+  });
+
 });
 
 
