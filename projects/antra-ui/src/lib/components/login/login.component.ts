@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { LoginActions, LoginActionType } from '../../interfaces/login.interface';
 import { Login } from '../../models/login.model';
+import { CustomValidationService } from '../../services/custom-validation.service';
 
 /**
  * `antra-login` component provides a default login interface with **email address field, password field** and
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
   // receiving customized validation messages from end user
   @Input() emailAddressValidationMessage;
   @Input() passwordValidationMessage;
+  // @Input() passwordPattern;
   @Input() loginUsingOption = false;
   @Input() loginUsingGmail = false;
   @Input() loginUsingOffice365 = false;
@@ -61,7 +63,8 @@ export class LoginComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor() {}
+  constructor() {
+  }
 
   // tslint:disable-next-line: typedef
   onSubmit() {
@@ -78,7 +81,10 @@ export class LoginComponent implements OnInit {
   /**
    * @ignore
    */
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.passwordPattern);
+    // this.customValidationService.passwordPattern = this.passwordPattern;
+  }
 
   /**
    * @ignore

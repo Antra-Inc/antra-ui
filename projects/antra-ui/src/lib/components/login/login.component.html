@@ -62,12 +62,12 @@
       <div class="form__row">
         <div class="form__column" *ngIf="loginUsingGmail">
           <button class="btn btn-danger" type="button" (click)="sendLoginActionName(actionType)">
-            <img class="form__button-img" src="../assets/svg/gmail.svg" />Gmail
+            <img class="form__button-img" src="/assets/svg/gmail.svg" />Gmail
           </button>
         </div>
         <div class="form__column form__button-right" *ngIf="loginUsingOffice365">
           <button type="button" (click)="sendLoginActionName(actionType)" class="btn btn-warning">
-            <img class="form__button-img" src="../assets/svg/office.svg" />Office 365
+            <img class="form__button-img" src="/assets/svg/office.svg" />Office 365
           </button>
         </div>
       </div>

@@ -11,6 +11,7 @@ export class LoginExampleComponent implements OnInit {
   actionNameThree: string;
   actionNameFour: string;
 
+  // passwordPattern = "";
   loginUsingOption = false;
   loginUsingGmail = true;
   loginUsingOffice365 = true;
