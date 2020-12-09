@@ -3,23 +3,46 @@
     <tr>
       <td>
         <antra-login
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
           (loginActionEvent)="getActionNameOne($event)"
         ></antra-login>
       </td>
+
       <td>
-        <antra-login id="dialog1"
+        <antra-login
           class="customized"
-          [loginUsingOption]="loginUsingOption"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
           (loginActionEvent)="getActionNameTwo($event)"
         ></antra-login>
       </td>
+      <td>
+        <antra-login
+          class="customized1"
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameThree($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <antra-login
+          class="customized2"
+          [loginUsingOption]="true"
+          [loginUsingOffice365]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameFour($event)"
+        ></antra-login>
+      </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td colspan="4">
         <hr />
       </td>
     </tr>
@@ -32,6 +55,16 @@
       <td>
         <h2>
           {{ actionNameTwo }}
+        </h2>
+      </td>
+      <td>
+        <h2>
+          {{ actionNameThree }}
+        </h2>
+      </td>
+      <td>
+        <h2>
+          {{ actionNameFour }}
         </h2>
       </td>
     </tr>

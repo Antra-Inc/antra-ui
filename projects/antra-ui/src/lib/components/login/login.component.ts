@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit {
   // receiving customized validation messages from end user
   @Input() emailAddressValidationMessage;
   @Input() passwordValidationMessage;
-  @Input() loginUsingOption = true;
+  @Input() loginUsingOption = false;
+  @Input() loginUsingGmail = false;
+  @Input() loginUsingOffice365 = false;
 
   // emitting login actions to end user
   @Output() loginActionEvent = new EventEmitter<string>();

@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class LoginExampleComponent implements OnInit {
   actionNameOne: string;
   actionNameTwo: string;
+  actionNameThree: string;
+  actionNameFour: string;
+
   loginUsingOption = false;
+  loginUsingGmail = true;
+  loginUsingOffice365 = true;
 
   emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
   passwordValidationMsg = [
@@ -27,5 +32,13 @@ export class LoginExampleComponent implements OnInit {
   // tslint:disable-next-line: typedef
   getActionNameTwo(details: string) {
     this.actionNameTwo = details;
+  }
+  // tslint:disable-next-line: typedef
+  getActionNameThree(details: string) {
+    this.actionNameThree = details;
+  }
+  // tslint:disable-next-line: typedef
+  getActionNameFour(details: string) {
+    this.actionNameFour = details;
   }
 }
