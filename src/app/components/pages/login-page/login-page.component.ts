@@ -11,6 +11,7 @@ export class LoginPageComponent implements OnInit {
     <tr>
       <td>
         <antra-login
+          class="default"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
           [loginUsingOffice365]="true"
@@ -22,7 +23,7 @@ export class LoginPageComponent implements OnInit {
 
       <td>
         <antra-login
-          class="customized"
+          class="example1"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
           (loginActionEvent)="getActionNameTwo($event)"
@@ -30,7 +31,7 @@ export class LoginPageComponent implements OnInit {
       </td>
       <td>
         <antra-login
-          class="customized1"
+          class="example2"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
@@ -40,7 +41,7 @@ export class LoginPageComponent implements OnInit {
       </td>
       <td>
         <antra-login
-          class="customized2"
+          class="example3"
           [loginUsingOption]="true"
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
@@ -56,29 +57,28 @@ export class LoginPageComponent implements OnInit {
     </tr>
     <tr>
       <td>
-        <h2>
+        <h2 class="text-center">
           {{ actionNameOne }}
         </h2>
       </td>
       <td>
-        <h2>
+        <h2 class="text-center">
           {{ actionNameTwo }}
         </h2>
       </td>
       <td>
-        <h2>
+        <h2 class="text-center">
           {{ actionNameThree }}
         </h2>
       </td>
       <td>
-        <h2>
+        <h2 class="text-center">
           {{ actionNameFour }}
         </h2>
       </td>
     </tr>
   </table>
 </div>
-
 `;
   scssSource = `.example-content {
     padding: 10px 0;
@@ -89,22 +89,34 @@ export class LoginPageComponent implements OnInit {
     }
   }
   
-  .customized::ng-deep .form {
+  .example1::ng-deep .form-container {
     background-color: darkslategray;
     height: 320px;
   }
   
-  .customized1::ng-deep .form {
+  .example2::ng-deep .form-container {
     background-color: azure;
   }
-  .customized1::ng-deep .btn-danger {
-    width: 100% !important;
+  .example2::ng-deep .btn-danger {
+    width: 100%;
+    position: absolute;
+    right: 30px;
   }
   
-  .customized2::ng-deep .form {
+  .example3::ng-deep .form-container {
     background-color: bisque;
   }
-  `;
+  .example3::ng-deep .form__button-right {
+    width: 100%;
+    position: absolute;
+    left: 30px;
+  }
+  
+  .text-center{
+    text-align: center;
+  }
+`;
+
   tsSource = `import { Component, OnInit } from '@angular/core';
 
   @Component({
@@ -128,6 +140,7 @@ export class LoginPageComponent implements OnInit {
       'Password is required',
       'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
     ];
+  
     constructor() {}
   
     ngOnInit(): void {}

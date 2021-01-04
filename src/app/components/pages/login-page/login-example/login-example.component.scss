@@ -7,24 +7,24 @@
   }
 }
 
-.customized::ng-deep .form-container {
+.example1::ng-deep .form-container {
   background-color: darkslategray;
   height: 320px;
 }
 
-.customized1::ng-deep .form-container {
+.example2::ng-deep .form-container {
   background-color: azure;
 }
-.customized1::ng-deep .btn-danger {
+.example2::ng-deep .btn-danger {
   width: 100%;
   position: absolute;
   right: 30px;
 }
 
-.customized2::ng-deep .form-container {
+.example3::ng-deep .form-container {
   background-color: bisque;
 }
-.customized2::ng-deep .form__button-right {
+.example3::ng-deep .form__button-right {
   width: 100%;
   position: absolute;
   left: 30px;

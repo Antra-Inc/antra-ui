@@ -3,6 +3,7 @@
     <tr>
       <td>
         <antra-login
+          class="default"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
           [loginUsingOffice365]="true"
@@ -14,7 +15,7 @@
 
       <td>
         <antra-login
-          class="customized"
+          class="example1"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
           (loginActionEvent)="getActionNameTwo($event)"
@@ -22,7 +23,7 @@
       </td>
       <td>
         <antra-login
-          class="customized1"
+          class="example2"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
@@ -32,7 +33,7 @@
       </td>
       <td>
         <antra-login
-          class="customized2"
+          class="example3"
           [loginUsingOption]="true"
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
