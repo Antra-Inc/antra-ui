@@ -1,6 +1,6 @@
-<div antraWidget class="form">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-    <div>
+<div antraWidget class="form-container">
+  <form class="form login-form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form__row">
       <input
         matInput
         placeholder="Email Address"
@@ -21,7 +21,7 @@
         </span>
       </div>
     </div>
-    <div>
+    <div class="form__row">
       <input
         matInput
         placeholder="Password"
@@ -42,7 +42,7 @@
         </span>
       </div>
     </div>
-    <div>
+    <div class="form__row">
       <button type="submit" class="btn btn-primary form__submit-center" [disabled]="loginForm.invalid">LOGIN</button>
       <!-- <antra-raised-button
         class="form__submit-center"
@@ -50,23 +50,27 @@
         btnText="LOGIN"
       ></antra-raised-button> -->
     </div>
-    <div class="form__link">
-      <span (click)="sendLoginActionName(actionType)">Forgot Password</span>
-    </div>
-    <div *ngIf="loginUsingOption">
-      <hr />
-      <div class="form__label-color-grey">
-        <b>Login using</b>
+    <div class="form__row">
+      <div class="form__link">
+        <span (click)="sendLoginActionName(forgotPassword)">Forgot Password</span>
       </div>
+    </div>
 
-      <div class="form__row">
+    <div class="form__options" *ngIf="loginUsingOption">
+      <hr />
+      <div class="form__option__row">
+        <div class="form__label-color-grey">
+          <b>Login using</b>
+        </div>
+      </div>
+      <div class="form__option__row">
         <div class="form__column" *ngIf="loginUsingGmail">
-          <button class="btn btn-danger" type="button" (click)="sendLoginActionName(actionType)">
+          <button class="btn btn-danger" type="button" (click)="sendLoginActionName(googleLogin)">
             <img class="form__button-img" src="/assets/svg/gmail.svg" />Gmail
           </button>
         </div>
         <div class="form__column form__button-right" *ngIf="loginUsingOffice365">
-          <button type="button" (click)="sendLoginActionName(actionType)" class="btn btn-warning">
+          <button type="button" (click)="sendLoginActionName(msftLogin)" class="btn btn-warning">
             <img class="form__button-img" src="/assets/svg/office.svg" />Office 365
           </button>
         </div>

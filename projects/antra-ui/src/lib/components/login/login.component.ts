@@ -58,7 +58,9 @@ export class LoginComponent implements OnInit {
   loginModel = new Login();
 
   loginActions: LoginActions;
-  actionType: LoginActionType = 'ForgotPassword';
+  forgotPassword: LoginActionType = 'ForgotPassword';
+  googleLogin: LoginActionType = 'GoogleLogin';
+  msftLogin: LoginActionType = 'MsftLogin';
 
   /**
    * @ignore

@@ -7,21 +7,29 @@
   }
 }
 
-.customized::ng-deep .form {
+.customized::ng-deep .form-container {
   background-color: darkslategray;
   height: 320px;
 }
 
-.customized1::ng-deep .form {
+.customized1::ng-deep .form-container {
   background-color: azure;
 }
 .customized1::ng-deep .btn-danger {
-  width: 100% !important;
+  width: 100%;
+  position: absolute;
+  right: 30px;
 }
 
-.customized2::ng-deep .form {
+.customized2::ng-deep .form-container {
   background-color: bisque;
 }
-// .customized2::ng-deep .btn-warning {
-//   width: 100% !important;
-// }
+.customized2::ng-deep .form__button-right {
+  width: 100%;
+  position: absolute;
+  left: 30px;
+}
+
+.text-center{
+  text-align: center;
+}
