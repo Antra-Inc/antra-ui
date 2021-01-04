@@ -11,7 +11,8 @@ export class LoginExampleComponent implements OnInit {
   actionNameThree: string;
   actionNameFour: string;
 
-  // passwordPattern = "";
+  passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+
   loginUsingOption = false;
   loginUsingGmail = true;
   loginUsingOffice365 = true;

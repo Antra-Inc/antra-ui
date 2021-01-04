@@ -12,9 +12,8 @@ export class CustomValidationService {
       if (!control.value) {
         return null;
       }
-      // console.log(this.passwordPattern);
-      const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$');
-      // const regex = new RegExp(this.passwordPattern);
+
+      const regex = new RegExp(this.passwordPattern);
       const valid = regex.test(control.value);
       return valid ? null : { invalidPassword: true };
     };
