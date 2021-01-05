@@ -17,7 +17,30 @@ export class LoginPageComponent implements OnInit {
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
+          [passwordPattern]="passwordPattern"
           (loginActionEvent)="getActionNameOne($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example2"
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameTwo($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example3"
+          [loginUsingOption]="true"
+          [loginUsingOffice365]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameThree($event)"
         ></antra-login>
       </td>
 
@@ -25,27 +48,8 @@ export class LoginPageComponent implements OnInit {
         <antra-login
           class="example1"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameTwo($event)"
-        ></antra-login>
-      </td>
-      <td>
-        <antra-login
-          class="example2"
-          [loginUsingOption]="true"
-          [loginUsingGmail]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameThree($event)"
-        ></antra-login>
-      </td>
-      <td>
-        <antra-login
-          class="example3"
-          [loginUsingOption]="true"
-          [loginUsingOffice365]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg1"
+          [passwordPattern]="passwordPattern1"
           (loginActionEvent)="getActionNameFour($event)"
         ></antra-login>
       </td>
@@ -130,7 +134,9 @@ export class LoginPageComponent implements OnInit {
     actionNameThree: string;
     actionNameFour: string;
   
-    // passwordPattern = "";
+    passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+    passwordPattern1 = '^(?=.*?[A-Z])(?=.*?[a-z]).{8,8}$';
+    
     loginUsingOption = false;
     loginUsingGmail = true;
     loginUsingOffice365 = true;
@@ -139,6 +145,10 @@ export class LoginPageComponent implements OnInit {
     passwordValidationMsg = [
       'Password is required',
       'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+    ];
+    passwordValidationMsg1 = [
+      'Password is required',
+      'Password should have maximum 8 characters, at least 1 uppercase and 1 lowercase letter',
     ];
   
     constructor() {}
@@ -161,7 +171,7 @@ export class LoginPageComponent implements OnInit {
     getActionNameFour(details: string) {
       this.actionNameFour = details;
     }
-  }  
+  }    
 `;
 
   constructor() {}
