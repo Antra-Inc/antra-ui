@@ -5,7 +5,7 @@ import { ValidatorFn, AbstractControl } from '@angular/forms';
   providedIn: 'root',
 })
 export class CustomValidationService {
-  passwordPattern;
+  passwordPattern: string;
 
   patternValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {

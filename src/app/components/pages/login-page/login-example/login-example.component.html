@@ -9,8 +9,30 @@
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameOne($event)"
           [passwordPattern]="passwordPattern"
+          (loginActionEvent)="getActionNameOne($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example2"
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameTwo($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example3"
+          [loginUsingOption]="true"
+          [loginUsingOffice365]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameThree($event)"
         ></antra-login>
       </td>
 
@@ -18,27 +40,8 @@
         <antra-login
           class="example1"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameTwo($event)"
-        ></antra-login>
-      </td>
-      <td>
-        <antra-login
-          class="example2"
-          [loginUsingOption]="true"
-          [loginUsingGmail]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameThree($event)"
-        ></antra-login>
-      </td>
-      <td>
-        <antra-login
-          class="example3"
-          [loginUsingOption]="true"
-          [loginUsingOffice365]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg1"
+          [passwordPattern]="passwordPattern1"
           (loginActionEvent)="getActionNameFour($event)"
         ></antra-login>
       </td>

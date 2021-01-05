@@ -12,7 +12,8 @@ export class LoginExampleComponent implements OnInit {
   actionNameFour: string;
 
   passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
-
+  passwordPattern1 = '^(?=.*?[A-Z])(?=.*?[a-z]).{8,8}$';
+  
   loginUsingOption = false;
   loginUsingGmail = true;
   loginUsingOffice365 = true;
@@ -21,6 +22,10 @@ export class LoginExampleComponent implements OnInit {
   passwordValidationMsg = [
     'Password is required',
     'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+  ];
+  passwordValidationMsg1 = [
+    'Password is required',
+    'Password should have maximum 8 characters, at least 1 uppercase and 1 lowercase letter',
   ];
 
   constructor() {}
