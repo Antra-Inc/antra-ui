@@ -47,7 +47,7 @@
     </div>
     <div class="form__row">
       <div class="form__link">
-        <span (click)="sendLoginActionName(forgotPassword)">Forgot Password</span>
+        <span (click)="sendLoginActionName('ForgotPassword')">Forgot Password</span>
       </div>
     </div>
 
@@ -60,12 +60,12 @@
       </div>
       <div class="form__option__row">
         <div class="form__column" *ngIf="loginUsingGmail">
-          <button class="btn btn-danger" type="button" (click)="sendLoginActionName(googleLogin)">
+          <button class="btn btn-danger" type="button" (click)="sendLoginActionName('GoogleLogin')">
             <img class="form__button-img" src="/assets/svg/gmail.svg" />Gmail
           </button>
         </div>
         <div class="form__column form__button-right" *ngIf="loginUsingOffice365">
-          <button type="button" (click)="sendLoginActionName(msftLogin)" class="btn btn-warning">
+          <button type="button" (click)="sendLoginActionName('MsftLogin')" class="btn btn-warning">
             <img class="form__button-img" src="/assets/svg/office.svg" />Office 365
           </button>
         </div>

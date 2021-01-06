@@ -28,7 +28,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/antra-ui/assets/svg",
+                "input": "dist/antra-ui/assets/svg",
                 "output": "assets/svg"
               }
             ],

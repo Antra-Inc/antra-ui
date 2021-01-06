@@ -58,19 +58,15 @@ export class LoginComponent implements OnInit {
   @Input() loginUsingOffice365 = false;
 
   // emitting login actions to end user
-  @Output() loginActionEvent = new EventEmitter<string>();
+  @Output() loginActionEvent = new EventEmitter<LoginActions>();
 
   loginModel = new Login();
-
   loginActions: LoginActions;
-  forgotPassword: LoginActionType = 'ForgotPassword';
-  googleLogin: LoginActionType = 'GoogleLogin';
-  msftLogin: LoginActionType = 'MsftLogin';
-
+  
   /**
    * @ignore
    */
-  constructor(private customValidationService: CustomValidationService) {}
+  constructor(private customValidationService: CustomValidationService) { }
 
   // tslint:disable-next-line: typedef
   onSubmit() {
@@ -80,7 +76,7 @@ export class LoginComponent implements OnInit {
       password: this.loginModel.password,
     };
     this.loginActionEvent.emit(
-      this.loginActions.actionType + ', ' + this.loginActions.email + ', ' + this.loginActions.password
+      this.loginActions
     );
   }
 
@@ -95,7 +91,12 @@ export class LoginComponent implements OnInit {
    * @ignore
    */
   // tslint:disable-next-line: typedef
-  sendLoginActionName(actionName: string) {
-    this.loginActionEvent.emit(actionName);
+  sendLoginActionName(actionType: LoginActionType) {
+    this.loginActions = {
+      actionType: actionType,
+      email: null,
+      password: null,
+    };
+    this.loginActionEvent.emit(this.loginActions);
   }
 }
