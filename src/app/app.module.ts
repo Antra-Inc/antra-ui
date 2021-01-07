@@ -10,6 +10,8 @@ import { RaisedButtonPageComponent } from './components/pages/raised-button-page
 import { ButtonExampleComponent } from './components/pages/button-page/button-example/button-example.component';
 import { RaisedButtonExampleComponent } from './components/pages/raised-button-page/raised-button-example/raised-button-example.component';
 import { ExampleDocComponent } from './components/example-doc/example-doc.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { LoginExampleComponent } from './components/pages/login-page/login-example/login-example.component';
 import { ProgressSpinnerPageComponent } from './components/pages/progress-spinner-page/progress-spinner-page.component';
 import { ProgressSpinnerExampleComponent } from './components/pages/progress-spinner-page/progress-spinner-example/progress-spinner-example.component';
 import { SidenavPageComponent } from './components/pages/sidenav-page/sidenav-page.component';
@@ -32,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     RaisedButtonPageComponent,
     ButtonExampleComponent,
     RaisedButtonExampleComponent,
+    LoginPageComponent,
+    LoginExampleComponent,
     ProgressSpinnerPageComponent,
     ProgressSpinnerExampleComponent,
     SidenavPageComponent,

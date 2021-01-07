@@ -30,6 +30,11 @@ export class AppComponent {
       children: [{ name: 'WidgetComponent', url: 'components/widget' }],
     },
     {
+      name: 'Login',
+      icon: 'lock_open',
+      children: [{ name: 'LoginComponent', url: 'components/login' }],
+    },
+    {
       name: 'Logo',
       icon: 'fingerprint',
       children: [{ name: 'LogoComponent', url: 'components/logo' }],

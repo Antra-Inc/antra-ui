@@ -32,3 +32,5 @@ $antra-app-theme: mat-light-theme($antra-app-primary, $antra-app-accent, $antra-
 @import './styles/button';
 
 @import './directives/antra-widget/antra-widget';
+
+@import './styles/form';

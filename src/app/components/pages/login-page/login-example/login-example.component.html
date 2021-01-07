@@ -1,0 +1,77 @@
+<div class="example-content">
+  <table>
+    <tr>
+      <td>
+        <antra-login
+          class="default"
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [loginUsingOffice365]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          [passwordPattern]="passwordPattern"
+          (loginActionEvent)="getActionNameOne($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example2"
+          [loginUsingOption]="true"
+          [loginUsingGmail]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameTwo($event)"
+        ></antra-login>
+      </td>
+      <td>
+        <!-- Default Password Pattern Validation Applied From Library -->
+        <antra-login
+          class="example3"
+          [loginUsingOption]="true"
+          [loginUsingOffice365]="true"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg"
+          (loginActionEvent)="getActionNameThree($event)"
+        ></antra-login>
+      </td>
+
+      <td>
+        <antra-login
+          class="example1"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg1"
+          [passwordPattern]="passwordPattern1"
+          (loginActionEvent)="getActionNameFour($event)"
+        ></antra-login>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2 class="text-center">
+          {{ actionNameOne }}
+        </h2>
+      </td>
+      <td>
+        <h2 class="text-center">
+          {{ actionNameTwo }}
+        </h2>
+      </td>
+      <td>
+        <h2 class="text-center">
+          {{ actionNameThree }}
+        </h2>
+      </td>
+      <td>
+        <h2 class="text-center">
+          {{ actionNameFour }}
+        </h2>
+      </td>
+    </tr>
+  </table>
+</div>
