@@ -143,6 +143,7 @@ describe('SidenavbarComponent', () => {
       expandable: true,
       name: 'example-sidenav tree1',
       url: undefined,
+      useSvgIcon: undefined,
       icon: 'person',
       level: 0
     };
