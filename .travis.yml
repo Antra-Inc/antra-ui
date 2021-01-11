@@ -11,6 +11,6 @@ script: skip
 jobs:
   include:
     - stage: test & lint
-      script: npm run test
+      script: npm run test:nowatch
       script: npm run lint
     
