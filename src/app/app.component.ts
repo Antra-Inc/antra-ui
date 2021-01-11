@@ -34,6 +34,12 @@ export class AppComponent {
       icon: 'lock_open',
       children: [{ name: 'LoginComponent', url: 'components/login' }],
     },
+
+    {
+      name: 'Password Reset',
+      icon: 'lock_open',
+      children: [{ name: 'PasswordResetComponent', url: 'components/password-reset' }],
+    },
     {
       name: 'Logo',
       icon: 'fingerprint',

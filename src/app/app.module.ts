@@ -25,6 +25,8 @@ import { loadSvgResources } from './utils/svg.util';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordResetPageComponent } from './components/pages/password-reset-page/password-reset-page.component';
+import { PasswordResetExampleComponent } from './components/pages/password-reset-page/password-reset-example/password-reset-example.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     WidgetExampleComponent,
     LogoPageComponent,
     LogoExampleComponent,
+    PasswordResetPageComponent,
+    PasswordResetExampleComponent,
   ],
   imports: [
     AntraUiModule,
