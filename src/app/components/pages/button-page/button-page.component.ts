@@ -16,7 +16,6 @@ export class ButtonPageComponent implements OnInit {
 </div>`;
   scssSource = `  .example-content {
     padding: 10px 0;
-  
     & > * {
       margin-right: 10px;
       margin-bottom: 10px;

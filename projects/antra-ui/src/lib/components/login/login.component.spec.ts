@@ -36,7 +36,7 @@ describe('LoginComponent', () => {
     const loginElement = fixture.debugElement.query(By.css('antra-login'));
 
     // tslint:disable-next-line: no-unused-expression
-    expect(loginElement.nativeElement.attributes).toContain['loginActionEvent'];
+    expect(loginElement.nativeElement.attributes).toContain('loginActionEvent');
   });
 
   it('should have button with text content LOGIN', () => {
