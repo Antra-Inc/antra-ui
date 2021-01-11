@@ -5,8 +5,8 @@ directories:
   - node_modules
 env:
   - CI=true
-  install: npn CI
-  script: skip
+install: npm ci
+script: skip
 
 jobs:
   include:
