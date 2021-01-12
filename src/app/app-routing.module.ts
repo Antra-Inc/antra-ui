@@ -8,6 +8,7 @@ import { RaisedButtonPageComponent } from './components/pages/raised-button-page
 import { SidenavPageComponent } from './components/pages/sidenav-page/sidenav-page.component';
 import { WidgetPageComponent } from './components/pages/widget-page/widget-page.component';
 import { PasswordResetPageComponent } from './components/pages/password-reset-page/password-reset-page.component';
+import { ChangePasswordPageComponent } from './components/pages/change-password-page/change-password-page.component';
 
 const routes: Routes = [
   { path: 'components/button', component: ButtonPageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'components/widget', component: WidgetPageComponent },
   { path: 'components/logo', component: LogoPageComponent },
   { path: 'components/password-reset', component: PasswordResetPageComponent },
+  { path: 'components/change-password', component: ChangePasswordPageComponent },
 ];
 
 @NgModule({
