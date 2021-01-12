@@ -5,7 +5,7 @@ import { AntraUiModule } from '../../antra-ui.module';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  template: ` <antra-login (clickEvent)="getActionName($event)"></antra-login>`,
+  template: ` <antra-login (loginActionEvent)="getActionName($event)"></antra-login>`,
 })
 class TestHostComponent {}
 
@@ -34,7 +34,6 @@ describe('LoginComponent', () => {
 
   it('should have event binding attribute with the name loginActionEvent', () => {
     const loginElement = fixture.debugElement.query(By.css('antra-login'));
-
     // tslint:disable-next-line: no-unused-expression
     expect(loginElement.nativeElement.attributes).toContain['loginActionEvent'];
   });
@@ -44,19 +43,13 @@ describe('LoginComponent', () => {
     expect(btnElement.textContent.trim()).toBe('LOGIN');
   });
 
-  it('should have button with text content LOGIN', () => {
-    const btnElement = fixture.nativeElement.querySelector('button');
-    expect(btnElement.textContent.trim()).toBe('LOGIN');
-  });
-
-  it('should have b element with textcontent Login using ', () => {
+  it('should have b element with textcontent Login using', () => {
     const boldElement = fixture.nativeElement.querySelector('b');
     expect(boldElement.textContent.trim()).toBe('Login using');
-    expect(boldElement.className).toContain('light-color');
   });
 
-  it('should have img element with classname btn-img ', () => {
+  it('should have img element with classname form__button-img', () => {
     const imgElement = fixture.nativeElement.querySelector('img');
-    expect(imgElement.className).toContain('btn-img');
+    expect(imgElement.className).toContain('form__button-img');
   });
 });
