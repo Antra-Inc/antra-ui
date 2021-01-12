@@ -17,9 +17,12 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  *
  * There is another input property known as **passwordPattern**, you can pass any custom pattern from application.
  * **For e.g:** [passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'.
- * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$', checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
+ * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$',
+ * checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
  *
- * There are another three **Input properties, such as loginUsingOption, loginUsingGmail and loginUsingOffice365**. They set default to **false**, meaning they are invisible to user.
+ * There are another three **Input properties, such as loginUsingOption, loginUsingGmail and loginUsingOffice365**.
+ * They set default to **false**, meaning they are invisible to user.
+ *
  * If you apply **true**, then they will become **visible**.
  *
  * There is an **Output event** named loginActionEvent, it will emit login action names as a string such as **'FORGOTPASSWORD',
@@ -62,11 +65,11 @@ export class LoginComponent implements OnInit {
 
   loginModel = new Login();
   loginActions: LoginActions;
-  
+
   /**
    * @ignore
    */
-  constructor(private customValidationService: CustomValidationService) { }
+  constructor(private customValidationService: CustomValidationService) {}
 
   // tslint:disable-next-line: typedef
   onSubmit() {
@@ -75,9 +78,7 @@ export class LoginComponent implements OnInit {
       email: this.loginModel.email,
       password: this.loginModel.password,
     };
-    this.loginActionEvent.emit(
-      this.loginActions
-    );
+    this.loginActionEvent.emit(this.loginActions);
   }
 
   /**
@@ -93,7 +94,7 @@ export class LoginComponent implements OnInit {
   // tslint:disable-next-line: typedef
   sendLoginActionName(actionType: LoginActionType) {
     this.loginActions = {
-      actionType: actionType,
+      actionType,
       email: null,
       password: null,
     };

@@ -78,7 +78,8 @@ export class SidenavbarComponent implements OnInit {
       useSvgIcon: node.useSvgIcon,
       level,
     };
-  }
+  };
+
   /**
    * @ignore
    */
@@ -119,7 +120,7 @@ export class SidenavbarComponent implements OnInit {
 
   /**
    * Emit event during click the tree node
-   * @param { NavLinkNodeFlat } node `node` contains customriz info for each tree node
+   * @param NavLinkNodeFlat node `node` contains customriz info for each tree node
    */
   // tslint:disable-next-line: typedef
   handleListOnClick(node: NavLinkNodeFlat) {
@@ -139,7 +140,7 @@ export class SidenavbarComponent implements OnInit {
   }
   /**
    * Toggle the tree node which has child tree nodes
-   * @param { NavLinkNodeFlat } node
+   * @param NavLinkNodeFlat node
    */
   handleTreeNodeToggle(node: NavLinkNodeFlat): void {
     this.treeControl.toggle(node);
