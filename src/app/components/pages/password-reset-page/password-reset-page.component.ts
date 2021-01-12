@@ -13,19 +13,31 @@ export class PasswordResetPageComponent implements OnInit {
         <antra-password-reset
           class="default"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
-          (passwordResetActionEvent)="sendVerificationEmail($event)"
+          (passwordResetActionEvent)="sendVerificationEmail1($event)"
+        ></antra-password-reset>
+      </td>
+      <td>
+        <antra-password-reset
+          class="customized"
+          [emailAddressValidationMessage]="emailAddressValidationMsg"
+          (passwordResetActionEvent)="sendVerificationEmail2($event)"
         ></antra-password-reset>
       </td>
     </tr>
     <tr>
-      <td colspan="4">
+      <td colspan="2">
         <hr />
       </td>
     </tr>
     <tr>
       <td>
         <h2 class="text-center">
-          {{ details }}
+          {{ details1 }}
+        </h2>
+      </td>
+      <td>
+        <h2 class="text-center">
+          {{ details2 }}
         </h2>
       </td>
     </tr>
@@ -42,6 +54,10 @@ export class PasswordResetPageComponent implements OnInit {
   }
   .text-center {
     text-align: center;
+  }
+  
+  .customized::ng-deep .form-container {
+    background-color: powderblue;
   }  
 `;
 
@@ -53,7 +69,8 @@ export class PasswordResetPageComponent implements OnInit {
     styleUrls: ['./password-reset-example.component.scss'],
   })
   export class PasswordResetExampleComponent implements OnInit {
-    details: string;
+    details1: string;
+    details2: string;
   
     emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
   
@@ -62,8 +79,11 @@ export class PasswordResetPageComponent implements OnInit {
     ngOnInit(): void {}
   
     // tslint:disable-next-line: typedef
-    sendVerificationEmail(details: string) {
-      this.details = details;
+    sendVerificationEmail1(details1: string) {
+      this.details1 = details1;
+    }
+    sendVerificationEmail2(details2: string) {
+      this.details2 = details2;
     }
   }  
 `;
