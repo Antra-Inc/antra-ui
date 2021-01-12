@@ -46,5 +46,5 @@ export class RaisedButtonPageComponent implements OnInit {
   `;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }
