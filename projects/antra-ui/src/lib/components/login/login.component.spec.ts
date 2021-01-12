@@ -51,5 +51,4 @@ describe('LoginComponent', () => {
     const frmElement = fixture.nativeElement.querySelector('div');
     expect(frmElement.className).toContain('form-container antra-widget');
   });
-
 });
