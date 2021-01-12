@@ -9,11 +9,11 @@ import { Login } from '../../models/login.model';
  * There is one **Input property,  emailAddressValidationMessage**, it is used to assign
  * custom validation message to **email address field** from end user.
  *
- * There is an **Output event** named passwordResetActionEvent, it will emit submit action name as a string **'SUBMIT** based on end user action.
+ * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, it will emit object of passwordResetActions which includes submit action name as a string **'PasswordReset and email address**.
  *
  * **Note:**
  * When you click on SUBMIT button, it will first validate provided email address and
- * then it will emit validated email address as the result.
+ * then it will emit validated email address as the result plus PasswordReset as action string.
  *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`

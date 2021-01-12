@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-reset-example.component.scss'],
 })
 export class PasswordResetExampleComponent implements OnInit {
-  details: string;
+  details1: string;
+  details2: string;
 
   emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
 
@@ -15,7 +16,10 @@ export class PasswordResetExampleComponent implements OnInit {
   ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
-  sendVerificationEmail(details: string) {
-    this.details = details;
+  sendVerificationEmail1(details1: string) {
+    this.details1 = details1;
+  }
+  sendVerificationEmail2(details2: string) {
+    this.details2 = details2;
   }
 }
