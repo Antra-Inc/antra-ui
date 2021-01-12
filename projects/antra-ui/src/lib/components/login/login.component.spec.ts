@@ -48,7 +48,7 @@ describe('LoginComponent', () => {
   });
 
   it('should have div with class names form-container antra-widget', () => {
-    const frmElement = fixture.nativeElement.querySelector('div');
-    expect(frmElement.className).toContain('form-container antra-widget');
+    const divElement = fixture.nativeElement.querySelector('div');
+    expect(divElement.className).toContain('form-container antra-widget');
   });
 });
