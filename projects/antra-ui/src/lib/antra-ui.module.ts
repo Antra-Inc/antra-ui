@@ -28,6 +28,7 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { MatchPasswordDirective } from './directives/match-password.directive';
+import { PasswordResetSuccessfulComponent } from './components/password-reset-successful/password-reset-successful.component';
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -47,6 +48,7 @@ import { MatchPasswordDirective } from './directives/match-password.directive';
     PasswordResetComponent,
     ChangePasswordComponent,
     MatchPasswordDirective,
+    PasswordResetSuccessfulComponent,
   ],
 
   imports: [
@@ -86,6 +88,7 @@ import { MatchPasswordDirective } from './directives/match-password.directive';
     LogoComponent,
     PasswordResetComponent,
     ChangePasswordComponent,
+    PasswordResetSuccessfulComponent
   ],
 })
 export class AntraUiModule {}

@@ -45,6 +45,11 @@ export class AppComponent {
       children: [{ name: 'ChangePasswordComponent', url: 'components/change-password' }],
     },
     {
+      name: 'Password Reset Successful',
+      icon: 'check_circle',
+      children: [{ name: 'PasswordResetSuccessfulComponent', url: 'components/password-reset-successful' }],
+    },
+    {
       name: 'Logo',
       icon: 'fingerprint',
       children: [{ name: 'LogoComponent', url: 'components/logo' }],
