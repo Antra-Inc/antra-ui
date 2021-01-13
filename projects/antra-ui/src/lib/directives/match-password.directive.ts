@@ -9,7 +9,7 @@ import { CustomValidationService } from '../services/custom-validation.service';
 export class MatchPasswordDirective {
   @Input('antraMatchPassword') matchPassword: string[] = [];
 
-  constructor(private customValidationService: CustomValidationService) {}
+  constructor(private customValidationService?: CustomValidationService) {}
 
   validate(formGroup: FormGroup): ValidationErrors {
     return this.customValidationService.matchPassword(this.matchPassword[0], this.matchPassword[1])(formGroup);

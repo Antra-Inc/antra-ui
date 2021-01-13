@@ -32,8 +32,14 @@
 }
 button:disabled,
 button[disabled] {
-  cursor:not-allowed;
+  cursor: not-allowed;
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+.form__column button {
+  outline: none;
+}
+.form__row button {
+  outline: none;
 }

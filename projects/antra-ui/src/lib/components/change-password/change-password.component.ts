@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PasswordResetActions } from '../../interfaces/password-reset.interface';
 import { Login } from '../../models/login.model';
+import { CustomValidationService } from '../../services/custom-validation.service';
 
 /**
  * `antra-change-password` component provides a default Change Password interface with two fields such as **password field, confirm password field** and
@@ -10,11 +11,12 @@ import { Login } from '../../models/login.model';
  * custom validation messages to **password and confirm password field** from end user. Input property, email address will hold the current email address for which user wishes to update the password.
  *
  * * There is another input property known as **passwordPattern**, you can pass any custom pattern from application.
- * **For e.g:** [passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'.
- * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$',
- * checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
+ * * For e.g: **[passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'**.
+ * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$', checks for 1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.
  *
- * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, it will emit object of passwordResetActions which includes submit action name as a string **'ChangePassword action type, email address, password and confirm password **.
+ * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, it will emit object of
+ * passwordResetActions which includes submit action name as a string **ChangePassword [action type], email address,
+ * password and confirm password**
  *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
@@ -44,12 +46,14 @@ export class ChangePasswordComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor() {}
+  constructor(private customValidationService: CustomValidationService) {}
 
   /**
    * @ignore
    */
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.customValidationService.passwordPattern = this.passwordPattern;
+  }
 
   // tslint:disable-next-line: typedef
   onSubmit() {
