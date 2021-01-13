@@ -31,10 +31,9 @@ export class AppComponent {
     },
     {
       name: 'Login',
-      icon: 'lock_open',
+      icon: 'login',
       children: [{ name: 'LoginComponent', url: 'components/login' }],
     },
-
     {
       name: 'Password Reset',
       icon: 'lock_open',

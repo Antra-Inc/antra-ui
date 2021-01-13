@@ -37,3 +37,9 @@ button[disabled] {
   background-color: #cccccc;
   color: #666666;
 }
+.form__column button {
+  outline: none;
+}
+.form__row button {
+  outline: none;
+}
