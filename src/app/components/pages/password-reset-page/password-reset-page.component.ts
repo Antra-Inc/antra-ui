@@ -58,7 +58,7 @@ export class PasswordResetPageComponent implements OnInit {
   
   .customized::ng-deep .form-container {
     background-color: powderblue;
-  }  
+  }   
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
