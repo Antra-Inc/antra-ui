@@ -9,6 +9,9 @@ export class ChangePasswordExampleComponent implements OnInit {
   details1: string;
   details2: string;
 
+  userName1 = 'John Smith';
+  userName2 = 'William Smith';
+
   emailAddress1 = 'narend.gentyal@gmail.com';
   emailAddress2 = 'narend.atsinfotech@gmail.com';
 
