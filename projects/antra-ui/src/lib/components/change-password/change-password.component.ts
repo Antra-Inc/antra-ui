@@ -7,8 +7,8 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * `antra-change-password` component provides a default Change Password interface with two fields such as **password field, confirm password field** and
  * one **SUBMIT** button. Password textbox does validations of required and strong password pattern where as Confirm Password textbox does validations of required and matches with password textbox value.
  *
- * There are three **Input properties,  emailAddress, passwordValidationMessage and confirmPasswordValidationMessage**, They are used to assign
- * custom validation messages to **password and confirm password field** from end user. Input property, email address will hold the current email address for which user wishes to update the password.
+ * There are four **Input properties, passwordValidationMessage and confirmPasswordValidationMessage**, They are used to assign
+ * custom validation messages to **password and confirm password field** from end user where as **Input properties, userName and email address** will hold the user who has logged-in whose user name and email address for which user wishes to update the password.
  *
  * * There is another input property known as **passwordPattern**, you can pass any custom pattern from application.
  * * For e.g: **[passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'**.
@@ -31,8 +31,9 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * <example-url>http://127.0.0.1:4200/components/change-password</example-url>
  */
 export class ChangePasswordComponent implements OnInit {
-  // receiving customized validation messages from end user
+  @Input() userName;
   @Input() emailAddress;
+  // receiving customized validation messages from end user
   @Input() passwordValidationMessage;
   @Input() confirmPasswordValidationMessage;
   @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';

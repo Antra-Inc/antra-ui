@@ -5,11 +5,11 @@ import { ChangePasswordComponent } from './change-password.component';
 
 @Component({
   template: `<antra-change-password
-  class="default"
-  [passwordValidationMessage]="passwordValidationMsg"
-  [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
-  (passwordResetActionEvent)="changePassword1($event)"
-></antra-change-password>`,
+    class="default"
+    [passwordValidationMessage]="passwordValidationMsg"
+    [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
+    (passwordResetActionEvent)="changePassword1($event)"
+  ></antra-change-password>`,
 })
 class TestHostComponent {}
 
@@ -41,9 +41,9 @@ describe('ChangePasswordComponent', () => {
     expect(btnElement.textContent.trim()).toBe('SUBMIT');
   });
 
-  it('should have h3 with text content Reset your password', () => {
-    const h3Element = fixture.nativeElement.querySelector('h3');
-    expect(h3Element.textContent.trim()).toBe('Reset your password');
+  it('should have p with text content Please create new Password', () => {
+    const pElement = fixture.nativeElement.querySelector('p');
+    expect(pElement.textContent.trim()).toBe('Please create new Password');
   });
 
   it('should have form with class name change-pwd-form', () => {
