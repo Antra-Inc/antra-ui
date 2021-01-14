@@ -38,7 +38,7 @@ export class ChangePasswordComponent implements OnInit {
   @Input() confirmPasswordValidationMessage;
   @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
 
-  // emitting password-reset SUBMIT action to end user
+  // emitting passwordResetActionEvent SUBMIT action to end user
   @Output() passwordResetActionEvent = new EventEmitter<PasswordResetActions>();
 
   loginModel = new Login();
