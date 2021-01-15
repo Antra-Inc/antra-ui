@@ -31,14 +31,14 @@ export class PasswordResetPageComponent implements OnInit {
     </tr>
     <tr>
       <td>
-        <h2 class="text-center">
-          {{ details1 }}
-        </h2>
+        <p class="text-center">
+          {{ details1 | json }}
+        </p>
       </td>
       <td>
-        <h2 class="text-center">
-          {{ details2 }}
-        </h2>
+        <p class="text-center">
+          {{ details2 | json }}
+        </p>
       </td>
     </tr>
   </table>

@@ -13,6 +13,7 @@ export class ChangePasswordPageComponent implements OnInit {
         <antra-change-password
           class="default"
           [passwordPattern]="passwordPattern"
+          [userName]="userName1"
           [emailAddress]="emailAddress1"
           [passwordValidationMessage]="passwordValidationMsg"
           [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
@@ -23,6 +24,7 @@ export class ChangePasswordPageComponent implements OnInit {
         <antra-change-password
           class="customized"
           [passwordPattern]="passwordPattern"
+          [userName]="userName2"
           [emailAddress]="emailAddress2"
           [passwordValidationMessage]="passwordValidationMsg"
           [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
@@ -37,14 +39,14 @@ export class ChangePasswordPageComponent implements OnInit {
     </tr>
     <tr>
       <td>
-        <h2 class="text-center">
-          {{ details1 }}
-        </h2>
+        <p class="text-center">
+          {{ details1 | json }}
+        </p>
       </td>
       <td>
-        <h2 class="text-center">
-          {{ details2 }}
-        </h2>
+        <p class="text-center">
+          {{ details2 | json }}
+        </p>
       </td>
     </tr>
   </table>

@@ -21,7 +21,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
           [btnText]="btnText"
           [showRedirectButton]="true"
           [successfulMessage] = "successfulMessage2"
-          (passwordResetActionEvent)="showActionDetails($event)"
+          (passwordResetSuccessfulEvent)="showActionDetails($event)"
         ></antra-password-reset-successful>
       </td>
     </tr>
@@ -34,9 +34,9 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
       <td>
       </td>
       <td>
-        <h2 class="text-center">
+        <h3 class="text-center">
           {{ details }}
-        </h2>
+        </h3>
       </td>
     </tr>
   </table>
