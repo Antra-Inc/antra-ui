@@ -56,6 +56,5 @@ export class PasswordResetComponent implements OnInit {
       confirmPassword: null,
     };
     this.passwordResetActionEvent.emit(this.passwordResetActions);
-    console.log(this.passwordResetActions.actionType, ' ', this.passwordResetActions.email);
   }
 }

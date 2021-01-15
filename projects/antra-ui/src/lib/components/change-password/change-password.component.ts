@@ -67,7 +67,5 @@ export class ChangePasswordComponent implements OnInit {
       confirmPassword: this.loginModel.confirmPassword,
     };
     this.passwordResetActionEvent.emit(this.passwordResetActions);
-    console.log(this.passwordResetActions.actionType, ' ', this.passwordResetActions.email);
-    console.log(this.passwordResetActions.password, ' ', this.passwordResetActions.confirmPassword);
   }
 }
