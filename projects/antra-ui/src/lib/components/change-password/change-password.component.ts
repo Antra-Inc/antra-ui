@@ -4,18 +4,28 @@ import { Login } from '../../models/login.model';
 import { CustomValidationService } from '../../services/custom-validation.service';
 
 /**
- * `antra-change-password` component provides a default Change Password interface with two fields such as **password field, confirm password field** and
- * one **SUBMIT** button. Password textbox does validations of required and strong password pattern where as Confirm Password textbox does validations of required and matches with password textbox value.
+ * `antra-change-password` component provides a default Change Password interface 
+ * with two fields such as **password field, confirm password field** and
+ * one **SUBMIT** button. Password textbox does validations of required 
+ * and strong password pattern where as Confirm Password textbox does validations 
+ * of required and matches with password textbox value.
  *
- * There are four **Input properties, passwordValidationMessage and confirmPasswordValidationMessage**, They are used to assign
- * custom validation messages to **password and confirm password field** from end user where as **Input properties, userName and email address** will hold the user who has logged-in whose user name and email address for which user wishes to update the password.
+ * There are four **Input properties, passwordValidationMessage and 
+ * confirmPasswordValidationMessage**, They are used to assign
+ * custom validation messages to **password and confirm password field** 
+ * from end user where as **Input properties, userName and email address** will hold 
+ * the user who has logged-in whose user name and email address for which user wishes 
+ * to update the password.
  *
- * * There is another input property known as **passwordPattern**, you can pass any custom pattern from application.
+ * * There is another input property known as **passwordPattern**, you can pass any 
+ * custom pattern from application.
  * * For e.g: **[passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'**.
- * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$', checks for 1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.
+ * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$', checks for 1 uppercase, 
+ * 1 lowercase, 1 number and total length should be minimum 8 characters long.
  *
- * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, it will emit object of
- * passwordResetActions which includes submit action name as a string **ChangePassword [action type], email address,
+ * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, 
+ * it will emit object of passwordResetActions which includes submit action name as a 
+ * string **ChangePassword [action type], email address,
  * password and confirm password**
  *
  * ### Usage

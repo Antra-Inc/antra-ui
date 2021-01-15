@@ -31,6 +31,7 @@ export class ChangePasswordExampleComponent implements OnInit {
   changePassword1(details1: string) {
     this.details1 = details1;
   }
+  // tslint:disable-next-line: typedef
   changePassword2(details2: string) {
     this.details2 = details2;
   }

@@ -3,13 +3,16 @@ import { PasswordResetActions } from '../../interfaces/password-reset.interface'
 import { Login } from '../../models/login.model';
 
 /**
- * `antra-password-reset` component provides a default Password Reset interface with **email address field** and
- * one **SUBMIT** button. Email address textbox does validations of required and valid email address.
+ * `antra-password-reset` component provides a default Password Reset interface 
+ * with **email address field** and one **SUBMIT** button. Email address textbox does 
+ * validations of required and valid email address.
  *
  * There is one **Input property,  emailAddressValidationMessage**, it is used to assign
  * custom validation message to **email address field** from end user.
  *
- * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, it will emit object of passwordResetActions which includes submit action name as a string **'PasswordReset and email address**.
+ * There is an **Output event** named passwordResetActionEvent, on click of **SUBMIT** button, 
+ * it will emit object of passwordResetActions which includes submit action name as a 
+ * string **'PasswordReset and email address**.
  *
  * **Note:**
  * When you click on SUBMIT button, it will first validate provided email address and

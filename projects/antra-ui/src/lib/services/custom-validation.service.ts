@@ -21,7 +21,7 @@ export class CustomValidationService {
   }
 
   // Matching Password with ConfirmPassword
-  matchPassword(password: string, confirmPassword: string) {
+  matchPassword(password: string, confirmPassword: string): any {
     return (formGroup: FormGroup) => {
       const passwordControl = formGroup.controls[password];
       const confirmPasswordControl = formGroup.controls[confirmPassword];

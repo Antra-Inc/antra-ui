@@ -19,6 +19,7 @@ export class PasswordResetExampleComponent implements OnInit {
   sendVerificationEmail1(details1: string) {
     this.details1 = details1;
   }
+  // tslint:disable-next-line: typedef
   sendVerificationEmail2(details2: string) {
     this.details2 = details2;
   }
