@@ -26,20 +26,15 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <hr />
-      </td>
-    </tr>
-    <tr>
       <td>
-        <h2 class="text-center">
-          {{ actionNameOne }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameOne | json }}
+        </p>
       </td>
       <td>
-        <h2 class="text-center">
-          {{ actionNameTwo }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameTwo | json }}
+        </p>
       </td>
     </tr>
   </table>
@@ -57,7 +52,6 @@
           (loginActionEvent)="getActionNameThree($event)"
         ></antra-login>
       </td>
-
       <td>
         <antra-login
           class="example1"
@@ -69,20 +63,15 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <hr />
-      </td>
-    </tr>
-    <tr>
       <td>
-        <h2 class="text-center">
-          {{ actionNameThree }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameThree | json }}
+        </p>
       </td>
       <td>
-        <h2 class="text-center">
-          {{ actionNameFour }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameFour | json }}
+        </p>
       </td>
     </tr>
   </table>
