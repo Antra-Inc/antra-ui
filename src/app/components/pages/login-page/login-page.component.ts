@@ -32,6 +32,23 @@ export class LoginPageComponent implements OnInit {
           (loginActionEvent)="getActionNameTwo($event)"
         ></antra-login>
       </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="text-center">
+          {{ actionNameOne | json }}
+        </p>
+      </td>
+      <td>
+        <p class="text-center">
+          {{ actionNameTwo | json }}
+        </p>
+      </td>
+    </tr>
+  </table>
+  <hr />
+  <table>
+    <tr>
       <td>
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
@@ -43,7 +60,6 @@ export class LoginPageComponent implements OnInit {
           (loginActionEvent)="getActionNameThree($event)"
         ></antra-login>
       </td>
-
       <td>
         <antra-login
           class="example1"
@@ -55,30 +71,15 @@ export class LoginPageComponent implements OnInit {
       </td>
     </tr>
     <tr>
-      <td colspan="4">
-        <hr />
-      </td>
-    </tr>
-    <tr>
       <td>
-        <h2 class="text-center">
-          {{ actionNameOne }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameThree | json }}
+        </p>
       </td>
       <td>
-        <h2 class="text-center">
-          {{ actionNameTwo }}
-        </h2>
-      </td>
-      <td>
-        <h2 class="text-center">
-          {{ actionNameThree }}
-        </h2>
-      </td>
-      <td>
-        <h2 class="text-center">
-          {{ actionNameFour }}
-        </h2>
+        <p class="text-center">
+          {{ actionNameFour | json }}
+        </p>
       </td>
     </tr>
   </table>

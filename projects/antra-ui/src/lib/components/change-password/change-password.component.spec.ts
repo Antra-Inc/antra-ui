@@ -1,22 +1,26 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { LoginComponent } from './login.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AntraUiModule } from '../../antra-ui.module';
-import { By } from '@angular/platform-browser';
+import { ChangePasswordComponent } from './change-password.component';
 
 @Component({
-  template: `<antra-login (loginActionEvent)="getActionName($event)"></antra-login>`,
+  template: `<antra-change-password
+    class="default"
+    [passwordValidationMessage]="passwordValidationMsg"
+    [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
+    (passwordResetActionEvent)="changePassword1($event)"
+  ></antra-change-password>`,
 })
 class TestHostComponent {}
 
-describe('LoginComponent', () => {
+describe('ChangePasswordComponent', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [LoginComponent, TestHostComponent],
+        declarations: [ChangePasswordComponent, TestHostComponent],
         imports: [AntraUiModule],
       }).compileComponents();
     })
@@ -32,14 +36,19 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have button with text content LOGIN', () => {
+  it('should have button with text content SUBMIT', () => {
     const btnElement = fixture.nativeElement.querySelector('button');
-    expect(btnElement.textContent.trim()).toBe('LOGIN');
+    expect(btnElement.textContent.trim()).toBe('SUBMIT');
   });
 
-  it('should have form with class name login-form', () => {
+  it('should have p with text content Please create new Password', () => {
+    const pElement = fixture.nativeElement.querySelector('p');
+    expect(pElement.textContent.trim()).toBe('Please create new Password');
+  });
+
+  it('should have form with class name change-pwd-form', () => {
     const frmElement = fixture.nativeElement.querySelector('form');
-    expect(frmElement.className).toContain('login-form');
+    expect(frmElement.className).toContain('change-pwd-form');
   });
 
   it('should have input with class name form__input', () => {

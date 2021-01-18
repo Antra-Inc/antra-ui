@@ -25,6 +25,12 @@ import { loadSvgResources } from './utils/svg.util';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordResetPageComponent } from './components/pages/password-reset-page/password-reset-page.component';
+import { PasswordResetExampleComponent } from './components/pages/password-reset-page/password-reset-example/password-reset-example.component';
+import { ChangePasswordPageComponent } from './components/pages/change-password-page/change-password-page.component';
+import { ChangePasswordExampleComponent } from './components/pages/change-password-page/change-password-example/change-password-example.component';
+import { PasswordResetSuccessfulPageComponent } from './components/pages/password-reset-successful-page/password-reset-successful-page.component';
+import { PasswordResetSuccessfulExampleComponent } from './components/pages/password-reset-successful-page/password-reset-successful-example/password-reset-successful-example.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +50,12 @@ import { HttpClientModule } from '@angular/common/http';
     WidgetExampleComponent,
     LogoPageComponent,
     LogoExampleComponent,
+    PasswordResetPageComponent,
+    PasswordResetExampleComponent,
+    ChangePasswordPageComponent,
+    ChangePasswordExampleComponent,
+    PasswordResetSuccessfulExampleComponent,
+    PasswordResetSuccessfulPageComponent,
   ],
   imports: [
     AntraUiModule,

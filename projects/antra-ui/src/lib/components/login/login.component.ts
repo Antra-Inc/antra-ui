@@ -26,7 +26,7 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * If you apply **true**, then they will become **visible**.
  *
  * There is an **Output event** named loginActionEvent, it will emit login action names as a string such as **'FORGOTPASSWORD',
- * 'GMAIL' & 'OFFICE365'** based on end user clicks.
+ * 'GMAIL' & 'OFFICE365'** based on end user clicks. It gives object of loginActions which includes actionType, email and password.
  *
  * **Note:**
  * When you click on LOGIN button, it will first validate provided email address and password and
