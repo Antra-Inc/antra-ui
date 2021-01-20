@@ -2,8 +2,11 @@
   <table>
     <tr>
       <td>
+        <h3>Example 1</h3>
         <antra-login
           class="default"
+          [showLoginError]="showLoginError1"
+          [loginErrorMessage]="loginErrorMessage1"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
           [loginUsingOffice365]="true"
@@ -14,6 +17,7 @@
         ></antra-login>
       </td>
       <td>
+        <h3>Example 2</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example2"
@@ -42,6 +46,7 @@
   <table>
     <tr>
       <td>
+        <h3>Example 3</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example3"
@@ -53,8 +58,11 @@
         ></antra-login>
       </td>
       <td>
+        <h3>Example 4</h3>
         <antra-login
           class="example1"
+          [showLoginError]="showLoginError2"
+          [loginErrorMessage]="loginErrorMessage2"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           [passwordValidationMessage]="passwordValidationMsg1"
           [passwordPattern]="passwordPattern1"
