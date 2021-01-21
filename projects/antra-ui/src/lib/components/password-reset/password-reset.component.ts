@@ -18,6 +18,12 @@ import { Login } from '../../models/login.model';
  * When you click on SUBMIT button, it will first validate provided email address and
  * then it will emit validated email address as the result plus PasswordReset as action string.
  *
+ * * **Note:**
+ * There are two additional **Input properties, such as showLoginError, default to False and loginErrorMessage to show
+ * variety of error messages based on submit button clicks**. For Instance, Inactive Email Address, Emaild Id does not exist, etc
+ *
+ * Note: If you turn showLoginError to true, then loginErrorMessage will become visible. 
+ * 
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
  */
@@ -34,6 +40,9 @@ export class PasswordResetComponent implements OnInit {
   // receiving customized validation messages from end user
   @Input() emailAddressValidationMessage;
 
+  @Input() showLoginError = false;
+  @Input() loginErrorMessage;
+  
   // emitting password-reset SUBMIT action to end user
   @Output() passwordResetActionEvent = new EventEmitter<PasswordResetActions>();
 
