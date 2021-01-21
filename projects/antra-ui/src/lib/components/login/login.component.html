@@ -41,13 +41,16 @@
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[1] }}
         </div>
       </div>
+      <div *ngIf="showLoginError && password.valid" class="text-danger">
+        <div><span class="material-icons"> error_outline </span>{{ loginErrorMessage }}</div>
+      </div>
     </div>
     <div class="form__row">
       <button type="submit" class="btn btn-primary form__submit-center" [disabled]="loginForm.invalid">LOGIN</button>
     </div>
     <div class="form__row">
       <div class="form__link">
-        <span (click)="sendLoginActionName('ForgotPassword')">Forgot Password</span>
+        <span (click)="sendLoginActionName('ForgotPassword')">Forgot Password?</span>
       </div>
     </div>
 
