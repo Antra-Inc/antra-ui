@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AntraUiModule } from '../../antra-ui.module';
-import { PasswordResetComponent } from './password-reset.component';
+import { ChangePasswordComponent } from './change-password.component';
 
 @Component({
-  template: `<antra-password-reset
+  template: `<antra-change-password
     class="default"
-    [emailAddressValidationMessage]="emailAddressValidationMsg"
-    (passwordResetActionEvent)="sendVerificationEmail($event)"
-  ></antra-password-reset>`,
+    [passwordValidationMessage]="passwordValidationMsg"
+    [confirmPasswordValidationMessage]="confirmPasswordValidationMsg"
+    (passwordResetActionEvent)="changePassword1($event)"
+  ></antra-change-password>`,
 })
 class TestHostComponent {}
 
-describe('PasswordResetComponent', () => {
+describe('ChangePasswordComponent', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [PasswordResetComponent, TestHostComponent],
+        declarations: [ChangePasswordComponent, TestHostComponent],
         imports: [AntraUiModule],
       }).compileComponents();
     })
@@ -40,14 +41,14 @@ describe('PasswordResetComponent', () => {
     expect(btnElement.textContent.trim()).toBe('SUBMIT');
   });
 
-  it('should have h3 with text content Password Reset', () => {
-    const h3Element = fixture.nativeElement.querySelector('h3');
-    expect(h3Element.textContent.trim()).toBe('Password Reset');
+  it('should have p with text content Please create new Password', () => {
+    const pElement = fixture.nativeElement.querySelector('p');
+    expect(pElement.textContent.trim()).toBe('Please create new Password');
   });
 
-  it('should have form with class name reset-form', () => {
+  it('should have form with class name change-pwd-form', () => {
     const frmElement = fixture.nativeElement.querySelector('form');
-    expect(frmElement.className).toContain('reset-form');
+    expect(frmElement.className).toContain('change-pwd-form');
   });
 
   it('should have input with class name form__input', () => {

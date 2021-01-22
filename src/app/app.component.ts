@@ -37,7 +37,11 @@ export class AppComponent {
     {
       name: 'Password Reset',
       icon: 'lock_open',
-      children: [{ name: 'PasswordResetComponent', url: 'components/password-reset' }],
+      children: [
+        { name: 'PasswordResetComponent', url: 'components/password-reset' },
+        { name: 'ChangePasswordComponent', url: 'components/change-password' },
+        { name: 'PasswordResetSuccessfulComponent', url: 'components/password-reset-successful' },
+      ],
     },
     {
       name: 'Logo',

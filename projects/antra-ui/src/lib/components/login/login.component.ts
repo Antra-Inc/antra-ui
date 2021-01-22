@@ -39,6 +39,12 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * There is an Input type, 'loginUsingOption' which will take boolean value. If it is false,
  * you will not be able to see Login Using option, it will hide Login using text, Gmail and Office365 buttons. Bydefault is true.
  *
+ * **Note:**
+ * There are two additional **Input properties, such as showLoginError, default to False and loginErrorMessage to show
+ * variety of error messages based on login failures**. For Instance, Invalid Credentials, Emaild Id does not exist, etc
+ *
+ * Note: If you turn showLoginError to true, then loginErrorMessage will become visible.
+ *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
  */
@@ -55,6 +61,9 @@ export class LoginComponent implements OnInit {
   // receiving customized validation messages from end user
   @Input() emailAddressValidationMessage;
   @Input() passwordValidationMessage;
+
+  @Input() showLoginError = false;
+  @Input() loginErrorMessage;
   @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
   @Input() loginUsingOption = false;
   @Input() loginUsingGmail = false;
@@ -66,6 +75,7 @@ export class LoginComponent implements OnInit {
   loginModel = new Login();
   loginActions: LoginActions;
 
+  errorMessage: string;
   /**
    * @ignore
    */

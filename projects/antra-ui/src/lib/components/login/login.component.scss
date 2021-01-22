@@ -1,11 +1,6 @@
 .form-container {
-  width: 400px;
+  height: 400px;
   padding: 30px;
-  border-radius: 20px;
-
-  .form-container__error {
-    margin-bottom: 15px;
-  }
 }
 .form__label-color-grey {
   margin: 10px 0;
@@ -20,11 +15,6 @@
   margin-bottom: 2px;
   border-radius: 50px;
 }
-.form__row,
-.form__option__row {
-  //r display: flex;
-  //r flex-wrap: wrap;
-}
 .form__column {
   width: 180px;
 }
@@ -33,25 +23,6 @@
   right: 0;
   display: inline-block;
 }
-button:disabled,
-button[disabled] {
-  cursor:not-allowed;
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
 .form__column button {
   outline: none;
-}
-.form__row button {
-  outline: none;
-}
-
-.form-actions {
-  display: flex;
-  flex-wrap: wrap;
-  .form-actions__item {
-    flex:1;
-    margin-right: 5px;
-  }
 }
