@@ -24,7 +24,7 @@ describe('PasswordResetComponent', () => {
       }).compileComponents();
     })
   );
- 
+
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
