@@ -1,11 +1,14 @@
 .form-container {
   width: 400px;
-  height: 400px;
   padding: 30px;
   border-radius: 20px;
+
+  .form-container__error {
+    margin-bottom: 15px;
+  }
 }
 .form__label-color-grey {
-  margin: 10px;
+  margin: 10px 0;
   color: darkgrey;
   font-weight: bold;
 }
@@ -19,8 +22,8 @@
 }
 .form__row,
 .form__option__row {
-  display: flex;
-  flex-wrap: wrap;
+  //r display: flex;
+  //r flex-wrap: wrap;
 }
 .form__column {
   width: 180px;
@@ -42,4 +45,13 @@ button[disabled] {
 }
 .form__row button {
   outline: none;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  .form-actions__item {
+    flex:1;
+    margin-right: 5px;
+  }
 }
