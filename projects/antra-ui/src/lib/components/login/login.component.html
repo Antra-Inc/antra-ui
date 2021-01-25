@@ -12,7 +12,7 @@
         required
         email
       />
-      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-container__error">
         <div *ngIf="email.errors?.required">
           <span class="material-icons"> error_outline </span> {{ emailAddressValidationMessage[0] }}
         </div>
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="form__row">
+    <div class="form__row text-right">
       <input
         matInput
         placeholder="Password"
@@ -33,7 +33,7 @@
         antraPasswordPattern
         required
       />
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="form-container__error">
         <div *ngIf="password.errors?.required">
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[0] }}
         </div>
@@ -54,20 +54,20 @@
       </div>
     </div>
 
-    <div class="form__options" *ngIf="loginUsingOption">
+    <div class="" *ngIf="loginUsingOption">
       <hr />
       <div class="form__option__row">
         <div class="form__label-color-grey">
           <b>Login using</b>
         </div>
       </div>
-      <div class="form__option__row">
-        <div class="form__column" *ngIf="loginUsingGmail">
+      <div class="form-actions">
+        <div class="form__column form-actions__item" *ngIf="loginUsingGmail">
           <button class="btn btn-danger" type="button" (click)="sendLoginActionName('GoogleLogin')">
             <img class="form__button-img" src="/assets/svg/gmail.svg" />Gmail
           </button>
         </div>
-        <div class="form__column form__button-right" *ngIf="loginUsingOffice365">
+        <div class="form__column form-actions__item" *ngIf="loginUsingOffice365">
           <button type="button" (click)="sendLoginActionName('MsftLogin')" class="btn btn-warning">
             <img class="form__button-img" src="/assets/svg/office.svg" />Office 365
           </button>

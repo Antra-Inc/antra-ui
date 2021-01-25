@@ -40,8 +40,8 @@ describe('PasswordResetSuccessfulComponent', () => {
     expect(spanElement.textContent.trim()).toBe('check_circle');
   });
 
-  it('should have div with class names form-container antra-widget', () => {
+  it('should have div with class names form-container password-reset antra-widget', () => {
     const divElement = fixture.nativeElement.querySelector('div');
-    expect(divElement.className).toContain('form-container antra-widget');
+    expect(divElement.className).toContain('form-container password-reset antra-widget');
   });
 });

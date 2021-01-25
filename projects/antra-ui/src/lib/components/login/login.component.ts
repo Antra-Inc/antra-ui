@@ -43,7 +43,7 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * There are two additional **Input properties, such as showLoginError, default to False and loginErrorMessage to show
  * variety of error messages based on login failures**. For Instance, Invalid Credentials, Emaild Id does not exist, etc
  *
- * Note: If you turn showLoginError to true, then loginErrorMessage will become visible. 
+ * Note: If you turn showLoginError to true, then loginErrorMessage will become visible.
  *
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`

@@ -12,7 +12,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
       <td>
         <antra-password-reset-successful
           class="default"
-          [successfulMessage] = "successfulMessage1"
+          [successfulMessage]="successfulMessage1"
         ></antra-password-reset-successful>
       </td>
       <td>
@@ -20,7 +20,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
           class="customized"
           [btnText]="btnText"
           [showRedirectButton]="true"
-          [successfulMessage] = "successfulMessage2"
+          [successfulMessage]="successfulMessage2"
           (passwordResetSuccessfulEvent)="showActionDetails($event)"
         ></antra-password-reset-successful>
       </td>
@@ -31,8 +31,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
       </td>
     </tr>
     <tr>
-      <td>
-      </td>
+      <td></td>
       <td>
         <h3 class="text-center">
           {{ details }}
@@ -52,11 +51,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
   }
   .text-center {
     text-align: center;
-  }
-  
-  .customized::ng-deep .form-container {
-    background-color: powderblue;
-  }
+  }  
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
