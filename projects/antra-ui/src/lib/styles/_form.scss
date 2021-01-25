@@ -5,16 +5,12 @@
   width: 400px;
   padding: 50px;
   border-radius: 20px;
-
-  &__bold {
-    font-weight: bold !important;
-    margin: 0px !important;
-  }
 }
 .form__row,
 .form__option__row {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 .form__input {
   margin-bottom: 10px;
@@ -42,10 +38,10 @@
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form__submit-center {
-  text-align: center;
-  width: 100%;
-}
+// .form__submit-center {
+//   text-align: center;
+//   width: 100%;
+// }
 .form__link {
   margin: 10px;
   color: darkgrey;
