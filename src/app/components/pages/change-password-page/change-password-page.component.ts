@@ -66,7 +66,7 @@ export class ChangePasswordPageComponent implements OnInit {
   
   .customized::ng-deep .form-container {
     background-color: powderblue;
-  }    
+  }      
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
@@ -79,6 +79,12 @@ export class ChangePasswordPageComponent implements OnInit {
   export class ChangePasswordExampleComponent implements OnInit {
     details1: string;
     details2: string;
+  
+    userName1 = 'John Smith';
+    userName2 = 'William Smith';
+  
+    emailAddress1 = 'narend.gentyal@gmail.com';
+    emailAddress2 = 'narend.atsinfotech@gmail.com';
   
     passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
   
@@ -96,6 +102,7 @@ export class ChangePasswordPageComponent implements OnInit {
     changePassword1(details1: string) {
       this.details1 = details1;
     }
+    // tslint:disable-next-line: typedef
     changePassword2(details2: string) {
       this.details2 = details2;
     }

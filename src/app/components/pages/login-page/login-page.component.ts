@@ -10,6 +10,7 @@ export class LoginPageComponent implements OnInit {
   <table>
     <tr>
       <td>
+        <h3>Example 1</h3>
         <antra-login
           class="default"
           [showLoginError]="showLoginError1"
@@ -24,6 +25,7 @@ export class LoginPageComponent implements OnInit {
         ></antra-login>
       </td>
       <td>
+        <h3>Example 2</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example2"
@@ -52,6 +54,7 @@ export class LoginPageComponent implements OnInit {
   <table>
     <tr>
       <td>
+        <h3>Example 3</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example3"
@@ -63,6 +66,7 @@ export class LoginPageComponent implements OnInit {
         ></antra-login>
       </td>
       <td>
+        <h3>Example 4</h3>
         <antra-login
           class="example1"
           [showLoginError]="showLoginError2"
@@ -99,31 +103,20 @@ export class LoginPageComponent implements OnInit {
   }
   
   .example1::ng-deep .form-container {
-    background-color: darkslategray;
-    height: 320px;
+    background-color: lightgoldenrodyellow;
   }
   
   .example2::ng-deep .form-container {
     background-color: azure;
   }
-  .example2::ng-deep .btn-danger {
-    width: 100%;
-    position: absolute;
-    right: 30px;
-  }
   
   .example3::ng-deep .form-container {
     background-color: bisque;
   }
-  .example3::ng-deep .form__button-right {
-    width: 100%;
-    position: absolute;
-    left: 30px;
-  }
   
-  .text-center{
+  .text-center {
     text-align: center;
-  }
+  }  
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
@@ -135,6 +128,8 @@ export class LoginPageComponent implements OnInit {
     styleUrls: ['./login-example.component.scss'],
   })
   export class LoginExampleComponent implements OnInit {
+    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
+  
     actionNameOne: LoginActions;
     actionNameTwo: LoginActions;
     actionNameThree: LoginActions;
@@ -203,11 +198,10 @@ export class LoginPageComponent implements OnInit {
       this.actionNameThree = details;
     }
   
-    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
     // tslint:disable-next-line: typedef
     getActionNameFour(details: LoginActions) {
       this.showLoginError2 = false;
-      for (let email of this.registeredEmailIds) {
+      for (const email of this.registeredEmailIds) {
         if (email === details.email) {
           this.actionNameFour = details;
           this.showLoginError2 = false;
@@ -224,7 +218,7 @@ export class LoginPageComponent implements OnInit {
         }
       }
     }
-  }  
+  }     
 `;
 
   constructor() {}

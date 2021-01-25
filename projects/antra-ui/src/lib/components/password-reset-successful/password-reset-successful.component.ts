@@ -1,20 +1,20 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 /**
- * `antra-password-reset-successful` component provides a default Password Reset Successful 
- * interface with **success-icon, message and optional button to redirect to another 
+ * `antra-password-reset-successful` component provides a default Password Reset Successful
+ * interface with **success-icon, message and optional button to redirect to another
  * component** and
  *
- * There is one **Input property,  successfulMessage**, it is used to receive successful 
+ * There is one **Input property,  successfulMessage**, it is used to receive successful
  * message from end user after password reset operation becomes successful.
- * There is one more **Input property,  btnText**, it is used to apply user friendly text 
+ * There is one more **Input property,  btnText**, it is used to apply user friendly text
  * to button from end user.
  *
- * **NOTE:**  **Input property,  showRedirectButton**, it is set default to **false**, 
+ * **NOTE:**  **Input property,  showRedirectButton**, it is set default to **false**,
  * meaning button is invisible to user. If you apply **true**, then it will become **visible**.
  *
- * There is an **Output event** named passwordResetSuccessfulEvent, on click 
- * of **CLICK HERE TO LOGIN** button, it will emit submit action name as 
+ * There is an **Output event** named passwordResetSuccessfulEvent, on click
+ * of **CLICK HERE TO LOGIN** button, it will emit submit action name as
  * a string **CLICK_HERE_TO_LOGIN**.
  *
  *

@@ -12,6 +12,8 @@ export class PasswordResetPageComponent implements OnInit {
       <td>
         <antra-password-reset
           class="default"
+          [showLoginError]="showLoginError"
+          [loginErrorMessage]="loginErrorMessage"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
           (passwordResetActionEvent)="sendVerificationEmail1($event)"
         ></antra-password-reset>
@@ -32,7 +34,7 @@ export class PasswordResetPageComponent implements OnInit {
     <tr>
       <td>
         <p class="text-center">
-          {{ details1 | json }}
+          {{ passwordResetActions | json }}
         </p>
       </td>
       <td>
@@ -57,20 +59,26 @@ export class PasswordResetPageComponent implements OnInit {
   }
   
   .customized::ng-deep .form-container {
-    background-color: powderblue;
+    background-color:azure;
   }  
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
-
+  import { PasswordResetActions } from 'antra-ui/lib/interfaces/password-reset.interface';
+  
   @Component({
     selector: 'app-password-reset-example',
     templateUrl: './password-reset-example.component.html',
     styleUrls: ['./password-reset-example.component.scss'],
   })
   export class PasswordResetExampleComponent implements OnInit {
-    details1: string;
+    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
+  
+    passwordResetActions: PasswordResetActions;
     details2: string;
+  
+    loginErrorMessage: string;
+    showLoginError = false;
   
     emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
   
@@ -79,13 +87,31 @@ export class PasswordResetPageComponent implements OnInit {
     ngOnInit(): void {}
   
     // tslint:disable-next-line: typedef
-    sendVerificationEmail1(details1: string) {
-      this.details1 = details1;
+    sendVerificationEmail1(pwdResetActions: PasswordResetActions) {
+      this.showLoginError = false;
+      for (const email of this.registeredEmailIds) {
+        if (email === pwdResetActions.email) {
+          this.passwordResetActions = pwdResetActions;
+          this.showLoginError = false;
+          this.loginErrorMessage = '';
+          break;
+        } else {
+          this.showLoginError = true;
+          this.loginErrorMessage = 'Email Id does not exist';
+          this.passwordResetActions = {
+            actionType: pwdResetActions.actionType,
+            email: pwdResetActions.email,
+            password: pwdResetActions.password,
+            confirmPassword: pwdResetActions.confirmPassword,
+          };
+        }
+      }
     }
+    // tslint:disable-next-line: typedef
     sendVerificationEmail2(details2: string) {
       this.details2 = details2;
     }
-  }  
+  }   
 `;
 
   constructor() {}
