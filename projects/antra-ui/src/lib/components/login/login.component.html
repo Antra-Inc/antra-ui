@@ -12,7 +12,7 @@
         required
         email
       />
-      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-container__error">
         <div *ngIf="email.errors?.required">
           <span class="material-icons"> error_outline </span> {{ emailAddressValidationMessage[0] }}
         </div>
@@ -33,7 +33,7 @@
         antraPasswordPattern
         required
       />
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="form-container__error">
         <div *ngIf="password.errors?.required">
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[0] }}
         </div>

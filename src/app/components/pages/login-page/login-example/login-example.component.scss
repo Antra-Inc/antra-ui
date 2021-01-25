@@ -7,28 +7,28 @@
   }
 }
 
-.example1::ng-deep .form-container {
-  background-color: darkslategray;
-  height: 320px;
-}
+// .example1::ng-deep .form-container {
+//   background-color: darkslategray;
+//   height: 320px;
+// }
 
-.example2::ng-deep .form-container {
-  background-color: azure;
-}
-.example2::ng-deep .btn-danger {
-  width: 100%;
-  position: absolute;
-  right: 30px;
-}
+// .example2::ng-deep .form-container {
+//   background-color: azure;
+// }
+// .example2::ng-deep .btn-danger {
+//   width: 100%;
+//   position: absolute;
+//   right: 30px;
+// }
 
-.example3::ng-deep .form-container {
-  background-color: bisque;
-}
-.example3::ng-deep .form__button-right {
-  width: 100%;
-  position: absolute;
-  left: 30px;
-}
+// .example3::ng-deep .form-container {
+//   background-color: bisque;
+// }
+// .example3::ng-deep .form__button-right {
+//   width: 100%;
+//   position: absolute;
+//   left: 30px;
+// }
 
 .text-center{
   text-align: center;
