@@ -72,6 +72,8 @@ export class PasswordResetPageComponent implements OnInit {
     styleUrls: ['./password-reset-example.component.scss'],
   })
   export class PasswordResetExampleComponent implements OnInit {
+    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
+  
     passwordResetActions: PasswordResetActions;
     details2: string;
   
@@ -84,11 +86,10 @@ export class PasswordResetPageComponent implements OnInit {
   
     ngOnInit(): void {}
   
-    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
     // tslint:disable-next-line: typedef
     sendVerificationEmail1(pwdResetActions: PasswordResetActions) {
       this.showLoginError = false;
-      for (let email of this.registeredEmailIds) {
+      for (const email of this.registeredEmailIds) {
         if (email === pwdResetActions.email) {
           this.passwordResetActions = pwdResetActions;
           this.showLoginError = false;
@@ -110,7 +111,7 @@ export class PasswordResetPageComponent implements OnInit {
     sendVerificationEmail2(details2: string) {
       this.details2 = details2;
     }
-  }  
+  }   
 `;
 
   constructor() {}

@@ -128,6 +128,8 @@ export class LoginPageComponent implements OnInit {
     styleUrls: ['./login-example.component.scss'],
   })
   export class LoginExampleComponent implements OnInit {
+    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
+  
     actionNameOne: LoginActions;
     actionNameTwo: LoginActions;
     actionNameThree: LoginActions;
@@ -196,11 +198,10 @@ export class LoginPageComponent implements OnInit {
       this.actionNameThree = details;
     }
   
-    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
     // tslint:disable-next-line: typedef
     getActionNameFour(details: LoginActions) {
       this.showLoginError2 = false;
-      for (let email of this.registeredEmailIds) {
+      for (const email of this.registeredEmailIds) {
         if (email === details.email) {
           this.actionNameFour = details;
           this.showLoginError2 = false;
@@ -217,7 +218,7 @@ export class LoginPageComponent implements OnInit {
         }
       }
     }
-  }    
+  }     
 `;
 
   constructor() {}
