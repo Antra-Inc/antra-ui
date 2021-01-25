@@ -1,9 +1,23 @@
 .form-container {
-  height: 400px;
   padding: 30px;
+
+  &__error {
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
 }
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  .form-actions__item {
+    flex: 1;
+    margin-right: 5px;
+  }
+}
+
 .form__label-color-grey {
-  margin: 10px;
+  margin: 10px 0;
   color: darkgrey;
   font-weight: bold;
 }
@@ -14,14 +28,6 @@
   margin-right: 10px;
   margin-bottom: 2px;
   border-radius: 50px;
-}
-.form__column {
-  width: 180px;
-}
-.form__button-right {
-  position: absolute;
-  right: 0;
-  display: inline-block;
 }
 .form__column button {
   outline: none;
