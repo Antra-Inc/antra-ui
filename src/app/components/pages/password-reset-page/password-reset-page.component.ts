@@ -34,7 +34,7 @@ export class PasswordResetPageComponent implements OnInit {
     <tr>
       <td>
         <p class="text-center">
-          {{ details1 | json }}
+          {{ passwordResetActions | json }}
         </p>
       </td>
       <td>
@@ -87,8 +87,6 @@ export class PasswordResetPageComponent implements OnInit {
     registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
     // tslint:disable-next-line: typedef
     sendVerificationEmail1(pwdResetActions: PasswordResetActions) {
-      // this.details1 = details1;
-  
       this.showLoginError = false;
       for (let email of this.registeredEmailIds) {
         if (email === pwdResetActions.email) {
