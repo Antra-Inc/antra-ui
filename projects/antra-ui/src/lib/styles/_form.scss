@@ -5,6 +5,11 @@
   width: 400px;
   padding: 50px;
   border-radius: 20px;
+
+  &__bold {
+    font-weight: bold !important;
+    margin: 0px !important;
+  }
 }
 .form__row,
 .form__option__row {
