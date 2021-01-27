@@ -20,6 +20,11 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$',
  * checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
  *
+ * * There is another input property known as **emailPattern**, you can pass any custom pattern from application.
+ * **For e.g:** [emailPattern]='^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$'.
+ * Default pattern is '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$',
+ * checks for **Alphanumeric characters, along with 0 or more special characters like '_','.'. You can use 0 or 1 time '@' symbol .**
+ * 
  * There are another three **Input properties, such as loginUsingOption, loginUsingGmail and loginUsingOffice365**.
  * They set default to **false**, meaning they are invisible to user.
  *
@@ -65,6 +70,7 @@ export class LoginComponent implements OnInit {
   @Input() showLoginError = false;
   @Input() loginErrorMessage;
   @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+  @Input() emailPattern = '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$';
   @Input() loginUsingOption = false;
   @Input() loginUsingGmail = false;
   @Input() loginUsingOffice365 = false;
@@ -96,6 +102,7 @@ export class LoginComponent implements OnInit {
    */
   ngOnInit(): void {
     this.customValidationService.passwordPattern = this.passwordPattern;
+    this.customValidationService.emailPattern = this.emailPattern;
   }
 
   /**

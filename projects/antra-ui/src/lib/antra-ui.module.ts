@@ -29,6 +29,7 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { PasswordResetSuccessfulComponent } from './components/password-reset-successful/password-reset-successful.component';
+import { EmailPatternDirective } from './directives/email-pattern.directive';
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { PasswordResetSuccessfulComponent } from './components/password-reset-su
     ChangePasswordComponent,
     MatchPasswordDirective,
     PasswordResetSuccessfulComponent,
+    EmailPatternDirective,
   ],
 
   imports: [
