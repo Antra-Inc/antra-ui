@@ -1,10 +1,5 @@
 .form-container {
   padding: 30px;
-
-  &__error {
-    margin-bottom: 15px;
-    color: #ff0000;
-  }
 }
 
 .form-actions {
@@ -27,7 +22,7 @@
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 2px;
-  border-radius: 50px;
+  border-radius: 0px;
 }
 .form__column button {
   outline: none;

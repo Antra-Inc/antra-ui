@@ -3,13 +3,13 @@ import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
 import { CustomValidationService } from '../services/custom-validation.service';
 
 @Directive({
-  selector: '[antraPasswordPattern]',
-  providers: [{ provide: NG_VALIDATORS, useExisting: PasswordPatternDirective, multi: true }]
+  selector: '[antraEmailPattern]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: EmailPatternDirective, multi: true }]
 })
-export class PasswordPatternDirective implements Validator {
+export class EmailPatternDirective implements Validator {
   constructor(private customValidator?: CustomValidationService) {}
 
   validate(control: AbstractControl): { [key: string]: any } | null {
-    return this.customValidator.passwordPatternValidator()(control);
+    return this.customValidator.emailPatternValidator()(control);
   }
 }

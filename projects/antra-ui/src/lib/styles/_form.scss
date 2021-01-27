@@ -5,6 +5,11 @@
   width: 400px;
   padding: 50px;
   border-radius: 20px;
+
+  &__error {
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
 }
 .form__row,
 .form__option__row {

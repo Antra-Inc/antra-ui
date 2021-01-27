@@ -6,20 +6,30 @@ import { ValidatorFn, AbstractControl, FormGroup } from '@angular/forms';
 })
 export class CustomValidationService {
   passwordPattern: string;
+  emailPattern: string;
 
   // Password Pattern Validation
-  patternValidator(): ValidatorFn {
+  passwordPatternValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {
       if (!control.value) {
         return null;
       }
-
       const regex = new RegExp(this.passwordPattern);
       const valid = regex.test(control.value);
       return valid ? null : { invalidPassword: true };
     };
   }
-
+  // Email Pattern Validation
+  emailPatternValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (!control.value) {
+        return null;
+      }
+      const regex = new RegExp(this.emailPattern);
+      const valid = regex.test(control.value);
+      return valid ? null : { invalidEmail: true };
+    };
+  }
   // Matching Password with ConfirmPassword
   matchPassword(password: string, confirmPassword: string): any {
     return (formGroup: FormGroup) => {

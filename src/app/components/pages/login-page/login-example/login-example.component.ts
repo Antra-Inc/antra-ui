@@ -7,7 +7,9 @@ import { LoginActions } from 'antra-ui/lib/interfaces/login.interface';
   styleUrls: ['./login-example.component.scss'],
 })
 export class LoginExampleComponent implements OnInit {
-  registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'narend@gmail.com'];
+  registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'john.smith', 'narend@gmail.com', 'rajeev.kumar'];
+
+  placeholder = 'Email Address';
 
   actionNameOne: LoginActions;
   actionNameTwo: LoginActions;
@@ -20,6 +22,8 @@ export class LoginExampleComponent implements OnInit {
   loginErrorMessage2: string;
   showLoginError2 = false;
 
+  emailPattern = '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$';
+
   passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
   passwordPattern1 = '^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$';
 
@@ -27,7 +31,7 @@ export class LoginExampleComponent implements OnInit {
   loginUsingGmail = true;
   loginUsingOffice365 = true;
 
-  emailAddressValidationMsg = ['Email Address is required', 'Please Enter Valid Email Address'];
+  emailAddressValidationMsg = ['Username or Email Address is required', 'Please Enter Valid Username or Email Address'];
   passwordValidationMsg = [
     'Password is required',
     'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
@@ -88,7 +92,7 @@ export class LoginExampleComponent implements OnInit {
         break;
       } else {
         this.showLoginError2 = true;
-        this.loginErrorMessage2 = 'Email Id does not exist';
+        this.loginErrorMessage2 = 'Username or Email Id does not exist';
         this.actionNameFour = {
           actionType: details.actionType,
           email: details.email,

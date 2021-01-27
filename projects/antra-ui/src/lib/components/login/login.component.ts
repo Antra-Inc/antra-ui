@@ -15,10 +15,19 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * There are two **Input properties,  emailAddressValidationMessage and passwordValidationMessage**, they are used to assign
  * custom validation messages to **email address field and password field** from end user.
  *
- * There is another input property known as **passwordPattern**, you can pass any custom pattern from application.
+ * There is another **input property known as passwordPattern**, you can pass any custom pattern from application.
  * **For e.g:** [passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'.
  * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$',
  * checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
+ *
+ * There is another **input property known as emailPattern**, you can pass any custom pattern from application.
+ * **For e.g:** [emailPattern]='^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$'.
+ * Default pattern is '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$',
+ * checks for **Alphanumeric characters, along with 0 or more special characters like '_','.'.
+ * You can use 0 or 1 time '@' symbol .**
+ *
+ * There is another **input property known as emailPlaceHolder**, where you can provide placeholder for Email Address TextField.
+ * Default value is 'User Name'. If you want to customize it to Email Address or any thing, then you can do that.
  *
  * There are another three **Input properties, such as loginUsingOption, loginUsingGmail and loginUsingOffice365**.
  * They set default to **false**, meaning they are invisible to user.
@@ -62,9 +71,11 @@ export class LoginComponent implements OnInit {
   @Input() emailAddressValidationMessage;
   @Input() passwordValidationMessage;
 
+  @Input() emailPlaceHolder = 'User Name';
   @Input() showLoginError = false;
   @Input() loginErrorMessage;
   @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+  @Input() emailPattern = '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$';
   @Input() loginUsingOption = false;
   @Input() loginUsingGmail = false;
   @Input() loginUsingOffice365 = false;
@@ -96,6 +107,7 @@ export class LoginComponent implements OnInit {
    */
   ngOnInit(): void {
     this.customValidationService.passwordPattern = this.passwordPattern;
+    this.customValidationService.emailPattern = this.emailPattern;
   }
 
   /**

@@ -3,20 +3,20 @@
     <div class="form__row">
       <input
         matInput
-        placeholder="Email Address"
+        placeholder="{{emailPlaceHolder}}"
         type="text"
         class="form__input"
         [(ngModel)]="loginModel.email"
         name="email"
         #email="ngModel"
         required
-        email
+        antraEmailPattern
       />
       <div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-container__error">
         <div *ngIf="email.errors?.required">
           <span class="material-icons"> error_outline </span> {{ emailAddressValidationMessage[0] }}
         </div>
-        <div *ngIf="email.errors?.email">
+        <div *ngIf="email.errors?.invalidEmail">
           <span class="material-icons"> error_outline </span> {{ emailAddressValidationMessage[1] }}
         </div>
       </div>
@@ -41,7 +41,7 @@
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[1] }}
         </div>
       </div>
-      <div *ngIf="showLoginError && password.valid" class="text-danger">
+      <div *ngIf="showLoginError && password.valid" class="form-container__error">
         <div><span class="material-icons"> error_outline </span>{{ loginErrorMessage }}</div>
       </div>
     </div>
