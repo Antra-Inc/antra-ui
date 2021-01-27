@@ -7,7 +7,7 @@ import { LoginActions } from 'antra-ui/lib/interfaces/login.interface';
   styleUrls: ['./login-example.component.scss'],
 })
 export class LoginExampleComponent implements OnInit {
-  registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'john.smith', 'narend@gmail.com'];
+  registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'john.smith', 'narend@gmail.com', 'rajeev.kumar'];
 
   placeholder = 'Email Address';
 
