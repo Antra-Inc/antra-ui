@@ -13,9 +13,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/logo</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/logo</example-url>
  */
-
 export class LogoComponent implements OnInit {
   @Input() svgPath;
   @Input() logoText;

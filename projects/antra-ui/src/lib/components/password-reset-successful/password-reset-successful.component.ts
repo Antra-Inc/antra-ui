@@ -28,7 +28,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/password-reset-successful</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/password-reset-successful</example-url>
  */
 export class PasswordResetSuccessfulComponent implements OnInit {
   @Input() successfulMessage = 'Password reset successful';
