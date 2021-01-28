@@ -12,6 +12,7 @@
     "build-antra-ui": "ng build antra-ui --prod=true && npm run build-scss && npm run build-doc",
     "build-example": "ng build --prod antra-lib",
     "build-example-gh-pages": "ng build --prod --output-path docs --base-href /Antra-ui/",
+    "build-deploy-gh-pages": "npm run build-antra-ui && npm run build-example-gh-pages",
     "start-example": "npm run start",
     "start-doc": "live-server ./documentation"
   },
