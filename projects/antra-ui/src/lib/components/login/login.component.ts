@@ -64,7 +64,7 @@ import { CustomValidationService } from '../../services/custom-validation.servic
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/login</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/login</example-url>
  */
 export class LoginComponent implements OnInit {
   // receiving customized validation messages from end user

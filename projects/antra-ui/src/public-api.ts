@@ -28,3 +28,7 @@ export * from './lib/antra-list/antra-list.module';
 
 // NavLinkNode and NavLinkNodeFlat are interface use for user generate customriz sidenav tree node
 export * from './lib/interfaces/sidenavbar.interface';
+
+export * from './lib/interfaces/login.interface';
+
+export * from './lib/interfaces/password-reset.interface';

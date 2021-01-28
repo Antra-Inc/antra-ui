@@ -34,7 +34,7 @@ import { Login } from '../../models/login.model';
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/password-reset</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/password-reset</example-url>
  */
 export class PasswordResetComponent implements OnInit {
   // receiving customized validation messages from end user

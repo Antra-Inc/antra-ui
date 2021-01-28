@@ -38,7 +38,7 @@ import { CustomValidationService } from '../../services/custom-validation.servic
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/change-password</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/change-password</example-url>
  */
 export class ChangePasswordComponent implements OnInit {
   @Input() userName;
