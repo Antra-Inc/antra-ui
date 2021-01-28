@@ -8,7 +8,7 @@ import { btnColor } from '../../interfaces/button.interface';
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/raised-button</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/raised-button</example-url>
  */
 export class RaisedButtonComponent implements OnInit {
   @Input() btnColor: btnColor = 'primary';

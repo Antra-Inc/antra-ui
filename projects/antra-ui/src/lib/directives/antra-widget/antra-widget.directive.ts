@@ -11,7 +11,7 @@ import { Directive, OnInit, HostBinding } from '@angular/core';
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/widget</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/widget</example-url>
  */
 export class AntraWidgetDirective implements OnInit {
   @HostBinding('class') elementClass = 'antra-widget';

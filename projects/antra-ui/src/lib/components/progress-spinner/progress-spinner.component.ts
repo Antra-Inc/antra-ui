@@ -12,7 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/progress-spinner</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/progress-spinner</example-url>
  */
 export class ProgressSpinnerComponent implements OnInit {
   @Input() percentage = 0;

@@ -26,7 +26,7 @@ import { NavLinkNode, NavLinkNodeFlat } from '../../interfaces/sidenavbar.interf
 })
 /**
  * Example of usage:
- * <example-url>http://127.0.0.1:4200/components/sidenav</example-url>
+ * <example-url>https://antra-inc.github.io/Antra-ui/components/sidenav</example-url>
  */
 export class SidenavbarComponent implements OnInit {
   /**

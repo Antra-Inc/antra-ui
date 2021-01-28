@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginActions } from 'antra-ui/lib/interfaces/login.interface';
+import { LoginActions } from 'antra-ui';
 
 @Component({
   selector: 'app-login-example',
