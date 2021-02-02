@@ -22,6 +22,10 @@ const routes: Routes = [
   { path: 'components/password-reset', component: PasswordResetPageComponent },
   { path: 'components/change-password', component: ChangePasswordPageComponent },
   { path: 'components/password-reset-successful', component: PasswordResetSuccessfulPageComponent },
+  { 
+    path: 'bmi', 
+    loadChildren: () => import('./browsermoduleissue/browsermoduleissue.module').then(m => m.BrowsermoduleissueModule),
+  }
 ];
 
 @NgModule({

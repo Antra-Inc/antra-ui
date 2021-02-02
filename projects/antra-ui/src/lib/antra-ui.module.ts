@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Mat modules
 
@@ -30,6 +28,8 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { PasswordResetSuccessfulComponent } from './components/password-reset-successful/password-reset-successful.component';
 import { EmailPatternDirective } from './directives/email-pattern.directive';
+import { CommonModule } from '@angular/common';
+
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -54,8 +54,7 @@ import { EmailPatternDirective } from './directives/email-pattern.directive';
   ],
 
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     AntraIconModule,
     AntraSidenavModule,
     AntraToolbarModule,
@@ -67,8 +66,6 @@ import { EmailPatternDirective } from './directives/email-pattern.directive';
     FormsModule,
   ],
   exports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     AntraIconModule,
     AntraSidenavModule,
     AntraToolbarModule,

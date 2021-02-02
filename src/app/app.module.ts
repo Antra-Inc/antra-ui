@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AntraUiModule } from 'antra-ui';
@@ -22,7 +23,7 @@ import { LogoPageComponent } from './components/pages/logo-page/logo-page.compon
 import { LogoExampleComponent } from './components/pages/logo-page/logo-example/logo-example.component';
 
 import { loadSvgResources } from './utils/svg.util';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, BrowserModule } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetPageComponent } from './components/pages/password-reset-page/password-reset-page.component';
@@ -31,6 +32,7 @@ import { ChangePasswordPageComponent } from './components/pages/change-password-
 import { ChangePasswordExampleComponent } from './components/pages/change-password-page/change-password-example/change-password-example.component';
 import { PasswordResetSuccessfulPageComponent } from './components/pages/password-reset-successful-page/password-reset-successful-page.component';
 import { PasswordResetSuccessfulExampleComponent } from './components/pages/password-reset-successful-page/password-reset-successful-example/password-reset-successful-example.component';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { PasswordResetSuccessfulExampleComponent } from './components/pages/pass
     PasswordResetSuccessfulPageComponent,
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     AntraUiModule,
     AppRoutingModule,
     HighlightModule,
@@ -73,6 +77,7 @@ import { PasswordResetSuccessfulExampleComponent } from './components/pages/pass
           scss: () => import('highlight.js/lib/languages/scss'),
           xml: () => import('highlight.js/lib/languages/xml'),
         },
+
       },
     },
   ],
