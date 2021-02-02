@@ -1,10 +1,11 @@
 /* tslint:disable:no-unused-variable */
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NavLinkNode, NavLinkNodeFlat } from 'projects/antra-ui/src/lib/interfaces/sidenavbar.interface';
 import { SidenavbarComponent } from './antra-sidenavbar.component';
 import { AntraUiModule } from '../../antra-ui.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   template: `
@@ -59,7 +60,9 @@ describe('SidenavbarComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [SidenavbarComponent, TestHostComponent],
-        imports: [AntraUiModule],
+        imports: [
+          BrowserAnimationsModule,
+          AntraUiModule],
         schemas: [NO_ERRORS_SCHEMA],
       }).compileComponents();
     })
