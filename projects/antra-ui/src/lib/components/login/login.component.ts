@@ -16,9 +16,8 @@ import { CustomValidationService } from '../../services/custom-validation.servic
  * custom validation messages to **email address field and password field** from end user.
  *
  * There is another **input property known as passwordPattern**, you can pass any custom pattern from application.
- * **For e.g:** [passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'.
- * Default pattern is '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$',
- * checks for **1 uppercase, 1 lowercase, 1 number and total length should be minimum 8 characters long.**
+ * **For e.g:** [passwordPattern]='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$', checks for 1 uppercase, 1 lowercase, 
+ * 1 number and total length should be minimum 8 characters long.
  *
  * There is another **input property known as emailPattern**, you can pass any custom pattern from application.
  * **For e.g:** [emailPattern]='^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$'.
@@ -74,7 +73,7 @@ export class LoginComponent implements OnInit {
   @Input() emailPlaceHolder = 'User Name';
   @Input() showLoginError = false;
   @Input() loginErrorMessage;
-  @Input() passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
+  @Input() passwordPattern = '';
   @Input() emailPattern = '^[a-zA-Z0-9+_.-]+[@]?[a-zA-Z0-9.-]+$';
   @Input() loginUsingOption = false;
   @Input() loginUsingGmail = false;

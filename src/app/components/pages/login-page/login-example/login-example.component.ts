@@ -40,7 +40,9 @@ export class LoginExampleComponent implements OnInit {
     'Password is required',
     'Password should have minimum 8 characters, at least 1 uppercase and 1 lowercase letter',
   ];
-
+  passwordValidationMsg2 = [
+    'Password is required',
+  ];
   constructor() {}
 
   ngOnInit(): void {}
