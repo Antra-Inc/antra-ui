@@ -21,11 +21,10 @@
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example2"
-          [emailPlaceHolder]="placeholder"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
+          [emailAddressValidationMessage]="emailAddressValidationMsg1"
+          [passwordValidationMessage]="passwordValidationMsg2"
           (loginActionEvent)="getActionNameTwo($event)"
         ></antra-login>
       </td>
@@ -47,10 +46,11 @@
   <table>
     <tr>
       <td>
-        <h3>Example 3</h3>
+        <h3>Example 3</h3> -->
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example3"
+          [emailPlaceHolder]="placeholder"
           [loginUsingOption]="true"
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
@@ -60,7 +60,7 @@
       </td>
       <td>
         <h3>Example 4</h3>
-        <antra-login
+          <antra-login
           class="example1"
           [showLoginError]="showLoginError2"
           [loginErrorMessage]="loginErrorMessage2"

@@ -37,7 +37,7 @@
         <div *ngIf="password.errors?.required">
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[0] }}
         </div>
-        <div *ngIf="password.errors?.invalidPassword">
+        <div *ngIf="password.errors?.invalidPassword && passwordValidationMessage[1]">
           <span class="material-icons"> error_outline </span> {{ passwordValidationMessage[1] }}
         </div>
       </div>
