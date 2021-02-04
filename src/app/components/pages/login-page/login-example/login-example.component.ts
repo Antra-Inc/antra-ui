@@ -32,6 +32,7 @@ export class LoginExampleComponent implements OnInit {
   loginUsingOffice365 = true;
 
   emailAddressValidationMsg = ['Username or Email Address is required', 'Please Enter Valid Username or Email Address'];
+  emailAddressValidationMsg1 = ['Username is required', 'Please Enter Valid Username'];
   passwordValidationMsg = [
     'Password is required',
     'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
