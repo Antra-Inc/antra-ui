@@ -11,6 +11,14 @@ script: skip
 jobs:
   include:
     - stage: test & lint
-      script: npm run test:nowatch
-      script: npm run lint
-    
+      script: npm run test-ci && npm run lint-ci
+
+    - stage: Github Pages release
+      script: npm run build-deploy-gh-pages
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $aura_token
+        local_dir: docs
+        on:
+          branch: master
