@@ -18,7 +18,7 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        github_token: $aura_token
+        github_token: $antra_token
         local_dir: docs
         on:
           branch: master
