@@ -2,23 +2,20 @@
   <table>
     <tr>
       <td>
+        <h3>Example 1</h3>
         <antra-notification-dialog class="default" [notificationStatus]="true" [successMessage]="successMessage1">
         </antra-notification-dialog>
       </td>
       <td>
+        <h3>Example 2</h3>
         <antra-notification-dialog class="customized" [notificationStatus]="true" [btnText]="btnText"
           [showRedirectButton]="true" [successMessage]="successMessage2"
           (sendNotificationEvent)="getActionName1($event)">
         </antra-notification-dialog>
       </td>
-      <td>
-        <antra-notification-dialog class="default" [notificationStatus]="false" [showRedirectButton]="true"
-          btnText="BACK TO LOGIN" [errorMessage]="errorMessage1" (sendNotificationEvent)="getActionName2($event)">
-        </antra-notification-dialog>
-      </td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="2">
         <hr />
       </td>
     </tr>
@@ -29,6 +26,27 @@
           {{ actionName1 }}
         </h3>
       </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>Example 3</h3>
+        <antra-notification-dialog class="default" [notificationStatus]="false" [errorMessage]="errorMessage1">
+        </antra-notification-dialog>
+      </td>
+      <td>
+        <h3>Example 4</h3>
+        <antra-notification-dialog class="default" [notificationStatus]="false" [showRedirectButton]="true"
+          btnText="BACK TO LOGIN" [errorMessage]="errorMessage2" (sendNotificationEvent)="getActionName2($event)">
+        </antra-notification-dialog>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td></td>
       <td>
         <h3 class="text-center">
           {{ actionName2 }}

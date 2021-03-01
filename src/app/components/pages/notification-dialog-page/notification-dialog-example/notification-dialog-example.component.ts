@@ -13,7 +13,8 @@ export class NotificationDialogExampleComponent implements OnInit {
   successMessage1 = 'Password reset link has been send to your registered email id';
   successMessage2 = 'Password reset successful';
 
-  errorMessage1 = 'The token has expired';
+  errorMessage1 = 'Failed to sent Password reset link to your registered email id';
+  errorMessage2 = 'The token has expired';
 
   btnText = 'CLICK HERE TO LOGIN';
 

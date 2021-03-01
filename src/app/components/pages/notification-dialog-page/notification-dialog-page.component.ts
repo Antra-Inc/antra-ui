@@ -11,19 +11,16 @@ export class NotificationDialogPageComponent implements OnInit {
   <table>
     <tr>
       <td>
-        <antra-password-reset-successful
-          class="default"
-          [successfulMessage]="successfulMessage1"
-        ></antra-password-reset-successful>
+        <h3>Example 1</h3>
+        <antra-notification-dialog class="default" [notificationStatus]="true" [successMessage]="successMessage1">
+        </antra-notification-dialog>
       </td>
       <td>
-        <antra-password-reset-successful
-          class="customized"
-          [btnText]="btnText"
-          [showRedirectButton]="true"
-          [successfulMessage]="successfulMessage2"
-          (passwordResetSuccessfulEvent)="showActionDetails($event)"
-        ></antra-password-reset-successful>
+        <h3>Example 2</h3>
+        <antra-notification-dialog class="customized" [notificationStatus]="true" [btnText]="btnText"
+          [showRedirectButton]="true" [successMessage]="successMessage2"
+          (sendNotificationEvent)="getActionName1($event)">
+        </antra-notification-dialog>
       </td>
     </tr>
     <tr>
@@ -35,7 +32,33 @@ export class NotificationDialogPageComponent implements OnInit {
       <td></td>
       <td>
         <h3 class="text-center">
-          {{ details }}
+          {{ actionName1 }}
+        </h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>Example 3</h3>
+        <antra-notification-dialog class="default" [notificationStatus]="false" [errorMessage]="errorMessage1">
+        </antra-notification-dialog>
+      </td>
+      <td>
+        <h3>Example 4</h3>
+        <antra-notification-dialog class="default" [notificationStatus]="false" [showRedirectButton]="true"
+          btnText="BACK TO LOGIN" [errorMessage]="errorMessage2" (sendNotificationEvent)="getActionName2($event)">
+        </antra-notification-dialog>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <h3 class="text-center">
+          {{ actionName2 }}
         </h3>
       </td>
     </tr>
@@ -58,26 +81,35 @@ export class NotificationDialogPageComponent implements OnInit {
   tsSource = `import { Component, OnInit } from '@angular/core';
 
   @Component({
-    selector: 'app-password-reset-successful-example',
-    templateUrl: './password-reset-successful-example.component.html',
-    styleUrls: ['./password-reset-successful-example.component.scss'],
+    selector: 'app-notification-dialog-example',
+    templateUrl: './notification-dialog-example.component.html',
+    styleUrls: ['./notification-dialog-example.component.scss']
   })
-  export class PasswordResetSuccessfulExampleComponent implements OnInit {
-    details: string;
+  export class NotificationDialogExampleComponent implements OnInit {
   
-    successfulMessage1 = 'Password reset link has been send to your registered email id';
-    successfulMessage2 = 'Password reset successful';
+    actionName1: string;
+    actionName2: string;
+  
+    successMessage1 = 'Password reset link has been send to your registered email id';
+    successMessage2 = 'Password reset successful';
+  
+    errorMessage1 = 'Failed to sent Password reset link to your registered email id';
+    errorMessage2 = 'The token has expired';
   
     btnText = 'CLICK HERE TO LOGIN';
   
-    constructor() {}
+    constructor() { }
   
-    ngOnInit(): void {}
+    ngOnInit(): void { }
   
-    // tslint:disable-next-line: typedef
-    showActionDetails(details: string) {
-      this.details = details;
+    getActionName1(actionName: string): void {
+      this.actionName1 = actionName;
     }
+  
+    getActionName2(actionName: string): void {
+      this.actionName2 = actionName;
+    }
+  
   }  
 `;
 
