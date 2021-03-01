@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AntraUiModule } from '../../antra-ui.module';
-
 import { NotificationDialogComponent } from './notification-dialog.component';
 
 @Component({
   template: `<antra-notification-dialog
     class="default"
-    [successfulMessage]="successfulMessage1"
+    [successMessage]="successMessage"
   ></antra-notification-dialog>`,
 })
 class TestHostComponent { }
@@ -40,8 +39,8 @@ describe('PasswordResetSuccessfulComponent', () => {
     expect(spanElement.textContent.trim()).toBe('check_circle');
   });
 
-  it('should have div with class names form-container password-reset antra-widget', () => {
+  it('should have div with class names form-container notification-dialog antra-widget', () => {
     const divElement = fixture.nativeElement.querySelector('div');
-    expect(divElement.className).toContain('form-container password-reset antra-widget');
+    expect(divElement.className).toContain('form-container notification-dialog antra-widget');
   });
 });

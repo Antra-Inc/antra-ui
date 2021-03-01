@@ -28,23 +28,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
  * ### Usage
  *  `import { AntraUiModule } from 'antra-ui';`
  */
+
 @Component({
   selector: 'antra-notification-dialog',
   templateUrl: './notification-dialog.component.html',
-  styleUrls: ['./notification-dialog.component.scss'],
+  styleUrls: ['./notification-dialog.component.scss']
 })
 /**
  * Example of usage:
  * <example-url>https://antra-inc.github.io/Antra-ui/components/notification-dialog</example-url>
  */
 export class NotificationDialogComponent implements OnInit {
+
   @Input() successMessage = 'Password reset successful';
   @Input() btnText = 'CLICK HERE TO LOGIN';
   @Input() showRedirectButton = false;
   @Input() notificationStatus = true;
   @Input() errorMessage = '';
 
-  // emitting sendNotificationEvent SUBMIT action to end user
+  // emitting sendNotificationEvent - SUBMIT action to end user
   @Output() sendNotificationEvent = new EventEmitter<string>();
 
   /**
@@ -61,4 +63,5 @@ export class NotificationDialogComponent implements OnInit {
   onSubmit() {
     this.sendNotificationEvent.emit(this.btnText);
   }
+
 }
