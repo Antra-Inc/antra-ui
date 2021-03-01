@@ -1,0 +1,39 @@
+<div class="example-content">
+  <table>
+    <tr>
+      <td>
+        <antra-notification-dialog class="default" [notificationStatus]="true" [successMessage]="successMessage1">
+        </antra-notification-dialog>
+      </td>
+      <td>
+        <antra-notification-dialog class="customized" [notificationStatus]="true" [btnText]="btnText"
+          [showRedirectButton]="true" [successMessage]="successMessage2"
+          (sendNotificationEvent)="getActionName1($event)">
+        </antra-notification-dialog>
+      </td>
+      <td>
+        <antra-notification-dialog class="default" [notificationStatus]="false" [showRedirectButton]="true"
+          btnText="BACK TO LOGIN" [errorMessage]="errorMessage1" (sendNotificationEvent)="getActionName2($event)">
+        </antra-notification-dialog>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <h3 class="text-center">
+          {{ actionName1 }}
+        </h3>
+      </td>
+      <td>
+        <h3 class="text-center">
+          {{ actionName2 }}
+        </h3>
+      </td>
+    </tr>
+  </table>
+</div>

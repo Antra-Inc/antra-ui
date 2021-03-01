@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AntraUiModule } from '../../antra-ui.module';
 
-import { PasswordResetSuccessfulComponent } from './password-reset-successful.component';
+import { NotificationDialogComponent } from './notification-dialog.component';
 
 @Component({
-  template: `<antra-password-reset-successful
+  template: `<antra-notification-dialog
     class="default"
     [successfulMessage]="successfulMessage1"
-  ></antra-password-reset-successful>`,
+  ></antra-notification-dialog>`,
 })
-class TestHostComponent {}
+class TestHostComponent { }
 
 describe('PasswordResetSuccessfulComponent', () => {
   let component: TestHostComponent;
@@ -19,7 +19,7 @@ describe('PasswordResetSuccessfulComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [PasswordResetSuccessfulComponent, TestHostComponent],
+        declarations: [NotificationDialogComponent, TestHostComponent],
         imports: [AntraUiModule],
       }).compileComponents();
     })

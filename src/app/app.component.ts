@@ -40,7 +40,13 @@ export class AppComponent {
       children: [
         { name: 'PasswordResetComponent', url: 'components/password-reset' },
         { name: 'ChangePasswordComponent', url: 'components/change-password' },
-        { name: 'PasswordResetSuccessfulComponent', url: 'components/password-reset-successful' },
+      ],
+    },
+    {
+      name: 'Notification Dialog',
+      icon: 'add_alert',
+      children: [
+        { name: 'NotificationDialogComponent', url: 'components/notification-dialog' },
       ],
     },
     {
@@ -55,7 +61,7 @@ export class AppComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   getClickEventFromSideNav(event: NavLinkNodeFlat): void {
     if (event.url) {

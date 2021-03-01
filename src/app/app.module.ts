@@ -29,8 +29,8 @@ import { PasswordResetPageComponent } from './components/pages/password-reset-pa
 import { PasswordResetExampleComponent } from './components/pages/password-reset-page/password-reset-example/password-reset-example.component';
 import { ChangePasswordPageComponent } from './components/pages/change-password-page/change-password-page.component';
 import { ChangePasswordExampleComponent } from './components/pages/change-password-page/change-password-example/change-password-example.component';
-import { PasswordResetSuccessfulPageComponent } from './components/pages/password-reset-successful-page/password-reset-successful-page.component';
-import { PasswordResetSuccessfulExampleComponent } from './components/pages/password-reset-successful-page/password-reset-successful-example/password-reset-successful-example.component';
+import { NotificationDialogPageComponent } from './components/pages/notification-dialog-page/notification-dialog-page.component';
+import { NotificationDialogExampleComponent } from './components/pages/notification-dialog-page/notification-dialog-example/notification-dialog-example.component';
 
 @NgModule({
   declarations: [
@@ -54,8 +54,8 @@ import { PasswordResetSuccessfulExampleComponent } from './components/pages/pass
     PasswordResetExampleComponent,
     ChangePasswordPageComponent,
     ChangePasswordExampleComponent,
-    PasswordResetSuccessfulExampleComponent,
-    PasswordResetSuccessfulPageComponent,
+    NotificationDialogPageComponent,
+    NotificationDialogExampleComponent,
   ],
   imports: [
     AntraUiModule,

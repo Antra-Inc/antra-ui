@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-password-reset-successful-page',
-  templateUrl: './password-reset-successful-page.component.html',
-  styleUrls: ['./password-reset-successful-page.component.scss'],
+  selector: 'app-notification-dialog-page',
+  templateUrl: './notification-dialog-page.component.html',
+  styleUrls: ['./notification-dialog-page.component.scss']
 })
-export class PasswordResetSuccessfulPageComponent implements OnInit {
+export class NotificationDialogPageComponent implements OnInit {
+
   htmlSource = `<div class="example-content">
   <table>
     <tr>
@@ -80,7 +81,7 @@ export class PasswordResetSuccessfulPageComponent implements OnInit {
   }  
 `;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

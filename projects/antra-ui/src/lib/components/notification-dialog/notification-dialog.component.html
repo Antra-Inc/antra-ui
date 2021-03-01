@@ -1,0 +1,23 @@
+<div antraWidget class="form-container notification-dialog" *ngIf="notificationStatus">
+  <div class="form__row text-center notification-dialog__success-icon">
+    <span class="material-icons"> check_circle </span>
+  </div>
+  <div class="form__row">
+    <p>{{ successMessage }}.</p>
+  </div>
+  <div class="form__row justity-content notification-dialog__btn" *ngIf="showRedirectButton">
+    <button mat-button (click)="onSubmit()" class="btn btn-primary form__submit-center">{{ btnText }}</button>
+  </div>
+</div>
+
+<div antraWidget class="form-container notification-dialog" *ngIf="notificationStatus==false">
+  <div class="form__row text-center notification-dialog__error-icon">
+    <span class="material-icons"> highlight_off </span>
+  </div>
+  <div class="form__row">
+    <p>{{ errorMessage }}.</p>
+  </div>
+  <div class="form__row justity-content notification-dialog__btn" *ngIf="showRedirectButton">
+    <button mat-button (click)="onSubmit()" class="btn btn-primary form__submit-center">{{ btnText }}</button>
+  </div>
+</div>

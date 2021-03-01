@@ -3,14 +3,25 @@
   font-size: 15px;
   width: 100%;
 }
-.password-reset {
-  &__icon {
+
+.notification-dialog {
+
+  &__success-icon,
+  &__error-icon {
     justify-content: center;
+
     .material-icons {
       color: #50e109;
       font-size: 50px;
     }
   }
+
+  &__error-icon {
+    .material-icons {
+      color: red !important;
+    }
+  }
+
   &__btn {
     button {
       width: auto !important;
