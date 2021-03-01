@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { NavLinkNode, NavLinkNodeFlat } from 'projects/antra-ui/src/lib/interfaces/sidenavbar.interface';
 import { SidenavbarComponent } from './antra-sidenavbar.component';
 import { AntraUiModule } from '../../antra-ui.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   template: `
@@ -59,7 +60,7 @@ describe('SidenavbarComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [SidenavbarComponent, TestHostComponent],
-        imports: [AntraUiModule],
+        imports: [NoopAnimationsModule, AntraUiModule],
         schemas: [NO_ERRORS_SCHEMA],
       }).compileComponents();
     })

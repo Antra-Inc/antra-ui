@@ -22,7 +22,8 @@ import { LogoPageComponent } from './components/pages/logo-page/logo-page.compon
 import { LogoExampleComponent } from './components/pages/logo-page/logo-example/logo-example.component';
 
 import { loadSvgResources } from './utils/svg.util';
-import { DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetPageComponent } from './components/pages/password-reset-page/password-reset-page.component';
@@ -57,11 +58,7 @@ import { NotificationDialogExampleComponent } from './components/pages/notificat
     NotificationDialogPageComponent,
     NotificationDialogExampleComponent,
   ],
-  imports: [
-    AntraUiModule,
-    AppRoutingModule,
-    HighlightModule,
-    HttpClientModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AntraUiModule, AppRoutingModule, HighlightModule, HttpClientModule],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
@@ -82,5 +79,4 @@ export class AppModule {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     loadSvgResources(iconRegistry, sanitizer);
   }
-
 }
