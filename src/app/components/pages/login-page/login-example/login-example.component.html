@@ -3,30 +3,19 @@
     <tr>
       <td>
         <h3>Example 1</h3>
-        <antra-login
-          class="default"
-          [showLoginError]="showLoginError1"
-          [loginErrorMessage]="loginErrorMessage1"
-          [loginUsingOption]="true"
-          [loginUsingGmail]="true"
-          [loginUsingOffice365]="true"
+        <antra-login class="default" [showLoginError]="showLoginError1" [loginErrorMessage]="loginErrorMessage1"
+          [loginUsingOption]="true" [loginUsingGmail]="true" [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          [passwordPattern]="passwordPattern"
-          (loginActionEvent)="getActionNameOne($event)"
-        ></antra-login>
+          [passwordValidationMessage]="passwordValidationMsg" [passwordPattern]="passwordPattern"
+          (loginActionEvent)="getActionNameOne($event)"></antra-login>
       </td>
       <td>
         <h3>Example 2</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
-        <antra-login
-          class="example2"
-          [loginUsingOption]="true"
-          [loginUsingGmail]="true"
+        <antra-login class="example2" [loginUsingOption]="true" [loginUsingGmail]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg1"
-          [passwordValidationMessage]="passwordValidationMsg2"
-          (loginActionEvent)="getActionNameTwo($event)"
-        ></antra-login>
+          [passwordValidationMessage]="passwordValidationMsg2" (loginActionEvent)="getActionNameTwo($event)">
+        </antra-login>
       </td>
     </tr>
     <tr>
@@ -46,30 +35,19 @@
   <table>
     <tr>
       <td>
-        <h3>Example 3</h3> -->
+        <h3>Example 3</h3>
         <!-- Default Password Pattern Validation Applied From Library -->
-        <antra-login
-          class="example3"
-          [emailPlaceHolder]="placeholder"
-          [loginUsingOption]="true"
-          [loginUsingOffice365]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
-          (loginActionEvent)="getActionNameThree($event)"
-        ></antra-login>
+        <antra-login class="example3" [emailPlaceHolder]="placeholder" [loginUsingOption]="true"
+          [loginUsingOffice365]="true" [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg" (loginActionEvent)="getActionNameThree($event)">
+        </antra-login>
       </td>
       <td>
         <h3>Example 4</h3>
-          <antra-login
-          class="example1"
-          [showLoginError]="showLoginError2"
-          [loginErrorMessage]="loginErrorMessage2"
-          [emailPattern]="emailPattern"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg1"
-          [passwordPattern]="passwordPattern1"
-          (loginActionEvent)="getActionNameFour($event)"
-        ></antra-login>
+        <antra-login class="example1" [showLoginError]="showLoginError2" [loginErrorMessage]="loginErrorMessage2"
+          [emailPattern]="emailPattern" [emailAddressValidationMessage]="emailAddressValidationMsg"
+          [passwordValidationMessage]="passwordValidationMsg1" [passwordPattern]="passwordPattern1"
+          (loginActionEvent)="getActionNameFour($event)"></antra-login>
       </td>
     </tr>
     <tr>

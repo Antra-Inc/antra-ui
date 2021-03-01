@@ -28,8 +28,9 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { MatchPasswordDirective } from './directives/match-password.directive';
-import { PasswordResetSuccessfulComponent } from './components/password-reset-successful/password-reset-successful.component';
+
 import { EmailPatternDirective } from './directives/email-pattern.directive';
+import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -49,7 +50,7 @@ import { EmailPatternDirective } from './directives/email-pattern.directive';
     PasswordResetComponent,
     ChangePasswordComponent,
     MatchPasswordDirective,
-    PasswordResetSuccessfulComponent,
+    NotificationDialogComponent,
     EmailPatternDirective,
   ],
 
@@ -90,7 +91,7 @@ import { EmailPatternDirective } from './directives/email-pattern.directive';
     LogoComponent,
     PasswordResetComponent,
     ChangePasswordComponent,
-    PasswordResetSuccessfulComponent
+    NotificationDialogComponent
   ],
 })
 export class AntraUiModule {}

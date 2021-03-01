@@ -29,11 +29,10 @@ export class LoginPageComponent implements OnInit {
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example2"
-          [emailPlaceHolder]="placeholder"
           [loginUsingOption]="true"
           [loginUsingGmail]="true"
-          [emailAddressValidationMessage]="emailAddressValidationMsg"
-          [passwordValidationMessage]="passwordValidationMsg"
+          [emailAddressValidationMessage]="emailAddressValidationMsg1"
+          [passwordValidationMessage]="passwordValidationMsg2"
           (loginActionEvent)="getActionNameTwo($event)"
         ></antra-login>
       </td>
@@ -55,10 +54,11 @@ export class LoginPageComponent implements OnInit {
   <table>
     <tr>
       <td>
-        <h3>Example 3</h3>
+        <h3>Example 3</h3> -->
         <!-- Default Password Pattern Validation Applied From Library -->
         <antra-login
           class="example3"
+          [emailPlaceHolder]="placeholder"
           [loginUsingOption]="true"
           [loginUsingOffice365]="true"
           [emailAddressValidationMessage]="emailAddressValidationMsg"
@@ -68,7 +68,7 @@ export class LoginPageComponent implements OnInit {
       </td>
       <td>
         <h3>Example 4</h3>
-        <antra-login
+          <antra-login
           class="example1"
           [showLoginError]="showLoginError2"
           [loginErrorMessage]="loginErrorMessage2"
@@ -122,7 +122,7 @@ export class LoginPageComponent implements OnInit {
 `;
 
   tsSource = `import { Component, OnInit } from '@angular/core';
-  import { LoginActions } from 'antra-ui/lib/interfaces/login.interface';
+  import { LoginActions } from 'antra-ui';
   
   @Component({
     selector: 'app-login-example',
@@ -130,7 +130,7 @@ export class LoginPageComponent implements OnInit {
     styleUrls: ['./login-example.component.scss'],
   })
   export class LoginExampleComponent implements OnInit {
-    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'john.smith', 'narend@gmail.com'];
+    registeredEmailIds = ['ramesh@gmail.com', 'rajeev@gmail.com', 'john.smith', 'narend@gmail.com', 'rajeev.kumar'];
   
     placeholder = 'Email Address';
   
@@ -155,6 +155,7 @@ export class LoginPageComponent implements OnInit {
     loginUsingOffice365 = true;
   
     emailAddressValidationMsg = ['Username or Email Address is required', 'Please Enter Valid Username or Email Address'];
+    emailAddressValidationMsg1 = ['Username is required', 'Please Enter Valid Username'];
     passwordValidationMsg = [
       'Password is required',
       'Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
@@ -163,7 +164,9 @@ export class LoginPageComponent implements OnInit {
       'Password is required',
       'Password should have minimum 8 characters, at least 1 uppercase and 1 lowercase letter',
     ];
-  
+    passwordValidationMsg2 = [
+      'Password is required',
+    ];
     constructor() {}
   
     ngOnInit(): void {}
@@ -224,7 +227,7 @@ export class LoginPageComponent implements OnInit {
         }
       }
     }
-  }  
+  }
 `;
 
   constructor() {}
