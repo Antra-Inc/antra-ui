@@ -31,6 +31,7 @@ import { MatchPasswordDirective } from './directives/match-password.directive';
 
 import { EmailPatternDirective } from './directives/email-pattern.directive';
 import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
+import { CommonModule } from '@angular/common';
 // import { NavLinkNode, NavLinkNodeFlat } from './interfaces/sidenavbar.interface';
 
 @NgModule({
@@ -55,8 +56,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
   ],
 
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     AntraIconModule,
     AntraSidenavModule,
     AntraToolbarModule,
@@ -68,8 +68,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     FormsModule,
   ],
   exports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     AntraIconModule,
     AntraSidenavModule,
     AntraToolbarModule,
@@ -91,7 +90,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     LogoComponent,
     PasswordResetComponent,
     ChangePasswordComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
   ],
 })
 export class AntraUiModule {}
