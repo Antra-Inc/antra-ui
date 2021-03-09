@@ -19,6 +19,10 @@ export class AppComponent {
       ],
     },
     {
+      name: 'Clock',
+      icon: 'alarm',
+    },
+    {
       name: 'SideNav',
       icon: 'settings',
       useSvgIcon: true,
