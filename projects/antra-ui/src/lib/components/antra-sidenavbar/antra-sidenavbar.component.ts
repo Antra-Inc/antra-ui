@@ -106,7 +106,7 @@ export class SidenavbarComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor() {}
+  constructor() { }
   /**
    * @ignore
    */

@@ -4,8 +4,8 @@
     (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseLeave()" color="primary">
     <mat-nav-list>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [ngStyle]="{ background: sideNavBackground }">
-        <mat-tree-node [ngStyle]="{ display: isExpanded ? 'block' : 'none' }" *matTreeNodeDef="let node"
-          matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
+        <mat-tree-node [ngStyle]="{ display: isExpanded || !node.children? 'block' : 'none' }"
+          *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="treeNodePaddingIndent">
           <mat-list-item (click)="handleListOnClick(node)" [ngStyle]="{ color: sideNavTextColor }">
             <mat-icon mat-list-icon *ngIf="!node.useSvgIcon">{{ node.icon }}</mat-icon>
             <mat-icon mat-list-icon *ngIf="node.useSvgIcon" [svgIcon]="node.icon"></mat-icon>
