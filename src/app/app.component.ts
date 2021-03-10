@@ -18,11 +18,6 @@ export class AppComponent {
         { name: 'RaisedButtonComponent', url: 'components/raised-button' },
       ],
     },
-    // for testing 0 child
-    {
-      name: 'Clock',
-      icon: 'alarm',
-    },
     {
       name: 'SideNav',
       icon: 'settings',

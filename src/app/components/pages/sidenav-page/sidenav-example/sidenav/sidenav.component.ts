@@ -13,13 +13,18 @@ export class SidenavComponent {
   optionInSideNav = '';
   isOpen = true;
   sideNavConfig: NavLinkNode[] = [
+    // for testing 0 child
+    {
+      name: 'Clock',
+      icon: 'alarm',
+    },
     {
       name: 'example-sidenav tree1',
       icon: 'myinfo',
       useSvgIcon: true,
       children: [
         { name: 'example-option1', url: 'components/example-option1' },
-        { name: 'example-option2', url: 'components/example-option2'},
+        { name: 'example-option2', url: 'components/example-option2' },
       ],
     },
     {
