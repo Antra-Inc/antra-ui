@@ -47,6 +47,11 @@ export class SidenavPageComponent {
     optionInSideNav = '';
     isOpen = true;
     sideNavConfig: NavLinkNode[] = [
+      // for testing 0 child
+      {
+        name: 'Clock',
+        icon: 'alarm',
+      },
       {
         name: 'example-sidenav tree1',
         icon: 'myinfo',
